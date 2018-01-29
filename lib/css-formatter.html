@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Formatter</title>
+    <link rel="stylesheet" href="./module/editor/lib/codemirror.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./module/editor/lib/codemirror.js"></script>
+    <script src="./js/formatting.js"></script>
+    <script src="./module/editor/mode/css/css.js"></script>
+    <script src="./module/editor/mode/xml/xml.js"></script>
+    <script src="./module/editor/mode/javascript/javascript.js"></script>
+    <script src="./module/editor/mode/htmlmixed/htmlmixed.js"></script>
+    <style type="text/css">
+    .beautifier {
+        border: rgb(204, 193, 193) 1px solid;
+        min-height: 400px;
+        margin: 10px auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2 style="text-align: center">CSS Beautifier</h2>
+            <div class="beautifier">
+                <textarea id="code" name="code" placeholder="Copy-paste your source code here..">
+                    .clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0
+}
+.clearfix {
+  display: block;
+  zoom: 1
+}
+.clear {
+  clear: both;
+}
+header
+{
+  padding:10px 0;
+}
+.header
+{
+  margin:0 auto;
+  padding:0 10px;
+  width:1000px;
+  color:#fff;
+  background:#1b95e0 ;
+  border-bottom:#0064a2 3px solid;
+  box-shadow:rgba(0,0,0,.6) 3px 3px 5px;
+}
+
+                </textarea>
+            </div>
+            </textarea>
+        </div>
+        <div class="row">
+            <input name="" type="button" class="btn btn-primary" value="BEAUTIFY" onclick="autoFormat('beautify','0');return false;">
+            <input name="" type="button" class="btn btn-success" value="SELECT" onclick="select_code()">
+            <input name="" type="button" class="btn btn-danger" value="CLEAR" onclick="clear_code()">
+        </div>
+    </div>
+    <script>
+    var typee = "beautify"
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        lineWrapping: true,
+        viewportMargin: Infinity,
+        autofocus: false,
+        mode: "css"
+    });
+    editor.setSize('100%', 400);
+
+    function select_code() {
+        CodeMirror.commands["selectAll"](editor);
+    }
+
+    function clear_code() {
+        editor.setValue("");
+    }
+
+    function autoFormat(type, indent) {
+        typee = type;
+        CodeMirror.commands["selectAll"](editor);
+        editor.autoFormatRange(editor.getCursor(true), editor.getCursor(false));
+        editor.setCursor(0);
+        var charWidth = editor.defaultCharWidth(),
+            basePadding = indent;
+        editor.on("renderLine", function(cm, line, elt) {
+            var off = CodeMirror.countColumn(line.text, null, cm.getOption("tabSize")) * charWidth;
+            elt.style.textIndent = "-" + off + "px";
+            elt.style.paddingLeft = (basePadding + off) + "px";
+        });
+        editor.refresh();
+    }
+    </script>
+</body>
+
+</html>
