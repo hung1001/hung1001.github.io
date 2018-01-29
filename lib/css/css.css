@@ -1,0 +1,116 @@
+﻿a,
+a:hover,
+a:active {
+    text-decoration: none !important
+}
+
+.tool-wrapper a i {
+    font-size: 7em;
+    padding: 20px;
+    width: 100%;
+    display: block;
+    min-height: 80px;
+    transition: all ease 0.2s;
+    text-align: center;
+    border: 1px solid #cacaca;
+    color: #444
+}
+
+.tool-wrapper a i:hover,
+.tool-wrapper a:hover {
+    opacity: .7;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.tool-footer {
+    text-align: center;
+    transition: all ease 0.2s;
+    color: #fff;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.5em;
+    margin: 0 0 30px;
+    vertical-align: middle;
+    background: #444;
+}
+
+.row:first-child {
+    margin-top: 3em;
+}
+
+.footer-bottom .footer-social {
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-bottom .footer-social li {
+    display: inline-block;
+}
+
+.footer-bottom .footer-social li a {
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #444;
+    margin: 0 5px;
+    font-size: 20px;
+    position: relative;
+    color: #fff;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 9;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+}
+
+.footer-bottom .footer-social li a:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    background: -moz-linear-gradient( 4deg, #2187e7 0%, #0659a8 100%);
+    background: -webkit-linear-gradient( 4deg, #2187e7 0%, #0659a8 100%);
+    background: -ms-linear-gradient( 4deg, #2187e7 0%, #0659a8 100%);
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.footer-bottom .footer-social li a:hover {
+    color: #fff;
+}
+
+.footer-bottom .footer-social li a:hover:before {
+    -webkit-transform: scale(.99);
+    -moz-transform: scale(.99);
+    -ms-transform: scale(.99);
+    -o-transform: scale(.99);
+    transform: scale(.99);
+}
+
+.text-center {
+    font-size: 18px;
+}
+
+hr {
+    margin: 10px 0
+}
