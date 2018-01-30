@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Minifier</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="./clipboard/clipboard.min.js"></script>
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+    <style>
+    textarea {
+        width: 100%;
+        margin: 10px 0
+    }
+    .btn {
+    	margin: 10px 0 0
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+        	<h3 class="text-center"><b>HTML MINIFIER</b></h3>
+            <form>
+                <textarea id="oldCode" name="oldCode" rows="10"></textarea>
+                <br />
+                <textarea id="newCode" name="newCode" rows="10"></textarea>
+                <br />
+                <input id="headstatus" name="headstatus" value="true" type="checkbox"> Don't compress HTML head of document
+                <br />
+                <input type="button" name="html-compressor" value="COMPRESS" id="HTMLcompressor" class="btn btn-primary">
+                <input type="button" name="copyBtn" id="copyBtn" value="COPY" class="btn btn-success" data-clipboard-target="#newCode">
+                <input type="button" name="clearText" id="clearText" value="Reset" class="btn btn-danger">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        new Clipboard('#copyBtn');
+    });
+    $('#btnReset').click(function() {
+        $('#content').val('');
+    });
+
+    $('#copyBtn').tooltip({
+        trigger: 'click',
+        placement: 'top'
+    });
+
+    function setTooltip(message) {
+        $('#copyBtn').tooltip('hide')
+            .attr('data-original-title', message)
+            .tooltip('show');
+    }
+
+    function hideTooltip() {
+        setTimeout(function() {
+            $('#copyBtn').tooltip('hide');
+        }, 3000);
+    }
+
+    var clipboard = new Clipboard('#copyBtn');
+
+    clipboard.on('success', function(e) {
+        setTooltip('Copied');
+        hideTooltip();
+    });
+
+    clipboard.on('error', function(e) {
+        setTooltip('Failed');
+        hideTooltip();
+    });
+    document.getElementById("HTMLcompressor").addEventListener("click", function() {
+        var allHTML = document.getElementById("oldCode").value;
+        var headHTML = "";
+        var removeThis = "";
+        var headstatus = document.getElementById("headstatus").checked;
+        if (headstatus != true) {
+            //Compress all the things!
+            allHTML = allHTML.replace(/(\r\n|\n|\r|\t)/gm, "");
+            allHTML = allHTML.replace(/\s+/g, " ");
+        } else {
+            //Don't compress the head
+            allHTML = allHTML.replace(new RegExp("</HEAD", "gi"), '</head');
+            allHTML = allHTML.replace(new RegExp("</head ", "gi"), '</head');
+
+            var bodySplit = "</head>";
+            var i = allHTML.indexOf(bodySplit) != -1;
+            if (i == true) {
+                var bodySplit = "</head>";
+                tempo = allHTML.split(new RegExp(bodySplit, 'i'));
+                headHTML = tempo[0];
+                allHTML = tempo[1];
+            } else {
+                bodySplit = "";
+            }
+            allHTML = allHTML.replace(/(\r\n|\n|\r|\t)/gm, "");
+            allHTML = allHTML.replace(/\s+/g, " ");
+            allHTML = headHTML + bodySplit + '\n' + allHTML;
+        }
+        document.getElementById("newCode").value = allHTML;
+    });
+
+    //reset text areas
+    document.getElementById("clearText").addEventListener("click", function() {
+        document.getElementById("oldCode").value = "";
+        document.getElementById("newCode").value = "";
+        document.getElementById("oldCode").focus();
+    });
+
+    var textBox = document.getElementById("newCode");
+    textBox.onfocus = function() {
+        textBox.select();
+        textBox.onmouseup = function() {
+            textBox.onmouseup = null;
+            return false;
+        };
+    };
+    </script>
+</body>
+
+</html>
