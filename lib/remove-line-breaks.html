@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Line Breaks</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="./clipboard/clipboard.min.js"></script>
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    textarea {
+        margin: 10px 0;
+        width: 100%
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center"><b>Remove Line Breaks</b></h3>
+        <div class="row">
+            <form>
+                <h3>INPUT</h3>
+                <textarea id="oldText" name="oldText" rows="8"></textarea>
+                <h3>OUTPUT</h3>
+                <textarea id="newText" name="newText" rows="8"></textarea>
+                <input type="hidden" id="paragraphs" name="paragraphs" value="yes">
+                <input type="hidden" id="noparagraphs" name="paragraphs" value="no" checked="">
+                <input type="button" name="Remove-Line-Breaks" value="REMOVE" onclick="javascript:removeBreaks()" class="btn btn-primary">
+                <input type="button" name="copyBtn" id="copyBtn" value="COPY" class="btn btn-success" data-clipboard-target="#newText">
+                <input type="button" name="clearText" id="clearText" value="RESET" class="btn btn-danger">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        new Clipboard('#copyBtn');
+        $('#oldText').focus();
+    });
+    $('#clearText').click(function(event) {
+        $('#oldText').focus();
+    });
+    $('#copyBtn').tooltip({
+        trigger: 'click',
+        placement: 'top'
+    });
+
+    function setTooltip(message) {
+        $('#copyBtn').tooltip('hide')
+            .attr('data-original-title', message)
+            .tooltip('show');
+    }
+
+    function hideTooltip() {
+        setTimeout(function() {
+            $('#copyBtn').tooltip('hide');
+        }, 3000);
+    }
+
+    var clipboard = new Clipboard('#copyBtn');
+
+    clipboard.on('success', function(e) {
+        setTooltip('Copied');
+        hideTooltip();
+    });
+
+    clipboard.on('error', function(e) {
+        setTooltip('Failed');
+        hideTooltip();
+    });
+
+    function removeBreaks() {
+
+        var para = document.getElementById("paragraphs").checked;
+        var nopara = document.getElementById("noparagraphs").checked;
+        var noBreaksText = document.getElementById("oldText").value;
+
+        noBreaksText = noBreaksText.replace(/(\r\n|\n|\r)/gm, "<1br />");
+
+        re1 = /<1br \/><1br \/>/gi;
+        re1a = /<1br \/><1br \/><1br \/>/gi;
+
+        if (nopara == 1 || nopara == true) {
+            noBreaksText = noBreaksText.replace(re1, " ");
+        } else {
+            noBreaksText = noBreaksText.replace(re1a, "<1br /><2br />");
+            noBreaksText = noBreaksText.replace(re1, "<2br />");
+        }
+
+        re2 = /\<1br \/>/gi;
+        noBreaksText = noBreaksText.replace(re2, " ");
+
+        re3 = /\s+/g;
+        noBreaksText = noBreaksText.replace(re3, " ");
+
+        re4 = /<2br \/>/gi;
+        noBreaksText = noBreaksText.replace(re4, "\n\n");
+        document.getElementById("newText").value = noBreaksText;
+    }
+
+    //reset text areas
+    document.getElementById("clearText").addEventListener("click", function() {
+        document.getElementById("oldText").value = "";
+        document.getElementById("newText").value = "";
+        document.getElementById("oldText").focus();
+    });
+
+    var textBox = document.getElementById("newText");
+    textBox.onfocus = function() {
+        textBox.select();
+        textBox.onmouseup = function() {
+            textBox.onmouseup = null;
+            return false;
+        };
+    };
+    </script>
+</body>
+
+</html>
