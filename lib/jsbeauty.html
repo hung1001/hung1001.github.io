@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript beautifier</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="./beauty/beautify.js"></script>
+    <script type="text/javascript" src="./beauty/beautify-tests.js"></script>
+    <script type="text/javascript" src="./beauty/HTML-Beautify.js"></script>
+    <script type="text/javascript" src="./beauty/javascriptobfuscator_unpacker.js"></script>
+    <script type="text/javascript" src="./beauty/sanitytest.js"></script>
+    <script type="text/javascript" src="./clipboard/clipboard.min.js"></script>
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    textarea {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center"><b>Javascript beautifier</b></h3>
+        <div class="row">
+            <form>
+                <textarea rows="20" name="content" id="content">
+                    /* paste in your code and press Beautify button */ if('this_is'==/an_example/){do_something();}else{var a=b?(c%d):e[f];}
+                </textarea>
+            </form>
+        </div>
+        <br />
+        <div class="row">
+            <button onclick="return do_js_beautify()" id="beautify" class="btn btn-primary">Beautify</button>
+            <button class="btn btn-success" id="copyBtn" data-clipboard-target="#content">COPY</button>
+            <button class="btn btn-danger" id="btnReset">CLEAR</button>
+            <select name="tabsize" id="tabsize">
+                <option value="1">indent with a tab character</option>
+                <option value="2">indent with 2 spaces</option>
+                <option value="3">indent with 3 spaces</option>
+                <option value="4" selected="selected">indent with 4 spaces</option>
+                <option value="8">indent with 8 spaces</option>
+            </select>
+            <input type="hidden" id="preserve-newlines" checked="checked" />
+            <input type="hidden" id="detect-packers" checked="checked" />
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        new Clipboard('#copyBtn');
+    });
+    $('#btnReset').click(function() {
+        $('#content').val('');
+    });
+
+    $('#copyBtn').tooltip({
+        trigger: 'click',
+        placement: 'top'
+    });
+
+    function setTooltip(message) {
+        $('#copyBtn').tooltip('hide')
+            .attr('data-original-title', message)
+            .tooltip('show');
+    }
+
+    function hideTooltip() {
+        setTimeout(function() {
+            $('#copyBtn').tooltip('hide');
+        }, 3000);
+    }
+
+    var clipboard = new Clipboard('#copyBtn');
+
+    clipboard.on('success', function(e) {
+        setTooltip('Copied');
+        hideTooltip();
+    });
+
+    clipboard.on('error', function(e) {
+        setTooltip('Failed');
+        hideTooltip();
+    });
+
+    function add_onload_function(fn) {
+        var oe = window.onload;
+        window.onload = function() {
+            if (oe) oe();
+            fn();
+        }
+    }
+    add_onload_function(function() {
+
+        var tabsize = get_var('tabsize');
+        if (tabsize) {
+            document.getElementById('tabsize').value = tabsize;
+        }
+
+
+        var c = document.forms[0].content;
+        c && c.setSelectionRange && c.setSelectionRange(0, 0);
+        c && c.focus && c.focus();
+    });
+
+    function starts_with(str, what) {
+        return str.substr(0, what.length) === what;
+    }
+
+    function trim_leading_comments(str) {
+        // very basic. doesn't support /* ... */
+        str = str.replace(/^(\s*\/\/[^\n]*\n)+/, '');
+        str = str.replace(/^\s+/, '');
+        return str;
+    }
+
+    function unpacker_filter(source) {
+
+        if (document.getElementById('detect-packers').checked) {
+
+            var stripped_source = trim_leading_comments(source);
+            if (starts_with(stripped_source.toLowerCase().replace(/ +/g, ''), 'eval(function(p,a,c,k')) {
+                eval('var unpacked_source = ' + stripped_source.substring(4) + ';')
+                return unpacker_filter(unpacked_source);
+            } else if (JavascriptObfuscator.detect(stripped_source)) {
+                var unpacked = JavascriptObfuscator.unpack(stripped_source);
+                if (unpacked !== stripped_source) {
+                    return unpacker_filter(unpacked);
+                }
+            }
+
+        }
+        return source;
+
+    }
+
+
+    function do_js_beautify() {
+        document.getElementById('beautify').disabled = true;
+        var js_source = document.getElementById('content').value.replace(/^\s+/, '');
+        var indent_size = document.getElementById('tabsize').value;
+        var indent_char = ' ';
+        var preserve_newlines = document.getElementById('preserve-newlines').checked;
+
+        if (indent_size == 1) {
+            indent_char = '\t';
+        }
+
+
+        if (js_source && js_source[0] === '<' && js_source.substring(0, 4) !== '<!--') {
+            document.getElementById('content').value = style_html(js_source, indent_size, indent_char, 80);
+        } else {
+            document.getElementById('content').value =
+                js_beautify(unpacker_filter(js_source), { indent_size: indent_size, indent_char: indent_char, preserve_newlines: preserve_newlines, space_after_anon_function: true });
+        }
+
+        document.getElementById('beautify').disabled = false;
+        return false;
+    }
+
+
+    function get_var(name) {
+        var res = new RegExp("[\\?&]" + name + "=([^&#]*)").exec(window.location.href);
+        return res ? res[1] : "";
+    }
+
+    function run_tests() {
+        var st = new SanityTest();
+        run_beautifier_tests(st);
+        JavascriptObfuscator.run_tests(st);
+        return st.results();
+    }
+    </script>
+</body>
+
+</html>
