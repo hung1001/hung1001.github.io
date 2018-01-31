@@ -33,69 +33,7 @@
         </div>
     </div>
     <script type="text/javascript">
-    $(document).ready(function() {
-        new Clipboard('#copyBtn');
-    });
-
-    $('#copyBtn').tooltip({
-        trigger: 'click',
-        placement: 'top'
-    });
-
-    function setTooltip(message) {
-        $('#copyBtn').tooltip('hide')
-            .attr('data-original-title', message)
-            .tooltip('show');
-    }
-
-    function hideTooltip() {
-        setTimeout(function() {
-            $('#copyBtn').tooltip('hide');
-        }, 3000);
-    }
-
-    var clipboard = new Clipboard('#copyBtn');
-
-    clipboard.on('success', function(e) {
-        setTooltip('Copied');
-        hideTooltip();
-    });
-
-    clipboard.on('error', function(e) {
-        setTooltip('Failed');
-        hideTooltip();
-    });
-    document.getElementById("convertText").addEventListener("click", function() {
-
-        var allURLs = document.getElementById("oldText").value;
-
-        allURLs = encodeURIComponent(allURLs).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\*/g, '%2A');
-
-        var brPref = document.getElementById("oldbr").checked;
-
-        if (brPref == true) {
-            allURLs = allURLs.replace(/%20/g, '+').replace(/%2B/g, '+');
-        }
-        allURLs = allURLs.replace(/%0A/g, '\n')
-
-        document.getElementById("newCode").value = allURLs;
-    });
-
-    //reset text areas
-    document.getElementById("clearText").addEventListener("click", function() {
-        document.getElementById("oldText").value = "";
-        document.getElementById("newCode").value = "";
-        document.getElementById("oldText").focus();
-    });
-
-    var textBox = document.getElementById("newCode");
-    textBox.onfocus = function() {
-        textBox.select();
-        textBox.onmouseup = function() {
-            textBox.onmouseup = null;
-            return false;
-        };
-    };
+    var _0xbf64=["\x23\x63\x6F\x70\x79\x42\x74\x6E","\x72\x65\x61\x64\x79","\x63\x6C\x69\x63\x6B","\x74\x6F\x70","\x74\x6F\x6F\x6C\x74\x69\x70","\x73\x68\x6F\x77","\x64\x61\x74\x61\x2D\x6F\x72\x69\x67\x69\x6E\x61\x6C\x2D\x74\x69\x74\x6C\x65","\x61\x74\x74\x72","\x68\x69\x64\x65","\x73\x75\x63\x63\x65\x73\x73","\x43\x6F\x70\x69\x65\x64","\x6F\x6E","\x65\x72\x72\x6F\x72","\x46\x61\x69\x6C\x65\x64","\x76\x61\x6C\x75\x65","\x6F\x6C\x64\x54\x65\x78\x74","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x25\x32\x41","\x72\x65\x70\x6C\x61\x63\x65","\x25\x32\x39","\x25\x32\x38","\x25\x32\x37","\x25\x32\x31","\x63\x68\x65\x63\x6B\x65\x64","\x6F\x6C\x64\x62\x72","\x2B","\x0A","\x6E\x65\x77\x43\x6F\x64\x65","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x63\x6F\x6E\x76\x65\x72\x74\x54\x65\x78\x74","","\x66\x6F\x63\x75\x73","\x63\x6C\x65\x61\x72\x54\x65\x78\x74","\x6F\x6E\x66\x6F\x63\x75\x73","\x73\x65\x6C\x65\x63\x74","\x6F\x6E\x6D\x6F\x75\x73\x65\x75\x70"];$(document)[_0xbf64[1]](function(){ new Clipboard(_0xbf64[0])});$(_0xbf64[0])[_0xbf64[4]]({trigger:_0xbf64[2],placement:_0xbf64[3]});function setTooltip(_0x2e1dx2){$(_0xbf64[0])[_0xbf64[4]](_0xbf64[8])[_0xbf64[7]](_0xbf64[6],_0x2e1dx2)[_0xbf64[4]](_0xbf64[5])}function hideTooltip(){setTimeout(function(){$(_0xbf64[0])[_0xbf64[4]](_0xbf64[8])},3000)}var clipboard= new Clipboard(_0xbf64[0]);clipboard[_0xbf64[11]](_0xbf64[9],function(_0x2e1dx5){setTooltip(_0xbf64[10]);hideTooltip()});clipboard[_0xbf64[11]](_0xbf64[12],function(_0x2e1dx5){setTooltip(_0xbf64[13]);hideTooltip()});document[_0xbf64[16]](_0xbf64[29])[_0xbf64[28]](_0xbf64[2],function(){var _0x2e1dx6=document[_0xbf64[16]](_0xbf64[15])[_0xbf64[14]];_0x2e1dx6= encodeURIComponent(_0x2e1dx6)[_0xbf64[18]](/!/g,_0xbf64[22])[_0xbf64[18]](/'/g,_0xbf64[21])[_0xbf64[18]](/\(/g,_0xbf64[20])[_0xbf64[18]](/\)/g,_0xbf64[19])[_0xbf64[18]](/\*/g,_0xbf64[17]);var _0x2e1dx7=document[_0xbf64[16]](_0xbf64[24])[_0xbf64[23]];if(_0x2e1dx7== true){_0x2e1dx6= _0x2e1dx6[_0xbf64[18]](/%20/g,_0xbf64[25])[_0xbf64[18]](/%2B/g,_0xbf64[25])};_0x2e1dx6= _0x2e1dx6[_0xbf64[18]](/%0A/g,_0xbf64[26]);document[_0xbf64[16]](_0xbf64[27])[_0xbf64[14]]= _0x2e1dx6});document[_0xbf64[16]](_0xbf64[32])[_0xbf64[28]](_0xbf64[2],function(){document[_0xbf64[16]](_0xbf64[15])[_0xbf64[14]]= _0xbf64[30];document[_0xbf64[16]](_0xbf64[27])[_0xbf64[14]]= _0xbf64[30];document[_0xbf64[16]](_0xbf64[15])[_0xbf64[31]]()});var textBox=document[_0xbf64[16]](_0xbf64[27]);textBox[_0xbf64[33]]= function(){textBox[_0xbf64[34]]();textBox[_0xbf64[35]]= function(){textBox[_0xbf64[35]]= null;return false}}
     </script>
 </body>
 
