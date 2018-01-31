@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Email HTML Code</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="./clipboard/clipboard.min.js"></script>
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    td {
+        padding: 10px
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center"><b>Email HTML Link Code</b></h2>
+        <p>&nbsp;</p>
+        <div class="row">
+            <form>
+                <div class="col-lg-6">
+                    <table>
+                        <tr>
+                            <td>
+                                Your Email address
+                            </td>
+                            <td>
+                                <input type="text" id="tfEmail" name="tfEmail" value="" size="21" class="frmtxt">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                The Link Text
+                            </td>
+                            <td>
+                                <input type="text" id="tfLink" name="tfLink" value="" size="21" class="frmtxt">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                The Subject Line
+                            </td>
+                            <td>
+                                <input type="text" id="tfSubject" name="tfSubject" value="" size="21" class="frmtxt">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                The Body of the Email
+                            </td>
+                            <td>
+                                <input type="text" id="tfBody" name="tfBody" value="" size="21" class="frmtxt">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" id="email-code" name="email-code" value="Create Email Link Code" class="btn btn-primary">
+                            </td>
+                            <td>
+                                <input type="reset" value="RESET" class="btn btn-danger" id='resetBtn'>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-6">
+                    <textarea id="newCode" name="newCode" rows="3" style="width: 100%"></textarea>
+                    <br />
+                    <br />
+                    <input type="button" name="copyClip" id="copyBtn" value="Copy to Clipboard" class="btn btn-success" data-clipboard-target="#newCode">
+                    <br />
+                    <br />
+                    <p id="workingExample">&nbsp;</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        new Clipboard('#copyBtn');
+        $('#tfEmail').focus();
+    });
+
+    $('#resetBtn').click(function(event) {
+        $('#newCode').val('');
+        $('#tfEmail').focus();
+        $('#workingExample').html('');
+
+    });
+    $('#copyBtn').tooltip({
+        trigger: 'click',
+        placement: 'top'
+    });
+
+    function setTooltip(message) {
+        $('#copyBtn').tooltip('hide')
+            .attr('data-original-title', message)
+            .tooltip('show');
+    }
+
+    function hideTooltip() {
+        setTimeout(function() {
+            $('#copyBtn').tooltip('hide');
+        }, 3000);
+    }
+
+    var clipboard = new Clipboard('#copyBtn');
+
+    clipboard.on('success', function(e) {
+        setTooltip('Copied');
+        hideTooltip();
+    });
+
+    clipboard.on('error', function(e) {
+        setTooltip('Failed');
+        hideTooltip();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var tfEmail;
+        var tfLink;
+        var tfSubject;
+        var tfBody;
+        var newCode;
+
+        document.getElementById("email-code").addEventListener("click", function() {
+
+            tfEmail = document.getElementById("tfEmail").value;
+
+            if (tfEmail == "") {
+                tfEmail = "YourName@YourSite.com";
+                tfLink = "YourName@YourSite.com";
+            }
+
+            tfEmail = tfEmail.replace(new RegExp('"', 'g'), '&quot;');
+            tfEmail = tfEmail.replace(new RegExp("'", "g"), "&#39;");
+            tfEmail = tfEmail.replace(new RegExp("&", "g"), "&amp;");
+            tfEmail = tfEmail.replace(new RegExp("=", "g"), "&61;");
+
+            tfEmail = tfEmail.replace(new RegExp("\\?", "g"), "&63;");
+
+            tfLink = document.getElementById("tfLink").value;
+
+            if (tfLink == "") { tfLink = "YourName@YourSite.com"; }
+            tfLink = tfLink.replace(new RegExp("'", "g"), "&#39;");
+            tfLink = tfLink.replace(new RegExp("&", "g"), "&amp;");
+            tfLink = tfLink.replace(new RegExp("=", "g"), "&61;");
+            tfLink = tfLink.replace(new RegExp("\\?", "g"), "&63;");
+
+            tfBody = document.getElementById("tfBody").value;
+
+            if (tfBody != "") {
+                tfBody = tfBody.replace(new RegExp('"', "g"), '&quot;');
+                tfBody = tfBody.replace(new RegExp("'", "g"), '&#39;');
+                tfBody = tfBody.replace(new RegExp("&", "g"), '&amp;');
+                tfBody = tfBody.replace(new RegExp("=", "g"), '&61;');
+                tfBody = tfBody.replace(new RegExp("\\?", "g"), '&63;');
+                tfBody = '&body=' + tfBody;
+            }
+
+            tfSubject = document.getElementById("tfSubject").value;
+
+            if (tfSubject != "") {
+                tfSubject = tfSubject.replace(new RegExp('"', "g"), '&quot;');
+                tfSubject = tfSubject.replace(new RegExp("'", "g"), '&#39;');
+                tfSubject = tfSubject.replace(new RegExp("&", "g"), '&amp;');
+                tfSubject = tfSubject.replace(new RegExp("=", "g"), '&61;');
+                tfSubject = tfSubject.replace(new RegExp("\\?", "g"), '&63;');
+                tfSubject = '?subject=' + tfSubject;
+            } else {
+                tfSubject = "";
+                tfBody = "";
+            }
+
+            newCode = '<a href="mailto:' + tfEmail + tfSubject + tfBody + '">' + tfLink + '</a>';
+
+            document.getElementById("newCode").value = newCode;
+            newCode = "<b>WORKING LINK</b>: " + newCode;
+
+            document.getElementById("workingExample").innerHTML = newCode;
+        });
+
+    });
+
+    var textBox = document.getElementById("newCode");
+    textBox.onfocus = function() {
+        textBox.select();
+        textBox.onmouseup = function() {
+            textBox.onmouseup = null;
+            return false;
+        };
+    };
+    </script>
+</body>
+
+</html>

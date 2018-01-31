@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Encode URL</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="./clipboard/clipboard.min.js"></script>
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    textarea {
+        width: 100%
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center"><b>Encode URL</b></h3>
+        <div class="row">
+            <form>
+                <h3>INPUT</h3>
+                <textarea id="oldText" name="oldText" rows="8"></textarea>
+                <h3>OUTPUT</h3>
+                <textarea id="newCode" name="newCode" rows="8"></textarea>
+                <input type="hidden" id="newbr" name="thebr" value="yes" checked="checked">
+                <input type="hidden" id="oldbr" name="thebr" value="yes">
+                <input type="button" name="ENCODE" value="ENCODE" id="convertText" class="btn btn-primary">
+                <input type="button" name="copyClip" id="copyBtn" value="COPY" class="btn btn-success" data-clipboard-target="#newCode">
+                <input type="button" name="clearText" id="clearText" value="RESET" class="btn btn-danger">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        new Clipboard('#copyBtn');
+    });
+
+    $('#copyBtn').tooltip({
+        trigger: 'click',
+        placement: 'top'
+    });
+
+    function setTooltip(message) {
+        $('#copyBtn').tooltip('hide')
+            .attr('data-original-title', message)
+            .tooltip('show');
+    }
+
+    function hideTooltip() {
+        setTimeout(function() {
+            $('#copyBtn').tooltip('hide');
+        }, 3000);
+    }
+
+    var clipboard = new Clipboard('#copyBtn');
+
+    clipboard.on('success', function(e) {
+        setTooltip('Copied');
+        hideTooltip();
+    });
+
+    clipboard.on('error', function(e) {
+        setTooltip('Failed');
+        hideTooltip();
+    });
+    document.getElementById("convertText").addEventListener("click", function() {
+
+        var allURLs = document.getElementById("oldText").value;
+
+        allURLs = encodeURIComponent(allURLs).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\*/g, '%2A');
+
+        var brPref = document.getElementById("oldbr").checked;
+
+        if (brPref == true) {
+            allURLs = allURLs.replace(/%20/g, '+').replace(/%2B/g, '+');
+        }
+        allURLs = allURLs.replace(/%0A/g, '\n')
+
+        document.getElementById("newCode").value = allURLs;
+    });
+
+    //reset text areas
+    document.getElementById("clearText").addEventListener("click", function() {
+        document.getElementById("oldText").value = "";
+        document.getElementById("newCode").value = "";
+        document.getElementById("oldText").focus();
+    });
+
+    var textBox = document.getElementById("newCode");
+    textBox.onfocus = function() {
+        textBox.select();
+        textBox.onmouseup = function() {
+            textBox.onmouseup = null;
+            return false;
+        };
+    };
+    </script>
+</body>
+
+</html>
