@@ -1670,7 +1670,7 @@ blockquote:after{background-image:url(data:image/gif;base64,R0lGODlhGQAZALMNAO7a
 .breadcrumbs a{color:#000;font-family:"times",monospace;font-size:17px}
 .breadcrumbs a:hover{color:#9e0101;transition:all .5s ease-out}
 .breadcrumbs{margin-top:4.5%;font-family:"times",monospace;font-size:17px;line-height:1.4em;border-bottom:1px solid #cacaca;border-top:1px solid #cacaca;padding:5px}
-#smoothmenu1{box-shadow:0 4px 12px #cacaca}
+#smoothmenu1{box-shadow:0 4px 12px #cacaca;position:relative}
 #sidebar-wrapper,#sidebar-wrapper2{margin-top:3%;margin-left:8px!important}
 .btndownload5 a,.btndownload5 a:hover,.downloadbtn5{color:#fff!important}
 .btndownload5{list-style:none;text-align:center;width:95%;margin:10px;padding:2px;font-size:14px;clear:both}
@@ -2156,7 +2156,7 @@ div#myDropdown-author ul:before{top:-11px;border-bottom:11px solid #8a8686}
 .subemail-wrap .close-subemail{color:#fff;cursor:pointer;font-size:40px;line-height:80px;position:absolute;right:30px;top:0;z-index:99999}
 .form-subemail h2{position:relative;left:-45px;color:#fff;text-align:center;font-size:50px}
 .switch-input-sidebar{display:none}
-.switch-label-sidebar{position:relative;cursor:pointer;font-weight:500;text-align:left;top:20px}
+.switch-label-sidebar{position:absolute;cursor:pointer;font-weight:500;text-align:left;top:20px}
 .switch-label-sidebar:before,.switch-label-sidebar:after{content:"";position:absolute;margin:0;outline:0;top:50%;-ms-transform:translate(0,-50%);-webkit-transform:translate(0,-50%);transform:translate(0,-50%);-webkit-transition:all 0.4s ease;transition:all 0.4s ease}
 .switch-label-sidebar:before{left:1px;width:34px;height:14px;background-color:#9E9E9E;border-radius:8px}
 .switch-label-sidebar:after{left:0;width:20px;height:20px;background-color:#FAFAFA;border-radius:50%;box-shadow:0 0 2px 1px rgba(0,0,0,0.2),0 2px 2px 0 rgba(0,0,0,0.098),0 1px 5px 0 rgba(0,0,0,0.084)}
