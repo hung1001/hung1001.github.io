@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Maker</title>
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./clipboard/clipboard.min.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center"><b>HEART MAKER</b></h3>
+        <div class="row" align="center">
+            <form>
+                <h3>INPUT</h3>
+                <input id="text" name="text">
+                <h3>OUTPUT</h3>
+                <textarea rows="15" cols="80" readonly="" id="result" onclick="this.focus(); this.select();"></textarea>
+                <br />
+                <br />
+                <input onclick="return createHeart('text', 'result');" value="GENERATOR" type="button" class="btn btn-primary">
+                <input value="COPY" type="button" class="btn btn-success" id="copyBtn" data-clipboard-target="#result">
+                <input value="RESET" type="reset" class="btn btn-danger" id="resetBtn">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        new Clipboard('#copyBtn');
+        $('#text').focus();
+    });
+    $('#resetBtn').click(function() {
+        $('#text').focus();
+    });
+    $('#copyBtn').tooltip({
+        trigger: 'click',
+        placement: 'top'
+    });
+
+    function setTooltip(message) {
+        $('#copyBtn').tooltip('hide')
+            .attr('data-original-title', message)
+            .tooltip('show');
+    }
+
+    function hideTooltip() {
+        setTimeout(function() {
+            $('#copyBtn').tooltip('hide');
+        }, 3000);
+    }
+
+    var clipboard = new Clipboard('#copyBtn');
+
+    clipboard.on('success', function(e) {
+        setTooltip('Copied');
+        hideTooltip();
+    });
+
+    clipboard.on('error', function(e) {
+        setTooltip('Failed');
+        hideTooltip();
+    });
+
+    function createHeart(sourceId, resultId) {
+        objSource = window.document.getElementById(sourceId);
+        objResult = window.document.getElementById(resultId);
+        if (objSource.value.length == 0) {
+            alert("Bạn chưa nhập đoạn text cần tạo hình trái tim vào ô trống");
+            return false;
+        }
+        string = objSource.value;
+        heart = "";
+        heart += "_________" + partString(string, 8) + "____________" + partString(string, 9) +
+            "\n";
+        heart += "______" + partString(string, 12) + "_______" + partString(string, 15) + "\n";
+        heart += "____" + partString(string, 17) + "___" + partString(string, 18) + "\n";
+        heart += "___" + partString(string, 41) + "\n";
+        heart += "__" + partString(string, 44) + "\n";
+        heart += "_" + partString(string, 46) + "\n";
+        heart += "_" + partString(string, 46) + "\n";
+        heart += partString(string, 47) + "\n";
+        heart += partString(string, 47) + "\n";
+
+        heart += partString(string, 46) + "\n";
+        heart += partString(string, 45) + "\n";
+        heart += "_" + partString(string, 43) + "\n";
+        heart += "__" + partString(string, 41) + "\n";
+        heart += "____" + partString(string, 38) + "\n";
+        heart += "______" + partString(string, 34) + "\n";
+        heart += "_________" + partString(string, 28) + "\n";
+        heart += "____________" + partString(string, 22) + "\n";
+        heart += "______________" + partString(string, 18) + "\n";
+        heart += "_________________" + partString(string, 13) + "\n";
+        heart += "___________________" + partString(string, 9) + "\n";
+        heart += "_____________________" + partString(string, 6) + "\n";
+        heart += "______________________" + partString(string, 4) + "\n";
+        heart += "_______________________" + partString(string, 2) + "\n";
+        objResult.value = heart;
+    }
+
+    function partString(string, num) {
+        if (string.length >= num)
+            return string.substring(0, num);
+        repeat = Math.ceil(num / string.length);
+        newString = "";
+        for (i = 0; i < repeat; i++)
+            newString += string;
+        return newString.substring(0, num);
+    }
+    </script>
+</body>
+
+</html>
