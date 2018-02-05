@@ -1,5 +1,5 @@
 a,a:hover,a:active{text-decoration:none!important}
-.tool-wrapper a i{font-size:7em;padding:20px;width:100%;display:block;min-height:80px;transition:all ease 0.2s;text-align:center;border:1px solid #cacaca;color:#444}
+.tool-wrapper a i{font-size:7em;padding:20px;width:100%;display:block;min-height:80px;transition:all ease 0.2s;text-align:center;border:1px solid #e7e7e7;color:#444}
 .tool-wrapper a i:hover,.tool-wrapper a:hover{opacity:.7;-webkit-transition:all .4s ease;-moz-transition:all .4s ease;-ms-transition:all .4s ease;-o-transition:all .4s ease;transition:all .4s ease}
 .tool-footer{text-align:center;transition:all ease 0.2s;color:#fff;display:block;height:50px;line-height:50px;font-size:1.5em;margin:0 0 30px;vertical-align:middle;background:#444}
 .row:first-child{margin-top:3em}
@@ -24,3 +24,7 @@ hr{margin:10px 0}
 ::-webkit-scrollbar-thumb:active{background:#aaa;-webkit-box-shadow:inset 1px 1px 2px rgba(0,0,0,0.3)}
 ::-webkit-scrollbar{height:8px;width:8px}
 ::-webkit-scrollbar-thumb{background:#444444}
+.navbar-default{background:#fff}
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{color:#555;background-color:rgba(231,231,231,.5)}
+.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{background-color:rgba(231,231,231,.5)}
+.navbar-brand{font-size:35px;position:relative;top:-8px}
