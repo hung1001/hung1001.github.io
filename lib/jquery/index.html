@@ -6,99 +6,250 @@
     <title>Jquery Libraries</title>
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
     <link rel="shortcut icon" href="./favicon.ico">
+    <script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../clipboard/clipboard.min.js"></script>
+    <style type="text/css">
+    h4 {
+        font-weight: 600
+    }
+
+    .btn {
+        margin: 5px 0
+    }
+
+    #BackToTop {
+        overflow: hidden;
+        position: fixed;
+        transform: scale(0);
+        z-index: 90;
+        right: 30px;
+        bottom: 31px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        width: 55px;
+        height: 55px;
+        color: #fff;
+        text-align: center;
+        background-color: #1a1a1a;
+        font-size: 22px;
+        line-height: 57px;
+        cursor: pointer;
+        border-radius: 100%;
+        transition: all .2s ease-in-out
+    }
+
+    #BackToTop i {
+        color: #fff!important
+    }
+
+    #BackToTop:hover {
+        transform: scale(1.1)!important
+    }
+
+    #BackToTop.active {
+        transform: scale(1)
+    }
+
+    .waves-effect {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        vertical-align: middle;
+        z-index: 1;
+        will-change: opacity, transform;
+        -webkit-transition: all .2s ease-out;
+        -moz-transition: all .2s ease-out;
+        -o-transition: all .2s ease-out;
+        -ms-transition: all .2s ease-out;
+        transition: all .2s ease-out
+    }
+
+    .waves-effect.waves-light {
+        background-color: rgba(255, 255, 255, 0.45)
+    }
+
+    .ripple {
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0)
+    }
+
+    .ripple:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10, 10);
+        opacity: 0;
+        transition: transform .5s, opacity 1s
+    }
+
+    .ripple:active:after {
+        transform: scale(0, 0);
+        opacity: .2;
+        transition: 0s
+    }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <h2 class="text-center"><b>Hosted jquery via my github</b></h2>
-            <h3>jQuery Core - All 3.x Versions Minified</h3>
-            <ul>
-                <li>jQuery Core 3.3.1</li>
-                <li>jQuery Core 3.3.0</li>
-                <li>jQuery Core 3.2.1</li>
-                <li>jQuery Core 3.2.0</li>
-                <li>jQuery Core 3.1.1</li>
-                <li>jQuery Core 3.1.0</li>
-                <li>jQuery Core 3.0.0</li>
-            </ul>
-            <h3>jQuery Core - All 2.x Versions Minified</h3>
-            <ul>
-                <li>jQuery Core 2.2.4</li>
-                <li>jQuery Core 2.2.3</li>
-                <li>jQuery Core 2.2.2</li>
-                <li>jQuery Core 2.2.1</li>
-                <li>jQuery Core 2.2.0</li>
-                <li>jQuery Core 2.1.4</li>
-                <li>jQuery Core 2.1.3</li>
-                <li>jQuery Core 2.1.2</li>
-                <li>jQuery Core 2.1.1</li>
-                <li>jQuery Core 2.1.0</li>
-                <li>jQuery Core 2.0.3</li>
-                <li>jQuery Core 2.0.2</li>
-                <li>jQuery Core 2.0.1</li>
-                <li>jQuery Core 2.0.0</li>
-            </ul>
-            <h3>jQuery Core - All 1.x Versions Minified</h3>
-            <ul>
-                <li>jQuery Core 1.12.4</li>
-                <li>jQuery Core 1.12.3</li>
-                <li>jQuery Core 1.12.2</li>
-                <li>jQuery Core 1.12.1</li>
-                <li>jQuery Core 1.12.0</li>
-                <li>jQuery Core 1.11.3</li>
-                <li>jQuery Core 1.11.2</li>
-                <li>jQuery Core 1.11.1</li>
-                <li>jQuery Core 1.11.0</li>
-                <li>jQuery Core 1.10.2</li>
-                <li>jQuery Core 1.10.1</li>
-                <li>jQuery Core 1.10.0</li>
-                <li>jQuery Core 1.9.1</li>
-                <li>jQuery Core 1.9.0</li>
-                <li>jQuery Core 1.8.3</li>
-                <li>jQuery Core 1.8.2</li>
-                <li>jQuery Core 1.8.1</li>
-                <li>jQuery Core 1.8.0</li>
-                <li>jQuery Core 1.7.2</li>
-                <li>jQuery Core 1.7.1</li>
-                <li>jQuery Core 1.7.0</li>
-                <li>jQuery Core 1.7.0</li>
-                <li>jQuery Core 1.6.4</li>
-                <li>jQuery Core 1.6.3</li>
-                <li>jQuery Core 1.6.2</li>
-                <li>jQuery Core 1.6.1</li>
-                <li>jQuery Core 1.6.0</li>
-                <li>jQuery Core 1.5.2</li>
-                <li>jQuery Core 1.5.1</li>
-                <li>jQuery Core 1.5.0</li>
-                <li>jQuery Core 1.4.4</li>
-                <li>jQuery Core 1.4.3</li>
-                <li>jQuery Core 1.4.2</li>
-                <li>jQuery Core 1.4.1</li>
-                <li>jQuery Core 1.4.0</li>
-                <li>jQuery Core 1.3.2</li>
-                <li>jQuery Core 1.3.1</li>
-                <li>jQuery Core 1.3.0</li>
-                <li>jQuery Core 1.2.6</li>
-                <li>jQuery Core 1.2.5</li>
-                <li>jQuery Core 1.2.4</li>
-                <li>jQuery Core 1.2.3</li>
-                <li>jQuery Core 1.2.2</li>
-                <li>jQuery Core 1.2.1</li>
-                <li>jQuery Core 1.2.0</li>
-                <li>jQuery Core 1.1.4</li>
-                <li>jQuery Core 1.1.3</li>
-                <li>jQuery Core 1.1.2</li>
-                <li>jQuery Core 1.1.1</li>
-                <li>jQuery Core 1.1.0</li>
-                <li>jQuery Core 1.0.4</li>
-                <li>jQuery Core 1.0.3</li>
-                <li>jQuery Core 1.0.2</li>
-                <li>jQuery Core 1.0.1</li>
-                <li>jQuery Core 1.0.0</li>
-            </ul>
+            <div class="col-lg-4">
+                <h4>jQuery Core - All 3.x Versions Minified</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="exportCode('3.3.1')">jQuery Core 3.3.1</a></a>
+                    </li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('3.3.0')">jQuery Core 3.3.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('3.2.1')">jQuery Core 3.2.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('3.2.0')">jQuery Core 3.2.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('3.1.1')">jQuery Core 3.1.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('3.1.0')">jQuery Core 3.1.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('3.0.0')">jQuery Core 3.0.0</a></li>
+                </ul>
+                <h4>jQuery Core - All 2.x Versions Minified</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.2.4')">jQuery Core 2.2.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.2.3')">jQuery Core 2.2.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.2.2')">jQuery Core 2.2.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.2.1')">jQuery Core 2.2.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.2.0')">jQuery Core 2.2.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.1.4')">jQuery Core 2.1.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.1.3')">jQuery Core 2.1.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.1.2')">jQuery Core 2.1.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.1.1')">jQuery Core 2.1.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.1.0')">jQuery Core 2.1.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.0.3')">jQuery Core 2.0.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.0.2')">jQuery Core 2.0.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.0.1')">jQuery Core 2.0.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.0.0')">jQuery Core 2.0.0</a></li>
+                </ul>
+                <h4>jQuery Core - All 1.x Versions Minified</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.12.4')">jQuery Core 1.12.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.12.3')">jQuery Core 1.12.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.12.2')">jQuery Core 1.12.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.12.1')">jQuery Core 1.12.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.12.0')">jQuery Core 1.12.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.11.3')">jQuery Core 1.11.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.11.2')">jQuery Core 1.11.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.11.1')">jQuery Core 1.11.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.11.0')">jQuery Core 1.11.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.10.2')">jQuery Core 1.10.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.10.1')">jQuery Core 1.10.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.10.0')">jQuery Core 1.10.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.9.1')">jQuery Core 1.9.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.9.0')">jQuery Core 1.9.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.8.3')">jQuery Core 1.8.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.8.2')">jQuery Core 1.8.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.8.1')">jQuery Core 1.8.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.8.0')">jQuery Core 1.8.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.7.2')">jQuery Core 1.7.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.7.1')">jQuery Core 1.7.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.7')">jQuery Core 1.7.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.6.4')">jQuery Core 1.6.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.6.3')">jQuery Core 1.6.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.6.2')">jQuery Core 1.6.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.6.1')">jQuery Core 1.6.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.6.0')">jQuery Core 1.6.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.5.2')">jQuery Core 1.5.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.5.1')">jQuery Core 1.5.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.5.0')">jQuery Core 1.5.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.4.4')">jQuery Core 1.4.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.4.3')">jQuery Core 1.4.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.4.2')">jQuery Core 1.4.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.4.1')">jQuery Core 1.4.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.4.0')">jQuery Core 1.4.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.3.2')">jQuery Core 1.3.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.3.1')">jQuery Core 1.3.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.3.0')">jQuery Core 1.3.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.2.6')">jQuery Core 1.2.6</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.2.5')">jQuery Core 1.2.5</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.2.4')">jQuery Core 1.2.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.2.3')">jQuery Core 1.2.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.2.2')">jQuery Core 1.2.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.2.1')">jQuery Core 1.2.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.2.0')">jQuery Core 1.2.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.1.4')">jQuery Core 1.1.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.1.3')">jQuery Core 1.1.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.1.2')">jQuery Core 1.1.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.1.1')">jQuery Core 1.1.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.1')">jQuery Core 1.1.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0.4')">jQuery Core 1.0.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0.3')">jQuery Core 1.0.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0.2')">jQuery Core 1.0.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0.1')">jQuery Core 1.0.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0')">jQuery Core 1.0.0</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-8">
+                <br />
+                <label>Without async</label>
+                <textarea id="export" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="copyBtn" class="btn btn-primary" data-clipboard-target="#export">COPY</button>
+                <br />
+                <label>With async</label>
+                <textarea id="exportAsync" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="copyBtnAsync" class="btn btn-primary" data-clipboard-target="#exportAsync">COPY</button>
+                <button id="resetBtn" class="btn btn-danger">RESET</button>
+                <br />
+                <label>Working link:</label>
+                <div id="testLink"></div>
+            </div>
         </div>
     </div>
+    <a class='waves-effect waves-light ripple' href='#' id='BackToTop'><i class="glyphicon glyphicon-chevron-up"></i></a>
+    <script type="text/javascript">
+    jQuery(document).ready(function(e) {
+        var t = e("#BackToTop");
+        e(window).scroll(function() { e(this).scrollTop() >= 200 ? t.show(10).animate("#BackToTop").addClass("active") : t.animate("#BackToTop").removeClass("active") });
+        t.click(function(t) {
+            t.preventDefault();
+            e("html,body").animate({ scrollTop: 0 }, 800)
+        })
+    })
+
+    function exportCode(ver) {
+        var testLink;
+        if (ver == "1.0.1" || ver == "1.0.2" || ver == "1.0.3" || ver == "1.0.4" || ver == "1.0" || ver == "1.1.1" || ver == "1.1.2" || ver == "1.1.3" || ver == "1.1.4" || ver == "1.1") {
+            $("#export").val('<script src="https://hung1001.github.io/lib/jquery/jquery-' + ver + '.pack.js" ' + 'type="text/javascript"/>');
+            testLink = '<a href="https://hung1001.github.io/lib/jquery/jquery-' + ver + '.pack.js" target="_blank"> ' + "jQuery Core " + ver + '</a>';
+        } else {
+            $("#export").val('<script src="https://hung1001.github.io/lib/jquery/jquery-' + ver + '.min.js" ' + 'type="text/javascript"/>');
+            testLink = '<a href="https://hung1001.github.io/lib/jquery/jquery-' + ver + '.min.js" target="_blank"> ' + "jQuery Core " + ver + '</a>';
+        }
+        if (ver == "1.0.1" || ver == "1.0.2" || ver == "1.0.3" || ver == "1.0.4" || ver == "1.0" || ver == "1.1.1" || ver == "1.1.2" || ver == "1.1.3" || ver == "1.1.4" || ver == "1.1") {
+            $("#exportAsync").val('<script async="async" src="https://hung1001.github.io/lib/jquery/jquery-' + ver + '.pack.js" ' + 'type="text/javascript"/>');
+        } else {
+            $("#exportAsync").val('<script async="async" src="https://hung1001.github.io/lib/jquery/jquery-' + ver + '.min.js" ' + 'type="text/javascript"/>');
+        }
+        document.getElementById("testLink").innerHTML = testLink;
+    }
+
+
+    $('#resetBtn').click(function() {
+        $("#export").val('');
+        $("#exportAsync").val('');
+        $("#testLink").html('');
+
+    });
+    $(document).ready(function() {
+        new Clipboard('#copyBtn,#copyBtnAsync');
+    });
+    </script>
 </body>
 
 </html>
