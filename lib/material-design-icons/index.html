@@ -157,7 +157,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Libraries<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="https://hung1001.github.io/lib/clipboard">Clipboard.js</a></li>
-                            <li><a href="#">Prism</a></li>
+                            <li><a href="#">Material Design Icons</a></li>
+                            <li><a href="https://hung1001.github.io/lib/prism">Prism</a></li>
                         </ul>
                     </li>
                     <li><a href="https://www.facebook.com/hung.hoangvan.1001"><i class="fa fa-envelope-o"></i> Contact</a></li>
@@ -175,13 +176,20 @@
                     <li><a href="javascript:void(0)" onclick="exportCode('3.0.1')">Material Design Icons 3.0.1</a></li>
                     <li><a href="javascript:void(0)" onclick="exportCode('3.0.0')">Material Design Icons 3.0.0</a></li>
                 </ul>
+                <h4>Material Design Icons - All 2.x Versions</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.2.3')">Material Design Icons 2.2.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.2.2')">Material Design Icons 2.2.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.2.1')">Material Design Icons 2.2.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.2.0')">Material Design Icons 2.2.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('2.1.3')">Material Design Icons 2.1.3</a></li>
+                </ul>
             </div>
             <div class="col-lg-8">
                 <br />
                 <label>CSS</label>
                 <textarea id="exportCSS" style="width: 100%" rows="1" readonly=""></textarea>
                 <button id="copyBtnCSS" class="btn btn-primary" data-clipboard-target="#exportCSS">COPY</button>
-                
                 <button id="resetBtn" class="btn btn-danger">RESET</button>
                 <br />
                 <label>Working link:</label>
@@ -202,7 +210,7 @@
 
     function exportCode(ver) {
         var testLink;
-        $("#exportCSS").val('<script src="https://hung1001.github.io/lib/material-design-icons/' + ver + '/material-icons.css" ' + 'type="text/javascript"/>');
+        $("#exportCSS").val('<link href="https://hung1001.github.io/lib/material-design-icons/' + ver + '/material-icons.css" ' + 'rel="stylesheet" type="text/css"/>');
         testLink = '<a href="https://hung1001.github.io/lib/material-design-icons/' + ver + '/material-icons.css" target="_blank"> ' + "Material Design Icons CSS " + ver + '</a>';
         document.getElementById("testLink").innerHTML = testLink;
     }
