@@ -173,6 +173,24 @@
                 <h4>Prism - All 1.x Versions</h4>
                 <ul>
                     <li><a href="javascript:void(0)" onclick="exportCode('1.11.0')">Prism 1.11.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.10.0')">Prism 1.10.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.9.0')">Prism 1.9.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.8.4')">Prism 1.8.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.8.3')">Prism 1.8.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.8.2')">Prism 1.8.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.8.1')">Prism 1.8.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.8.0')">Prism 1.8.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.7.0')">Prism 1.7.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.6.0')">Prism 1.6.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.5.1')">Prism 1.5.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.5.0')">Prism 1.5.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.4.1')">Prism 1.4.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.4.0')">Prism 1.4.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.3.0')">Prism 1.3.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.2.0')">Prism 1.2.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.1.0')">Prism 1.1.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0.1')">Prism 1.0.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0.0')">Prism 1.0.0</a></li>
                 </ul>
             </div>
             <div class="col-lg-8">
@@ -183,7 +201,7 @@
                 <br />
                 <label>CSS</label>
                 <textarea id="exportCSS" style="width: 100%" rows="1" readonly=""></textarea>
-                <button id="copyBtnJSMin" class="btn btn-primary" data-clipboard-target="#exportCSS">COPY</button>
+                <button id="copyBtnCSSMin" class="btn btn-primary" data-clipboard-target="#exportCSS">COPY</button>
                 <button id="resetBtn" class="btn btn-danger">RESET</button>
                 <br />
                 <label>Working link:</label>
@@ -216,7 +234,7 @@
         $("#testLink").html('');
     });
     $(document).ready(function() {
-        new Clipboard('#copyBtnJS,#copyBtnJSMin');
+        new Clipboard('#copyBtnJS,#copyBtnCSSMin');
     });
     </script>
 </body>
