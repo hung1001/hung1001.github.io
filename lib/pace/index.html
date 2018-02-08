@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pace</title>
+    <link rel="stylesheet" type="text/css" href="../fontas/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../material-design-icons/3.0.1/material-icons.css">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <script type="text/javascript" src="../../lastest/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lastest/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../lastest/clipboard.min.js"></script>
+    <script async="async" src="../js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type="text/css">
+    .form-control{
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+    .themecustom {
+        display: none
+    }
+
+    .navbar-default {
+        background: #fff
+    }
+
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav>.active>a:focus,
+    .navbar-default .navbar-nav>.active>a:hover {
+        color: #555;
+        background-color: rgba(231, 231, 231, .5)
+    }
+
+    .navbar-default .navbar-nav>li>a:focus,
+    .navbar-default .navbar-nav>li>a:hover {
+        background-color: rgba(231, 231, 231, .5)
+    }
+
+    .navbar-brand {
+        font-size: 35px;
+        position: relative;
+        top: -8px
+    }
+
+    h4 {
+        font-weight: 600
+    }
+
+    .btn {
+        margin: 5px 0
+    }
+
+    #BackToTop {
+        overflow: hidden;
+        position: fixed;
+        transform: scale(0);
+        z-index: 90;
+        right: 30px;
+        bottom: 31px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        width: 55px;
+        height: 55px;
+        color: #fff;
+        text-align: center;
+        background-color: #1a1a1a;
+        font-size: 22px;
+        line-height: 57px;
+        cursor: pointer;
+        border-radius: 100%;
+        transition: all .2s ease-in-out
+    }
+
+    #BackToTop i {
+        color: #fff!important
+    }
+
+    #BackToTop:hover {
+        transform: scale(1.1)!important
+    }
+
+    #BackToTop.active {
+        transform: scale(1)
+    }
+
+    .waves-effect {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        vertical-align: middle;
+        z-index: 1;
+        will-change: opacity, transform;
+        -webkit-transition: all .2s ease-out;
+        -moz-transition: all .2s ease-out;
+        -o-transition: all .2s ease-out;
+        -ms-transition: all .2s ease-out;
+        transition: all .2s ease-out
+    }
+
+    .waves-effect.waves-light {
+        background-color: rgba(255, 255, 255, 0.45)
+    }
+
+    .ripple {
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0)
+    }
+
+    .ripple:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10, 10);
+        opacity: 0;
+        transition: transform .5s, opacity 1s
+    }
+
+    .ripple:active:after {
+        transform: scale(0, 0);
+        opacity: .2;
+        transition: 0s
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://hung1001.github.io"><i class="fa fa-gears"></i></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://hung1001.github.io/lib/jquery"><i class="fa fa-book"></i> Jquery Libraries</a></li>
+                    <li><a href="https://hung1001.github.io/lib/bootstrap-dist"><i class="fa fa-pie-chart"></i> Bootstrap Libraries</a></li>
+                    <li><a href="https://hung1001.github.io/lib/font-awesome"><i class="fa fa-feed"></i> FontAwesome Libraries</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Libraries<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://hung1001.github.io/lib/clipboard">Clipboard.js</a></li>
+                            <li><a href="https://hung1001.github.io/lib/material-design-icons">Material Design Icons</a></li>
+                            <li><a href="https://hung1001.github.io/lib/prism">Prism</a></li>
+                            <li><a href="#">Pace</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.facebook.com/hung.hoangvan.1001"><i class="fa fa-envelope-o"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="clear: both;margin:4em 0 2em"></div>
+    <div class="container">
+        <div class="row">
+            <h2 class="text-right"><b>Hosted Pace via my github</b></h2>
+            <div class="col-lg-4">
+                <h4>Pace - All 1.x Versions</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0.2')">Pace 1.0.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0.1')">Pace 1.0.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('1.0.0')">Pace 1.0.0</a></li>
+                </ul>
+                <h4>Pace - All 0.x Versions</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.7.8')">Pace 0.7.8</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.7.7')">Pace 0.7.7</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.7.6')">Pace 0.7.6</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.7.5')">Pace 0.7.5</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.7.4')">Pace 0.7.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.7.3')">Pace 0.7.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.7.2')">Pace 0.7.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.7.1')">Pace 0.7.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.7.0')">Pace 0.7.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.6.1')">Pace 0.6.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.6.0')">Pace 0.6.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.5.7')">Pace 0.5.7</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.5.6')">Pace 0.5.6</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.5.5')">Pace 0.5.5</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.5.4')">Pace 0.5.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.5.3')">Pace 0.5.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.5.2')">Pace 0.5.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.5.1')">Pace 0.5.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.5.0')">Pace 0.5.0</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.18')">Pace 0.4.18</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.17')">Pace 0.4.17</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.16')">Pace 0.4.16</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.15')">Pace 0.4.15</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.14')">Pace 0.4.14</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.13')">Pace 0.4.13</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.12')">Pace 0.4.12</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.11')">Pace 0.4.11</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.10')">Pace 0.4.10</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.9')">Pace 0.4.9</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.8')">Pace 0.4.8</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.7')">Pace 0.4.7</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.6')">Pace 0.4.6</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.5')">Pace 0.4.5</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.4')">Pace 0.4.4</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.3')">Pace 0.4.3</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.2')">Pace 0.4.2</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.1')">Pace 0.4.1</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('0.4.0')">Pace 0.4.0</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-8">
+                <h4>#1 Custom your themes color (Only support version 0.5.3 or higher)</h4>
+                <select id="color" class="form-control">
+                    <option value="black" selected="">Black</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="orange">Orange</option>
+                    <option value="pink">Pink</option>
+                    <option value="purple">Purple</option>
+                    <option value="red">Red</option>
+                    <option value="silver">Silver</option>
+                    <option value="white">White</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+                <br />
+                <label>CSS</label>
+                <textarea id="exportJS" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="copyBtnJS" class="btn btn-primary" data-clipboard-target="#exportJS">COPY</button>
+                <button id="resetBtn" class="btn btn-danger">RESET</button>
+                <br />
+                <label>Working link:</label>
+                <div id="testLink"></div>
+                <div class="themecustom">
+                    <h4>Custom Themes Color</h4>
+                    <textarea id="themecustom0" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom0" class="btn btn-primary" data-clipboard-target="#themecustom0">COPY</button>
+                    <textarea id="themecustom1" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom1" class="btn btn-primary" data-clipboard-target="#themecustom1">COPY</button>
+                    <textarea id="themecustom2" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom2" class="btn btn-primary" data-clipboard-target="#themecustom2">COPY</button>
+                    <textarea id="themecustom3" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom3" class="btn btn-primary" data-clipboard-target="#themecustom3">COPY</button>
+                    <textarea id="themecustom4" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom4" class="btn btn-primary" data-clipboard-target="#themecustom4">COPY</button>
+                    <textarea id="themecustom5" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom5" class="btn btn-primary" data-clipboard-target="#themecustom5">COPY</button>
+                    <textarea id="themecustom6" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom6" class="btn btn-primary" data-clipboard-target="#themecustom6">COPY</button>
+                    <textarea id="themecustom7" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom7" class="btn btn-primary" data-clipboard-target="#themecustom7">COPY</button>
+                    <textarea id="themecustom8" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom8" class="btn btn-primary" data-clipboard-target="#themecustom8">COPY</button>
+                    <textarea id="themecustom9" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom9" class="btn btn-primary" data-clipboard-target="#themecustom9">COPY</button>
+                    <textarea id="themecustom10" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom10" class="btn btn-primary" data-clipboard-target="#themecustom10">COPY</button>
+                    <textarea id="themecustom11" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom11" class="btn btn-primary" data-clipboard-target="#themecustom11">COPY</button>
+                    <textarea id="themecustom12" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom12" class="btn btn-primary" data-clipboard-target="#themecustom12">COPY</button>
+                    <textarea id="themecustom13" style="width: 100%" rows="1" readonly=""></textarea>
+                    <button id="btnthemecustom13" class="btn btn-primary" data-clipboard-target="#themecustom13">COPY</button>
+                </div>
+                <hr />
+                <h4>Default Themes</h4>
+                <textarea id="theme0" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme0" class="btn btn-primary" data-clipboard-target="#theme0">COPY</button>
+                <textarea id="theme1" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme1" class="btn btn-primary" data-clipboard-target="#theme1">COPY</button>
+                <textarea id="theme2" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme2" class="btn btn-primary" data-clipboard-target="#theme2">COPY</button>
+                <textarea id="theme3" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme3" class="btn btn-primary" data-clipboard-target="#theme3">COPY</button>
+                <textarea id="theme4" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme4" class="btn btn-primary" data-clipboard-target="#theme4">COPY</button>
+                <textarea id="theme5" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme5" class="btn btn-primary" data-clipboard-target="#theme5">COPY</button>
+                <textarea id="theme6" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme6" class="btn btn-primary" data-clipboard-target="#theme6">COPY</button>
+                <textarea id="theme7" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme7" class="btn btn-primary" data-clipboard-target="#theme7">COPY</button>
+                <textarea id="theme8" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme8" class="btn btn-primary" data-clipboard-target="#theme8">COPY</button>
+                <textarea id="theme9" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme9" class="btn btn-primary" data-clipboard-target="#theme9">COPY</button>
+                <textarea id="theme10" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme10" class="btn btn-primary" data-clipboard-target="#theme10">COPY</button>
+                <textarea id="theme11" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme11" class="btn btn-primary" data-clipboard-target="#theme11">COPY</button>
+                <textarea id="theme12" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme12" class="btn btn-primary" data-clipboard-target="#theme12">COPY</button>
+                <textarea id="theme13" style="width: 100%" rows="1" readonly=""></textarea>
+                <button id="btntheme13" class="btn btn-primary" data-clipboard-target="#theme13">COPY</button>
+                <hr />
+            </div>
+        </div>
+    </div>
+    <a class='waves-effect waves-light ripple' href='#' id='BackToTop'><i class="glyphicon glyphicon-chevron-up"></i></a>
+    <script type="text/javascript">
+    jQuery(document).ready(function(e) {
+        var t = e("#BackToTop");
+        e(window).scroll(function() { e(this).scrollTop() >= 200 ? t.show(10).animate("#BackToTop").addClass("active") : t.animate("#BackToTop").removeClass("active") });
+        t.click(function(t) {
+            t.preventDefault();
+            e("html,body").animate({ scrollTop: 0 }, 800)
+        })
+    })
+
+    function exportCode(ver) {
+        var testLink;
+        if (ver >= '0.4.0' && ver <= '0.4.9' || ver >= '0.4.10' && ver <= '0.4.14') {
+            $('.themecustom').css('display', 'none');
+            var li = ["pace-theme-barber-shop", "pace-theme-big-counter", "pace-theme-bounce", "pace-theme-corner-indicator", "pace-theme-fill-left", "pace-theme-flash", "pace-theme-flat-top", "pace-theme-mac-osx", "pace-theme-minimal"];
+            for (var i = 0; i < li.length; i++) {
+                $("#theme" + i).val('<link href="https://hung1001.github.io/lib/pace/' + ver + '/themes/' + li[i] + '.css" rel="stylesheet" type="text/css"/>');
+                for (var j = 9; j < 14; j++) {
+                    $("#theme" + j).val('Not available !');
+                }
+            }
+        }
+        if (ver == '0.4.15') {
+            $('.themecustom').css('display', 'none');
+            var li = ["pace-theme-barber-shop", "pace-theme-big-counter", "pace-theme-bounce", "pace-theme-center-circle", "pace-theme-corner-indicator", "pace-theme-fill-left", "pace-theme-flash", "pace-theme-flat-top", "pace-theme-mac-osx", "pace-theme-minimal"];
+            for (var i = 0; i < li.length; i++) {
+                $("#theme" + i).val('<link href="https://hung1001.github.io/lib/pace/' + ver + '/themes/' + li[i] + '.css" rel="stylesheet" type="text/css"/>');
+                for (var j = 10; j < 14; j++) {
+                    $("#theme" + j).val('Not available !');
+                }
+            }
+        }
+        if (ver == '0.4.16' || ver == '0.4.17') {
+            $('.themecustom').css('display', 'none');
+            var li = ["pace-theme-barber-shop", "pace-theme-big-counter", "pace-theme-bounce", "pace-theme-center-circle", "pace-theme-center-radar", "pace-theme-corner-indicator", "pace-theme-fill-left", "pace-theme-flash", "pace-theme-flat-top", "pace-theme-loading-bar", "pace-theme-mac-osx", "pace-theme-minimal"];
+            for (var i = 0; i < li.length; i++) {
+                $("#theme" + i).val('<link href="https://hung1001.github.io/lib/pace/' + ver + '/themes/' + li[i] + '.css" rel="stylesheet" type="text/css"/>');
+                for (var j = 12; j < 14; j++) {
+                    $("#theme" + j).val('Not available !');
+                }
+            }
+        }
+        if (ver == '0.4.18' || ver >= '0.5.0' && ver <= '0.5.2') {
+            $('.themecustom').css('display', 'none');
+            var li = ["pace-theme-barber-shop", "pace-theme-big-counter", "pace-theme-bounce", "pace-theme-center-atom", "pace-theme-center-circle", "pace-theme-center-radar", "pace-theme-center-simple", "pace-theme-corner-indicator", "pace-theme-fill-left", "pace-theme-flash", "pace-theme-flat-top", "pace-theme-loading-bar", "pace-theme-mac-osx", "pace-theme-minimal"];
+            for (var i = 0; i < li.length; i++) {
+                $("#theme" + i).val('<link href="https://hung1001.github.io/lib/pace/' + ver + '/themes/' + li[i] + '.css" rel="stylesheet" type="text/css"/>');
+            }
+        }
+        if (ver >= '0.5.3' && ver <= '0.7.8') {
+            $('.themecustom').css('display', 'block');
+            var col = document.getElementById("color").value;
+            var li = ["pace-theme-barber-shop", "pace-theme-big-counter", "pace-theme-bounce", "pace-theme-center-atom", "pace-theme-center-circle", "pace-theme-center-radar", "pace-theme-center-simple", "pace-theme-corner-indicator", "pace-theme-fill-left", "pace-theme-flash", "pace-theme-flat-top", "pace-theme-loading-bar", "pace-theme-mac-osx", "pace-theme-minimal"];
+            for (var i = 0; i < li.length; i++) {
+                $("#theme" + i).val('<link href="https://hung1001.github.io/lib/pace/' + ver + '/themes/' + li[i] + '.css" rel="stylesheet" type="text/css"/>');
+                $("#themecustom" + i).val('<link href="https://hung1001.github.io/lib/pace/' + ver + '/themes/' + col + '/' + li[i] + '.css" rel="stylesheet" type="text/css"/>');
+            }
+        }
+        if (ver >= '1.0.0') {
+            $('.themecustom').css('display', 'none');
+            var col = document.getElementById("color").value;
+            var li = ["pace-theme-barber-shop", "pace-theme-big-counter", "pace-theme-bounce", "pace-theme-center-atom", "pace-theme-center-circle", "pace-theme-center-radar", "pace-theme-center-simple", "pace-theme-corner-indicator", "pace-theme-fill-left", "pace-theme-flash", "pace-theme-flat-top", "pace-theme-loading-bar", "pace-theme-mac-osx", "pace-theme-minimal"];
+            for (var i = 0; i < li.length; i++) {
+                $("#theme" + i).val('<link href="https://hung1001.github.io/lib/pace/' + ver + '/themes/' + col + '/' + li[i] + '.css" rel="stylesheet" type="text/css"/>');
+            }
+        }
+        $("#exportJS").val('<script src="https://hung1001.github.io/lib/pace/' + ver + '/pace.min.js" ' + 'type="text/javascript"/>');
+        testLink = '<a href="https://hung1001.github.io/lib/pace/' + ver + '/pace.min.js" target="_blank"> ' + "Pace JS Min " + ver + '</a>';
+        document.getElementById("testLink").innerHTML = testLink;
+    }
+
+    $('#resetBtn').click(function() {
+        $("#exportJS").val('');
+        $("#testLink").html('');
+        for (var i = 0; i < 14; i++) {
+            $("#theme" + i).val('');
+            $("#themecustom" + i).val('');
+        }
+    });
+    $(document).ready(function() {
+        new Clipboard('#copyBtnJS');
+        for (var i = 0; i < 14; i++) {
+            new Clipboard('#btntheme' + i);
+            new Clipboard('#btnthemecustom' + i);
+        }
+    });
+    </script>
+</body>
+
+</html>
