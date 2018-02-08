@@ -7,9 +7,11 @@
     <link rel="stylesheet" type="text/css" href="../fontas/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
     <link rel="shortcut icon" href="./favicon.ico">
-    <script type="text/javascript" src="../jquery/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../clipboard/clipboard.min.js"></script>
+    <script type="text/javascript" src="../../lastest/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lastest/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../lastest/clipboard.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../lastest/prism.min.css">
+    <script type="text/javascript" src="../../lastest/prism.min.js"></script>
     <script async="async" src="../js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
     <script type="text/javascript">
     window.dataLayer = window.dataLayer || [];
@@ -214,6 +216,15 @@
                 <br />
                 <label>Working link:</label>
                 <div id="testLink"></div>
+                <hr />
+                <pre><code class="language-html" id="ex1">&lt;!-- Target --&gt;
+&lt;input id=&quot;foo&quot; value=&quot;https://github.com/zenorocha/clipboard.js.git&quot;&gt;
+
+&lt;!-- Trigger --&gt;
+&lt;button class=&quot;btn&quot; data-clipboard-target=&quot;#foo&quot;&gt;
+    &lt;img src=&quot;assets/clippy.svg&quot; alt=&quot;Copy to clipboard&quot;&gt;
+&lt;/button&gt;</code></pre>
+                <button id="copyex1" class="btn btn-primary" data-clipboard-target="#ex1">COPY</button>
             </div>
         </div>
     </div>
@@ -230,7 +241,7 @@
 
     function exportCode(ver) {
         var testLink;
-        if (ver == "1.1.0"||ver == "1.2.0") {
+        if (ver == "1.1.0" || ver == "1.2.0") {
             $("#exportJS").val('Not available !');
             $("#exportJSMin").val('<script src="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.min.js" ' + 'type="text/javascript"/>');
             testLink = '<a href="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.min.js" target="_blank"> ' + "JS Clippboard Min " + ver + '</a>';
@@ -250,7 +261,7 @@
         $("#testLink").html('');
     });
     $(document).ready(function() {
-        new Clipboard('#copyBtnJS,#copyBtnJSMin');
+        new Clipboard('#copyBtnJS,#copyBtnJSMin,#copyex1');
     });
     </script>
 </body>
