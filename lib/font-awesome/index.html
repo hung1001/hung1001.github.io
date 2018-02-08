@@ -7,9 +7,9 @@
     <link rel="stylesheet" type="text/css" href="../fontas/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
     <link rel="shortcut icon" href="./favicon.ico">
-    <script type="text/javascript" src="../jquery/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../clipboard/clipboard.min.js"></script>
+    <script type="text/javascript" src="../../lastest/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lastest/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../lastest/clipboard.min.js"></script>
     <script async="async" src="../js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
     <script type="text/javascript">
     window.dataLayer = window.dataLayer || [];
@@ -217,51 +217,77 @@
                 <br />
                 <label>Working link:</label>
                 <div id="testLink"></div>
+                <hr />
+                <div class="col-lg-4">
+                    <h4>Example</h4>
+                    <br /> 1x : <i class="fa fa-facebook-square"></i>
+                    <br /> 2x : <i class="fa fa-facebook-square fa-2x"></i>
+                    <br /> 3x : <i class="fa fa-facebook-square fa-3x"></i>
+                    <br /> 4x : <i class="fa fa-facebook-square fa-4x"></i>
+                </div>
+                <div class="col-lg-4">
+                    <h4>With Spin</h4> Spin 1x : <i class="fa fa-spinner fa-spin"></i>
+                    <br />Spin 2x : <i class="fa fa-spinner fa-spin fa-2x"></i>
+                    <br />Spin 3x : <i class="fa fa-spinner fa-spin fa-3x"></i>
+                    <br />Spin 4x : <i class="fa fa-spinner fa-spin fa-4x"></i>
+                </div>
+                <div class="col-lg-4">
+                    <h4>With Rotate</h4>
+                    <i class="fa fa-shield"></i> normal
+                    <br />
+                    <i class="fa fa-shield fa-rotate-90"></i> fa-rotate-90
+                    <br>
+                    <i class="fa fa-shield fa-rotate-180"></i> fa-rotate-180
+                    <br/>
+                    <i class="fa fa-shield fa-rotate-270"></i> fa-rotate-270
+                    <br/>
+                    <i class="fa fa-shield fa-flip-horizontal"></i> fa-flip-horizontal
+                    <br/>
+                    <i class="fa fa-shield fa-flip-vertical"></i> fa-flip-vertical</div>
             </div>
         </div>
-    </div>
-    <a class='waves-effect waves-light ripple' href='#' id='BackToTop'><i class="glyphicon glyphicon-chevron-up"></i></a>
-    <script type="text/javascript">
-    jQuery(document).ready(function(e) {
-        var t = e("#BackToTop");
-        e(window).scroll(function() { e(this).scrollTop() >= 200 ? t.show(10).animate("#BackToTop").addClass("active") : t.animate("#BackToTop").removeClass("active") });
-        t.click(function(t) {
-            t.preventDefault();
-            e("html,body").animate({ scrollTop: 0 }, 800)
+        <a class='waves-effect waves-light ripple' href='#' id='BackToTop'><i class="glyphicon glyphicon-chevron-up"></i></a>
+        <script type="text/javascript">
+        jQuery(document).ready(function(e) {
+            var t = e("#BackToTop");
+            e(window).scroll(function() { e(this).scrollTop() >= 200 ? t.show(10).animate("#BackToTop").addClass("active") : t.animate("#BackToTop").removeClass("active") });
+            t.click(function(t) {
+                t.preventDefault();
+                e("html,body").animate({ scrollTop: 0 }, 800)
+            })
         })
-    })
 
-    function exportCode(ver) {
-        var testLink;
-        if (ver == "2.0") {
-            $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
-            $("#exportCSSMin").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.min.css" ' + 'rel="stylesheet" type="text/css"/>');
-            testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.min.css" target="_blank"> ' + "CSS FontAwesome Min " + ver + '</a>';
-        } else {
-            if (ver != "2.0.0") {
-                $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
-                $("#exportCSSMin").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.min.css" ' + 'rel="stylesheet" type="text/css"/>');
-                testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.min.css" target="_blank"> ' + "CSS FontAwesome Min " + ver + '</a>';
+        function exportCode(ver) {
+            var testLink;
+            if (ver == "2.0") {
+                $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
+                $("#exportCSSMin").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.min.css" ' + 'rel="stylesheet" type="text/css"/>');
+                testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.min.css" target="_blank"> ' + "CSS FontAwesome Min " + ver + '</a>';
             } else {
-                $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
-                $('#exportCSSMin').val('Not available !');
-                testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>';
+                if (ver != "2.0.0") {
+                    $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
+                    $("#exportCSSMin").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.min.css" ' + 'rel="stylesheet" type="text/css"/>');
+                    testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.min.css" target="_blank"> ' + "CSS FontAwesome Min " + ver + '</a>';
+                } else {
+                    $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
+                    $('#exportCSSMin').val('Not available !');
+                    testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>';
+                }
+
             }
 
+            document.getElementById("testLink").innerHTML = testLink;
         }
 
-        document.getElementById("testLink").innerHTML = testLink;
-    }
-
-    $('#resetBtn').click(function() {
-        $("#exportCSS").val('');
-        $("#exportCSSMin").val('');
-        $("#testLink").html('');
-    });
-    $(document).ready(function() {
-        new Clipboard('#copyBtnCSSMin,#copyBtnCSS');
-    });
-    </script>
+        $('#resetBtn').click(function() {
+            $("#exportCSS").val('');
+            $("#exportCSSMin").val('');
+            $("#testLink").html('');
+        });
+        $(document).ready(function() {
+            new Clipboard('#copyBtnCSSMin,#copyBtnCSS');
+        });
+        </script>
 </body>
 
 </html>
