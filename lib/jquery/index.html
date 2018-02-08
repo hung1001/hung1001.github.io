@@ -269,6 +269,10 @@
                 <br />
                 <label>Working link:</label>
                 <div id="testLink"></div>
+                <hr />
+                <p><h4>If you click on me, I will disappear.</h4></p>
+                <p>Click me away!</p>
+                <p>Click me too!</p>
             </div>
         </div>
     </div>
@@ -306,6 +310,9 @@
         $("#testLink").html('');
     });
     $(document).ready(function() {
+        $("p").click(function() {
+            $(this).hide();
+        });
         new Clipboard('#copyBtn,#copyBtnAsync');
     });
     </script>

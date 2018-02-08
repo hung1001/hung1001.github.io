@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <title>Bootstrap Libraries</title>
     <link rel="stylesheet" type="text/css" href="../fontas/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./3.3.7/css/bootstrap.min.css">
     <link rel="shortcut icon" href="./favicon.ico">
     <script type="text/javascript" src="../../lastest/jquery.min.js"></script>
-    <script type="text/javascript" src="../../lastest/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="../../lastest/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="./3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../lastest/clipboard.min.js"></script>
     <script async="async" src="../js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
     <script type="text/javascript">
@@ -206,6 +207,32 @@
                 <br />
                 <label>Working link:</label>
                 <div id="testLink"></div>
+                <hr />
+                <h4>Bootstrap Icon: <i class="glyphicon glyphicon-heart"></i><i class="glyphicon glyphicon-grain"></i><i class="glyphicon glyphicon-cd"></i></h4>
+                <h4>Bootstrap Dropdown: </h4>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Dropdown Example
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <h4>Bootstrap Tooltip: <a title="Hello" data-toggle="tooltip" data-placement="right">Hover Me !</a></h4>
+                <h4>Bootstrap Navigation: </h4>
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
@@ -235,6 +262,7 @@
     });
     $(document).ready(function() {
         new Clipboard('#copyBtnJS,#copyBtnCSS');
+        $('[data-toggle="tooltip"]').tooltip();
     });
     </script>
 </body>
