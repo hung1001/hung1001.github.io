@@ -613,6 +613,12 @@ SyntaxHighlighter.all()
         $("#exportJS").val('');
         $("#exportCSS").val('');
         $("#testLink").html('');
+        for (var i = 0; i < 23; i++) {
+            $("#language" + i).val('');
+        }
+        for (var i = 0; i < 7; i++) {
+             $("#theme" + i).val('');
+        }
     });
     $(document).ready(function() {
         new Clipboard('#copyBtnJS,#copyBtnCSSMin');
