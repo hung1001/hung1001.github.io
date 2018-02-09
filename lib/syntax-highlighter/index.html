@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../../lastest/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../lastest/clipboard.min.js"></script>
     <script type="text/javascript" src="../../lastest/syntax/shCore.min.js"></script>
-    <script type="text/javascript" src="../../lastest/syntax/shBrushPhp.min.js"></script>
+    <script type="text/javascript" src="../../lastest/syntax/shBrushMe.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../../lastest/syntax/shCoreEclipse.min.css">
     <link rel="stylesheet" type="text/css" href="../../lastest/syntax/shThemeEclipse.min.css">
     <script async="async" src="../js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
@@ -166,7 +166,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="https://hung1001.github.io/lib/clipboard">Clipboard.js</a></li>
                             <li><a href="https://hung1001.github.io/lib/material-design-icons">Material Design Icons</a></li>
-                            <li><a href="#">Prism</a></li>
+                            <li><a href="https://hung1001.github.io/lib/prism">Prism</a></li>
+                            <li><a href="#">Syntax Highlighter</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -279,6 +280,7 @@
             </div>
         </div>
         <hr />
+        <h3 class="text-center"><b>Example</b></h3>
         <pre class='brush: php'>         /***********************************
          ** Multiline block comments
          **********************************/
@@ -301,6 +303,275 @@
             }
         }
       </pre>
+        <hr />
+        <h3 class="text-center"><b>Install</b></h3>
+        <ol>
+            <li>Add base files to your page: shCore.js and shCore.css</li>
+            <li>Add brushes that you want (for example, shBrushJScript.js for JavaScript,...)</li>
+            <li>Include shCore.css and shThemeDefault.css</li>
+            <li>Create a code snippet with either &lt;pre /&gt; or &lt;script /&gt; method (see below)</li>
+            <li>Call SyntaxHighlighter.all() JavaScript method</li>
+        </ol>
+        <hr />
+        <h3 class="text-center"><b>Use &lt;pre /&gt; method</b></h3>
+        <pre class="brush:html">&lt;!-- Include required JS files --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/shCore.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;!--
+    At least one brush, here we choose JS. You need to include a brush for every
+    language you want to highlight
+--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;css/shBrushJScript.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;!-- Include *at least* the core style and default theme --&gt;
+&lt;link href=&quot;css/shCore.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+&lt;link href=&quot;css/shThemeDefault.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+ 
+&lt;!-- You also need to add some content to highlight, but that is covered elsewhere. --&gt;
+&lt;pre class=&quot;brush: js&quot;&gt;
+function foo()
+{
+}
+&lt;/pre&gt;
+
+&lt;!-- Finally, to actually run the highlighter, you need to include this JS on your page --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+SyntaxHighlighter.all()
+&lt;/script&gt;
+        </pre>
+        <hr />
+        <h3 class="text-center"><b>Use &lt;script /&gt; method (necessary CDATA tag)</b></h3>
+        <pre class='brush: xml'>&lt;script type=&quot;syntaxhighlighter&quot; class=&quot;brush: js&quot;&gt;&lt;![CDATA[
+  /**
+   * SyntaxHighlighter
+   */
+  function foo()
+  {
+      if (counter <= 10)
+          return;
+      // it works!
+  }
+  ]]&gt;&lt;/script&gt;
+</pre>
+        <hr/>
+        <h3 class="text-center"><b>Brushes</b></h3>
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>Brush name
+                </th>
+                <th>Brush aliases
+                </th>
+                <th>File name
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    ActionScript3
+                </td>
+                <td>as3, actionscript3
+                </td>
+                <td>shBrushAS3.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Bash/shell
+                </td>
+                <td>bash, shell
+                </td>
+                <td>shBrushBash.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ColdFusion
+                </td>
+                <td>cf, coldfusion
+                </td>
+                <td>shBrushColdFusion.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    C#
+                </td>
+                <td>c-sharp, csharp
+                </td>
+                <td>shBrushCSharp.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    C++
+                </td>
+                <td>cpp, c
+                </td>
+                <td>shBrushCpp.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    CSS
+                </td>
+                <td>css
+                </td>
+                <td>shBrushCss.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Delphi
+                </td>
+                <td>delphi, pas, pascal
+                </td>
+                <td>shBrushDelphi.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Diff
+                </td>
+                <td>diff, patch
+                </td>
+                <td>shBrushDiff.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Erlang
+                </td>
+                <td>erl, erlang
+                </td>
+                <td>shBrushErlang.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Groovy
+                </td>
+                <td>groovy
+                </td>
+                <td>shBrushGroovy.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    JavaScript
+                </td>
+                <td>js, jscript, javascript
+                </td>
+                <td>shBrushJScript.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Java
+                </td>
+                <td>java
+                </td>
+                <td>shBrushJava.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    JavaFX
+                </td>
+                <td>jfx, javafx
+                </td>
+                <td>shBrushJavaFX.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Perl
+                </td>
+                <td>perl, pl
+                </td>
+                <td>shBrushPerl.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    PHP
+                </td>
+                <td>php
+                </td>
+                <td>shBrushPhp.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Plain Text
+                </td>
+                <td>plain, text
+                </td>
+                <td>shBrushPlain.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    PowerShell
+                </td>
+                <td>ps, powershell
+                </td>
+                <td>shBrushPowerShell.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Python
+                </td>
+                <td>py, python
+                </td>
+                <td>shBrushPython.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ruby
+                </td>
+                <td>rails, ror, ruby
+                </td>
+                <td>shBrushRuby.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Scala
+                </td>
+                <td>scala
+                </td>
+                <td>shBrushScala.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SQL
+                </td>
+                <td>sql
+                </td>
+                <td>shBrushSql.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Visual Basic
+                </td>
+                <td>vb, vbnet
+                </td>
+                <td>shBrushVb.js
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    XML
+                </td>
+                <td>xml, xhtml, xslt, html, xhtml
+                </td>
+                <td>shBrushXml.js
+                </td>
+            </tr>
+        </table>
     </div>
     <a class='waves-effect waves-light ripple' href='#' id='BackToTop'><i class="glyphicon glyphicon-chevron-up"></i></a>
     <script type="text/javascript">
