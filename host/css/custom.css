@@ -1448,7 +1448,7 @@ ul.social-icons-footer li.twitter2:hover{background-position:0 -1171px}
 .sidebar2 .PopularPosts .widget-content ul li:last-child,.sidebar2 .custom-widget li:last-child,.sidebar .PopularPosts .widget-content ul li:last-child,.sidebar .custom-widget li:last-child,.tab-widget .PopularPosts .widget-content ul li:last-child,.tab-widget .custom-widget li:last-child{padding-bottom:0}
 .PopularPosts ul li a{color:#333;font-weight:400;font-size:17px;line-height:1.4em;transition:color .3s;font-family:"times",monospace}
 .PopularPosts ul li a:hover{color:#a0d3db}
-.PopularPosts .item-title{margin:0 0 4px;padding:0;line-height:0;margin:0 0 4px;-webkit-line-clamp:3;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical}
+.PopularPosts .item-title{margin:0 0 4px;padding:0;line-height:0;margin:0 0 4px;-webkit-line-clamp:4;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical}
 .item-snippet{display:none;font-size:0;padding-top:0}
 .PopularPosts ul{counter-reset:popularcount;margin:0;padding:0}
 .PopularPosts .item-thumbnail::before{background:rgba(0,0,0,.3);bottom:0;content:"";height:100px;width:100px;left:0;right:0;margin:0 auto;position:absolute;z-index:3}
