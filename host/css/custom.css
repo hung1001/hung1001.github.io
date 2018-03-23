@@ -910,7 +910,7 @@ div.ddsmoothmobile ul li a:hover{background:#000}
 #comments .comment-thread .comment-replies,#comments .comment .comment-replybox-single{margin-left:40px;border-left:1px solid #ddd}
 #comments .comment-thread .thread-count,.comments .continue{display:none}
 .comments .continue a{margin-left:10px}
-#comments .comment{list-style-type:none;padding:0 0 30px 0;position:relative;margin-left:10px;margin-right:10px}
+#comments .comment{list-style-type:none;padding:0 0 35px 0;position:relative;margin-left:10px;margin-right:10px}
 #comments .comment .comment{padding-bottom:8px;margin-top:15px}
 .comment .avatar-image-container{position:absolute}
 .comment .avatar-image-container img{border-radius:100%;max-height:40px!important;max-width:40px!important}
@@ -918,7 +918,7 @@ div.ddsmoothmobile ul li a:hover{background:#000}
 #comments .comment-author-header-wrapper{margin-left:40px}
 #comments .comment .thread-expanded .comment-block{padding-bottom:25px}
 #comments .comment .comment-header .user,#comments .comment .comment-header .user a{color:#1d1f1e;font-style:normal;font-weight:600;font-size:17px;text-transform:none}
-#comments .comment .comment-actions{text-transform: uppercase;font-family: arial,sans-serif;background:transparent;border:0;box-shadow:none;cursor:pointer;font-size:13px;font-weight:500;outline:none;text-decoration:none;width:auto;bottom:0;left:16px;margin-bottom:5px;position:absolute}
+#comments .comment .comment-actions{text-transform: uppercase;font-family: arial,sans-serif;background:transparent;border:0;box-shadow:none;cursor:pointer;font-size:12px;font-weight:500;outline:none;text-decoration:none;width:auto;bottom:0;left:16px;margin-bottom:5px;position:absolute}
 #comments .comment .comment-actions a{color:#232323;font-weight:500}
 #comments .comment .comment-actions a:hover{color:#2187e7;transition:.3s}
 #comments .comment .comment-actions > *{margin-right:8px}
