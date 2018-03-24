@@ -846,7 +846,7 @@ a#showsearch{color:#fff;font-weight:700;font-size:13px;padding:10px 10px 10px 1p
 .ddsmoothmenu ul li ul{margin-top:6px;box-shadow:0 5px 30px rgba(0,0,0,.3)}
 .ddsmoothmenu ul li ul li{list-style:none!important;margin-top:-5px}
 .ddsmoothmenu ul li ul li ul{margin-top:5px;top:0}
-.ddsmoothmenu{font:14px times;width:100%;display:none;height:39px;border-bottom:1px solid #e1e1e1}
+.ddsmoothmenu{font:14px times;width:100%;display:none;height:39px;box-shadow: 0 10px 16px 0 rgba(28,28,28,.06);}
 .ddsmoothmenu ul li{padding:0;position:relative;display:inline;float:left}
 .ddsmoothmenu ul li a{display:block;color:#333!important;font-weight:600;font-size:13px;text-decoration:none;padding:13px 20px 10px!important;opacity:1!important}
 * html .ddsmoothmenu ul li a{display:inline-block}
@@ -1820,7 +1820,7 @@ blockquote:after{background-image:url(data:image/gif;base64,R0lGODlhGQAZALMNAO7a
 .breadcrumbs a{color:#000;font-family:"times",monospace;font-size:17px}
 .breadcrumbs a:hover{color:#9e0101;transition:all .5s ease-out}
 .breadcrumbs{margin-top:4.5%;font-family:"times",monospace;font-size:17px;line-height:1.4em;border-bottom:1px dashed #cacaca;border-top:1px dashed #cacaca;padding:5px}
-#smoothmenu1{box-shadow:0 4px 12px #cacaca;position:relative}
+#smoothmenu1{position:relative}
 #sidebar-wrapper,#sidebar-wrapper2{margin-top:3%;margin-left:8px!important}
 .btndownload5 a,.btndownload5 a:hover,.downloadbtn5{color:#fff!important}
 .btndownload5{list-style:none;text-align:center;width:95%;margin:10px;padding:2px;font-size:14px;clear:both}
