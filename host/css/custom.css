@@ -940,20 +940,6 @@ ul.featuredlabel_thumbs2 li a:hover,ul.featuredlabel_thumbs li a:hover{color:#2b
 @media screen and (max-width:800px){.featuredlabel-wrapper{display:none}.post.hentry{margin:3% 0 0}}
 .featuredlabel_thumbs2 li:nth-child(1n+5){display:none}
 .featuredlabel_title2 a{-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;display:-webkit-box}
-#recent1{overflow:hidden;margin-bottom:15px}
-#recent1 .recent-box{float:right;display:block;width:48%;padding-bottom:5px;margin-bottom:0;padding-top:10px}
-#recent1 .recent-box:first-child{float:left;margin-right:2%;border-bottom:none}
-#recent1 .recent-box:first-child .imageContainer{float:none;width:100%;height:220px;margin-bottom:10px}
-#recent1 ul{padding-top:10px}
-#recent1 .recent-box .post-summary{display:none}
-#recent1 .recent-box:first-child .post-summary{display:block;font-size:14px;line-height:21px;color:#111}
-#recent1 .recent-box:first-child .label_title{-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;color:#222222;font-weight:bold;text-transform:uppercase}
-.label_title,.post-date{color:#222222}
-#recent1 li.recent-box:nth-child(6n),#recent1 li.recent-box:nth-child(8n){width:49%;float:left}
-#recent1 li.recent-box:nth-child(8n){border-bottom:0}
-#recent1 .title{font-size:13px;font-weight:500;padding:15px;transition:all 0.5s ease-out}
-.label_thumb{position:relative;width:100%;height:100%;margin-left:0}
-.imageContainer{width:125px;height:85px;overflow:hidden;float:left;margin-right:15px}
 #comments h4{width:fit-content;margin:0 0 30px 0}
 #comments{margin-top:15px;padding:0;background:#fff}
 #comments .comment{position:relative}
@@ -1486,7 +1472,7 @@ ul.social-icons-footer li.twitter2:hover{background-position:0 -1171px}
 .material-scrolltop:active::before{width:120%;padding-top:120%;-webkit-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2s ease-out}
 .material-scrolltop.reveal{width:50px;height:50px}
 .material-scrolltop span{display:block;font-size:25px;color:#fff}
-.material-scrolltop,.material-scrolltop::before{background-image:url(top-arrow.svg);background-position:center 50%;background-repeat:no-repeat}
+.material-scrolltop,.material-scrolltop::before{background-image:url(top-arrow.svg);background-position: 47% 48%;background-repeat:no-repeat}
 .sidebar .FollowByEmail .title-wrap,.sidebar .FollowByEmail>h3.title,.sidebar2 .FollowByEmail .title-wrap,.sidebar2 .FollowByEmail>h3.title{margin-bottom:0}
 .FollowByEmail td{width:100%;float:left;box-sizing:border-box}
 .FollowByEmail .follow-by-email-inner .follow-by-email-submit{margin-left:0;width:100%;border-radius:0;height:30px;font-size:15px;color:#fff;background-color:#2187e7;font-family:inherit;text-transform:uppercase;font-weight:700;letter-spacing:1px}
