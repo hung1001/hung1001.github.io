@@ -936,7 +936,7 @@ div.featuredlabel_meta_comment a:before{content:"\f0e6";font-family:FontAwesome;
 div.featuredlabel_meta_comment a:hover{color:#2b5cb9!important}
 div.featuredlabel_meta_date:before{content:"\f133";font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit;padding-right:5px}
 ul.featuredlabel_thumbs2 li a:hover,ul.featuredlabel_thumbs li a:hover{color:#2b5cb9;text-decoration:none}
-.data-title{box-shadow:0 4px 10px #dadada;display:block;padding:6px 15px;font-size:20px;font-weight:bold;background:linear-gradient(135deg,#ffffff 0%,#ffffff 70%,#F2F2F2 30%,#F2F2F2 30%,#F2F2F2 100%);text-transform:uppercase;color:#222;line-height:normal}
+.data-title{box-shadow:0 4px 10px #dadada;display:block;padding:6px 15px 6px 2px;font-size:20px;font-weight:bold;background:linear-gradient(135deg,#ffffff 0%,#ffffff 70%,#F2F2F2 30%,#F2F2F2 30%,#F2F2F2 100%);text-transform:uppercase;color:#222;line-height:normal}
 @media screen and (max-width:800px){.featuredlabel-wrapper{display:none}.post.hentry{margin:3% 0 0}}
 .featuredlabel_thumbs2 li:nth-child(1n+5){display:none}
 .featuredlabel_title2 a{-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;display:-webkit-box}
@@ -1480,6 +1480,13 @@ ul.social-icons-footer li.twitter2:hover{background-position:0 -1171px}
 .jugas_footer_copyright a{color:#333}
 .back-to-top-v2{width:36px;height:35px;z-index:5;position:fixed;bottom:-50px;right:1%;cursor:pointer;overflow:hidden;font-size:16px;background-color:#444343;color:#fff;text-align:center;line-height:33px;border-radius:3px;transition:all .3s ease;box-shadow:2px 3px 6px rgba(34,36,38,0.35)}
 .back-to-top-v2:hover{background:#2187e7}
+.material-scrolltop{display:block;z-index:9999;position:fixed;width:0;height:0;bottom:23px;right:23px;padding:0;overflow:hidden;outline:none;border:none;border-radius:2px;box-shadow:0 3px 10px rgba(0,0,0,0.5);cursor:hand;border-radius:50%;background:#232323;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-transition:all 0.3s cubic-bezier(0.25,0.25,0,1);-ms-transition:all 0.3s cubic-bezier(0.25,0.25,0,1);-moz-transition:all 0.3s cubic-bezier(0.25,0.25,0,1);-o-transition:all 0.3s cubic-bezier(0.25,0.25,0,1);transition:all 0.3s cubic-bezier(0.25,0.25,0,1)}
+.material-scrolltop:hover{background-color:#232323;text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,0.5),0 3px 15px rgba(0,0,0,0.5)}
+.material-scrolltop::before{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);content:"";width:0;border-radius:100%}
+.material-scrolltop:active::before{width:120%;padding-top:120%;-webkit-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2s ease-out}
+.material-scrolltop.reveal{width:50px;height:50px}
+.material-scrolltop span{display:block;font-size:25px;color:#fff}
+.material-scrolltop,.material-scrolltop::before{background-image:url(top-arrow.svg);background-position:center 50%;background-repeat:no-repeat}
 .sidebar .FollowByEmail .title-wrap,.sidebar .FollowByEmail>h3.title,.sidebar2 .FollowByEmail .title-wrap,.sidebar2 .FollowByEmail>h3.title{margin-bottom:0}
 .FollowByEmail td{width:100%;float:left;box-sizing:border-box}
 .FollowByEmail .follow-by-email-inner .follow-by-email-submit{margin-left:0;width:100%;border-radius:0;height:30px;font-size:15px;color:#fff;background-color:#2187e7;font-family:inherit;text-transform:uppercase;font-weight:700;letter-spacing:1px}
