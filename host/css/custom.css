@@ -810,7 +810,7 @@ a.btn.disabled{pointer-events:none}
 .social-top1 ul li{float:left;text-align:center;height:39px;margin:10px 0 0 20px}
 .social-top1 ul li:not(:first-child){font:14px "Roboto Slab","Roboto",sans-serif}
 .social-top1 ul li:not(:first-child) a{padding:1px 0 8px}
-.social-top1 ul li a{padding-bottom:6px;text-decoration:none;color:#333;font-size:1em;letter-spacing:.04rem;font-weight:600;display:block}
+.social-top1 ul li a{padding-bottom:6px;text-decoration:none;color:#333;font-size:.96em;letter-spacing:.04rem;font-weight:600;display:block}
 .social-top1 ul li a:hover{transition:.2s;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s}
 .social-top1 ul li a.social-top1-left-fanpage:hover{color:#2980b9}
 .social-top1 ul li a.social-top1-left-bookmark:hover{color:#2b3303}
@@ -875,7 +875,7 @@ a#showsearch{color:#fff;font-weight:700;font-size:13px;padding:10px 10px 10px 1p
 .ddsmoothmenu ul li ul li ul{margin-top:5px;top:0}
 .ddsmoothmenu{font:14px "Roboto Slab","Roboto",sans-serif;;width:100%;display:none;height:39px;box-shadow:0 10px 16px 0 rgba(28,28,28,.06)}
 .ddsmoothmenu ul li{padding:0;position:relative;display:inline;float:left}
-.ddsmoothmenu ul li a{display:block;color:#333!important;font-weight:600;font-size:1em;text-decoration:none;padding:10px 20px 11px!important;opacity:1!important}
+.ddsmoothmenu ul li a{display:block;color:#333!important;font-weight:600;font-size:.96em;text-decoration:none;padding:10px 20px 11px!important;opacity:1!important}
 * html .ddsmoothmenu ul li a{display:inline-block}
 .ddsmoothmenu ul li a:link,.ddsmoothmenu ul li a:visited{color:#fff}
 .ddsmoothmenu ul li a.selected,.ddsmoothmenu ul li a:hover{transition:.3s;background:#fff!important;color:#2187e7!important}
@@ -1107,7 +1107,7 @@ ul.featuredlabel_thumbs2 li a:hover,ul.featuredlabel_thumbs li a:hover{color:#2b
 .ripple2:after{content:"";display:block;position:absolute;width:100%;height:100%;top:0;left:0;pointer-events:none;background-image:radial-gradient(circle,#000 10%,transparent 10.01%);background-repeat:no-repeat;background-position:50%;transform:scale(10,10);opacity:0;transition:transform .5s,opacity 1s}
 .ripple2:active:after{transform:scale(0,0);opacity:.2;transition:0s}
 #menuleft,.darkshadow{position:fixed;bottom:0;top:0}
-.toggleMenu{cursor:pointer;font-size:30px!important;margin:-1px 0 0}
+.toggleMenu{cursor:pointer;font-size:30px!important;margin:-2px 0 0}
 #searchformleft::-webkit-input-placeholder{color:hsl(0,0%,53.3%)}
 #searchformleft:-moz-placeholder{color:hsl(0,0%,53.3%);opacity:1}
 #searchformleft::-moz-placeholder{color:hsl(0,0%,53.3%);opacity:1}
