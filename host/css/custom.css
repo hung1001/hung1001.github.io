@@ -1,7 +1,6 @@
 /* ####### Integrated FontAwesome #######*/
 @font-face{font-family:FontAwesome;src:url(../font/fonts/fontawesome-webfont.eot?v=4.7.0);src:url(../font/fonts/fontawesome-webfont.eot?#iefix&amp;v=4.7.0) format('embedded-opentype'),url(../font/fonts/fontawesome-webfont.woff2?v=4.7.0) format('woff2'),url(../font/fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'),url(../font/fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'),url(../font/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal}
 /* ####### Integrated Font Roboto Slab #######*/
-/* roboto-slab-regular - latin-ext_greek_cyrillic_vietnamese_latin_cyrillic-ext_greek-ext */
 @font-face {
   font-family: 'Roboto Slab';
   font-style: normal;
@@ -14,7 +13,6 @@
        url('../font/fonts/roboto-slab/roboto-slab-v7-latin-ext_greek_cyrillic_vietnamese_latin_cyrillic-ext_greek-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../font/fonts/roboto-slab/roboto-slab-v7-latin-ext_greek_cyrillic_vietnamese_latin_cyrillic-ext_greek-ext-regular.svg#RobotoSlab') format('svg'); /* Legacy iOS */
 }
-/* roboto-slab-700 - latin-ext_greek_cyrillic_vietnamese_latin_cyrillic-ext_greek-ext */
 @font-face {
   font-family: 'Roboto Slab';
   font-style: normal;
@@ -936,7 +934,7 @@ div.ddsmoothmobile ul li a:hover{background:#000}
 .title-wrap h2,.posts-title h2{position:relative;float:left;display:block!important;height:25px;font-size:14px;color:#fff;background-color:#0a9e01;font-weight:400;text-transform:uppercase;line-height:26px;border:0;padding:0 10px;margin:0}
 .title-wrap h2 a,.posts-title h2 a{color:#fff}
 .col-right .big-column li.first-big{width:49%;float:left;margin-right:15px;clear:both;margin-left:0;padding:0}
-.col-right .big-column .first-big .col-thumb{width:100%;height:180px;float:left}
+.col-right .big-column .first-big .col-thumb{width:100%;height:220px;float:left}
 .col-right .big-column .first-big .col-thumb img{height:100%;width:100%;display:block;position:relative}
 .col-right .big-column .first-big .post-panel{float:none;position:static;width:100%}
 .col-right .big-column li{width:24%;float:left;margin-right:6px;padding:0 0 10px;border:none}
@@ -955,7 +953,7 @@ div.ddsmoothmobile ul li a:hover{background:#000}
 .big-column .rcp-title a{color:#232323;font-size:15px;transition:color .3s}
 .big-column .rcp-title a:hover{color:#2187e7}
 .big-column .first-big .col-thumb{width:100%;height:180px}
-.big-column .first-big .col-thumb img{width:100%;height:180px}
+.big-column .first-big .col-thumb img{width:100%;height:100%}
 .big-column .first-big .post-panel{padding:10px 0 0;color:#303030;text-align:left}
 .big-column .first-big .rcp-title{font-size:16px;margin:0 0 10px;font-weight:700;font-style:normal;text-transform:uppercase}
 .big-column .first-big .rcp-title a,.big-column .first-big .item-meta{color:#303030}
@@ -2162,7 +2160,7 @@ div#myDropdown-newcmt ul:before{top:-26px;border-color:transparent transparent #
 .more-share-line-2 ul li:nth-child(2) a{color:#4f99e2}
 .more-share-line-2 ul li:nth-child(3) a{color:#eb4823}
 #closeMore{position:absolute;right:-14px;top:-17px;text-decoration:none;width:40px;height:40px;border-radius:100%;background:#fff;border:1px solid #999;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
-#closeMore::before{font-family:fontawesome;content:'\f00d';font-size:30px;color:#111;left:8px;position:relative;top:-4px}
+#closeMore::before{font-family:fontawesome;content:'\f00d';font-size:30px;color:#111;left:9px;position:relative;top:8px}
 #closeMore:hover{border-color:#222cec;opacity:.8}
 @media screen and (min-width:1255px){.more-share-line-1 ul li,.more-share-line-2 ul li{padding:43px 23px 43px 37px}}
 @media screen and (min-width:970px) and (max-width:1254px){.more-share-line-1 ul li i,.more-share-line-2 ul li i{font-size:40px}.more-share-line-1 ul li,.more-share-line-2 ul li{padding:43px 17px 43px 26px}.more-share-line-1 ul li a span,.more-share-line-2 ul li a span{top:-5px}}
@@ -2190,7 +2188,7 @@ div#myDropdown-newcmt ul:before{top:-26px;border-color:transparent transparent #
 .convert-code-content h4{color:#de2d2d;text-align:left;text-transform:unset;font-weight:700;letter-spacing:unset;padding:0;margin-top:15px}
 .convert-code-content ul{margin-left:18px}
 #closeConvert{color:#444;position:absolute;right:-12px;top:-16px;cursor:pointer;width:35px;height:35px;border:1px solid #999;border-radius:100%}
-#closeConvert::before{font-family:fontawesome;content:'\f00d';font-size:28px;color:#111;left:7px;position:relative;top:5px}
+#closeConvert::before{font-family:fontawesome;content:'\f00d';font-size:28px;color:#111;left:7px;position:relative;top:-5px}
 .convert-float-shadow{font:700 12px Verdana;font-weight:600;padding:8px;background:#373a3e;border-radius:3px;color:#fff;margin:10px 0;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;vertical-align:middle;-webkit-transform:perspective(1px) translateZ(0);transform:perspective(1px) translateZ(0);box-shadow:0 0 1px transparent;position:relative;-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transition-property:transform;transition-property:transform}
 .convert-float-shadow:before{pointer-events:none;position:absolute;z-index:-1;content:'';top:100%;left:5%;height:10px;width:90%;opacity:0;background:-webkit-radial-gradient(center,ellipse,rgba(0,0,0,.35) 0,transparent 80%);background:radial-gradient(ellipse at center,rgba(0,0,0,.35) 0,transparent 80%);-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transition-property:transform,opacity;transition-property:transform,opacity}
 .convert-float-shadow:active,.convert-float-shadow:focus,.convert-float-shadow:hover{-webkit-transform:translateY(-5px);transform:translateY(-5px)}
