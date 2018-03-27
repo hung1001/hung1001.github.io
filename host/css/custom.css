@@ -1054,7 +1054,7 @@ ul.featuredlabel_thumbs2 li a:hover,ul.featuredlabel_thumbs li a:hover{color:#2b
 @media screen and (max-width:800px){.featuredlabel-wrapper{display:none}.post.hentry{margin:3% 0 0}}
 .featuredlabel_thumbs2 li:nth-child(1n+5){display:none}
 .featuredlabel_title2 a{-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;display:-webkit-box}
-#comments h4{width:fit-content;margin:0 0 30px 0}
+#comments h4{display: table;margin:0 0 30px 0}
 #comments{margin-top:15px;padding:0;background:#fff}
 #comments .comment{position:relative}
 #comments .comment-thread ol{margin:0;padding-left:0}
