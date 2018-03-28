@@ -1505,7 +1505,7 @@ div.snippets{letter-spacing:.001rem;font-size:18px}
 .share-art .lin-art:hover{background:rgba(0,119,181,.7)}
 .sora-author-box{background:#fff;overflow:hidden;padding:18px 10px;margin:10px 0;position:relative}
 .sora-author-box img{float:left;margin-right:20px;border-radius:50%}
-.sora-author-box div{padding:10px;font-size:17px}
+.sora-author-box div{font-size:17px}
 .sora-author-box div div{font-size:.9174em;word-wrap:break-word}
 .sora-author-box b{font-size:19px;margin:0 5px 0 0}
 #related-posts-item{width:100%;margin:30px 0 20px}
