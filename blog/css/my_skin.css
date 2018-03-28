@@ -1645,7 +1645,7 @@ div.skiptranslate .goog-te-gadget{display:inline-block;margin:0;padding:0}
 .buttondownload span.title-hover2,.buttondownload span.title2{position:absolute;text-align:center;margin:0 auto;font-size:16px;font-weight:700;transition:.3s;color:#3A5FCD;left:80px}
 .buttondownload span.title-hover2{left:80px;opacity:0;color:#fff}
 .fb-info-content ul{list-style:none;line-height:1.12rem}
-.fb-info-content ul li{background-image:url("src/fb-icon.hung1001.png");background-repeat:no-repeat}
+.fb-info-content ul li{background-image:url("src/hung1001-fb.png");background-repeat:no-repeat}
 .fb-info-content{display:table;margin:0 auto}
 .fb-info-content ul li p{margin-bottom:15px;font-size:15px;font-weight:500;color:#000;line-height:1.12rem}
 .fb-info-content ul li a{color:#143a84}
@@ -1981,7 +1981,7 @@ kbd{display:inline-block;margin:0 .1em;padding:.1em .6em;font-size:13px;line-hei
 #flippanel{padding:1px;text-align:left;display:none;border:0;margin:10px;font-size:15px}
 li a.notify-box:after{text-align:center;position:absolute;right:-5px;top:2px;background:#fa3e3e;color:#fff;padding:0;width:13px;height:13px;line-height:13px;border-radius:100%;font-size:60%;transform:scale(1);transition:all .3s ease}
 .notify-box:hover:before{color:#fa3e3e}
-.notify-box{cursor:pointer;background-image:url("src/icon.png");background-size:auto;background-position:4px -235px;margin-top:4px}
+.notify-box{cursor:pointer;background-image:url("src/hung1001-noti.png");background-size:auto;background-position:4px -235px;margin-top:4px}
 .ani{position:relative}
 @keyframes mation{48%,62%{transform:scale(1,1)}50%{transform:scale(1.1,.9)}56%{transform:scale(.9,1.1) translate(0,-5px)}59%{transform:scale(1,1) translate(0,-3px)}}
 .comment_emo_list a>span{color:#fff}
