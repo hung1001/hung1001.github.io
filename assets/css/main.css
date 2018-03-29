@@ -1689,7 +1689,7 @@ div.about-me{text-align:center}
 .postok ul li a{color:#000!important;font-size:17px}
 .postok ul li a:hover{color:#014d9e!important}
 .postok ul li{line-height:25px}
-#home-button{color:#fff!important;background:#444!important}
+#home-button{color:#fff;background:#444}
 .tb_outer_wrap{width:100%;max-width:650px;margin:15px auto}
 .tb_video_wrap_macbook{position:relative;padding-bottom:43%;padding-top:0;height:0;overflow:hidden;-webkit-border-image:url("src/macbook_laptop_frame.png") 50 233 112 228 stretch stretch;-moz-border-image:url("src/macbook_laptop_frame.png") 50 233 112 228 stretch stretch;-o-border-image:url("src/macbook_laptop_frame.png") 50 233 112 228 stretch stretch;border-image:url("src/macbook_laptop_frame.png") 50 233 112 228 stretch stretch;border-color:transparent;border-width:27px 76px 55px;border-style:inset}
 .tb_video_wrap_macbook embed,.tb_video_wrap_macbook iframe,.tb_video_wrap_macbook object{position:absolute;top:0;width:100%;height:100%;background-color:#ddd}
