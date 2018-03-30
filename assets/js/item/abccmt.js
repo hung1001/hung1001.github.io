@@ -1,5 +1,5 @@
 var id = "comment-holder";
-var url = "hung1001.github.io/image/emoji/";
+var url = "https://hung1001.github.io/image/emoji/";
 var hung1001_icon = [
     { text: ":v", img: "pacman.png" },
     { text: ":d", img: "1.png" },
