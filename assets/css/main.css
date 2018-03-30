@@ -2011,9 +2011,9 @@ li a.notify-box:after{text-align:center;position:absolute;right:-5px;top:2px;bac
 .bsdripplebtn{cursor:pointer!important;overflow:hidden;text-decoration:none;display:inline-block;-webkit-appearance:none;font-size:1.6em;border-radius:4px;color:rgba(255,255,255,0.7);font-weight:400;padding:15px 20px;margin:0 10px;box-shadow:0 2px 2px 1px rgba(0,0,0,0.1);transition:all .3s}
 .bsdripplebtn:hover,.bsdripplebtn:active{box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22)}
 .bsdripplebtn.btnone{background:#3cf}
-.bsdripplebtn.btnone:before{content:'\e8f4'}
-.bsdripplebtn.btntwo:before{content:'\e2c4'}
-.bsdripplebtn.btnone:before,.bsdripplebtn.btntwo:before{font-family:'Material Icons';font-size:20px;margin:0 5px 0 0}
+.bsdripplebtn.btnone:before{content:'\f06e'}
+.bsdripplebtn.btntwo:before{content:'\f019'}
+.bsdripplebtn.btnone:before,.bsdripplebtn.btntwo:before{font-family: fontawesome;font-size:20px;margin:0 5px 0 0;position: relative;top:-2px;}
 .bsdripplebtn.btntwo{background:#f33}
 #btnripplebsd a:hover,#btnripplebsd a:active{color:#f2f2f2!important;transition:all .3s ease-in-out!important}
 .add-cmt-wrapper{float:right;position:relative}
