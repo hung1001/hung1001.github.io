@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="./3.3.7/css/bootstrap.min.css">
     <link rel="shortcut icon" href="./favicon.ico">
     <script type="text/javascript" src="../../lastest/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="../../lastest/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="./3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../lastest/clipboard.min.js"></script>
     <script async="async" src="../js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
@@ -273,7 +272,7 @@
         $("#testLink").html('');
     });
     $(document).ready(function() {
-        new Clipboard('#copyBtnJS,#copyBtnCSS');
+        new ClipboardJS('#copyBtnJS,#copyBtnCSS');
         $('[data-toggle="tooltip"]').tooltip();
     });
     </script>
