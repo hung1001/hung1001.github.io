@@ -234,12 +234,12 @@
                 <div id="testLink"></div>
                 <hr />
                 <pre><code class="language-html" id="ex1">&lt;!-- Target --&gt;
-&lt;input id=&quot;foo&quot; value=&quot;https://github.com/zenorocha/clipboard.js.git&quot;&gt;
-
-&lt;!-- Trigger --&gt;
-&lt;button class=&quot;btn&quot; data-clipboard-target=&quot;#foo&quot;&gt;
-    &lt;img src=&quot;assets/clippy.svg&quot; alt=&quot;Copy to clipboard&quot;&gt;
-&lt;/button&gt;</code></pre>
+ &lt;input id=&quot;foo&quot; value=&quot;https://github.com/zenorocha/clipboard.js.git&quot;&gt;
+ 
+ &lt;!-- Trigger --&gt;
+ &lt;button class=&quot;btn&quot; data-clipboard-target=&quot;#foo&quot;&gt;
+     &lt;img src=&quot;assets/clippy.svg&quot; alt=&quot;Copy to clipboard&quot;&gt;
+ &lt;/button&gt;</code></pre>
                 <button id="copyex1" class="btn btn-primary" data-clipboard-target="#ex1">COPY</button>
             </div>
         </div>
@@ -277,7 +277,7 @@
         $("#testLink").html('');
     });
     $(document).ready(function() {
-        new Clipboard('#copyBtnJS,#copyBtnJSMin,#copyex1');
+        new ClipboardJS('#copyBtnJS,#copyBtnJSMin,#copyex1');
     });
     </script>
 </body>
