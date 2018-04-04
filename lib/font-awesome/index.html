@@ -281,19 +281,25 @@
             if (ver >= "5.0.6") {
                 $("#lbl1").html("SVG with JS");
                 $("#lbl2").html("Web Fonts with CSS");
+                $("#exportCSS").val('<script src="https://hung1001.github.io/lib/font-awesome/5/' + ver + '/svg-with-js/js/fontawesome-all.min.js" ' + 'type="text/javascript">' + '</' + 'script>');
+                $("#exportCSSMin").val('<link href="https://hung1001.github.io/lib/font-awesome/5/' + ver + '/web-fonts-with-css/css/fontawesome-all.min.css" ' + 'rel="stylesheet" type="text/css"/>');
+                testLink = '<a href="https://hung1001.github.io/lib/font-awesome/5/' + ver + '/svg-with-js/js/fontawesome-all.min.js" target="_blank"> ' + "SVG with JS Min " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/font-awesome/5/' + ver + '/web-fonts-with-css/css/fontawesome-all.min.css" target="_blank"> ' + "Web Fonts with CSS " + ver + '</a>';
             } else if (ver == "2.0") {
-                $("#lbl1").html("CSS");$("#lbl2").html("CSS Min");
+                $("#lbl1").html("CSS");
+                $("#lbl2").html("CSS Min");
                 $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
                 $("#exportCSSMin").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.min.css" ' + 'rel="stylesheet" type="text/css"/>');
                 testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.min.css" target="_blank"> ' + "CSS FontAwesome Min " + ver + '</a>';
             } else {
                 if (ver != "2.0.0") {
-                    $("#lbl1").html("CSS");$("#lbl2").html("CSS Min");
+                    $("#lbl1").html("CSS");
+                    $("#lbl2").html("CSS Min");
                     $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
                     $("#exportCSSMin").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.min.css" ' + 'rel="stylesheet" type="text/css"/>');
                     testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.min.css" target="_blank"> ' + "CSS FontAwesome Min " + ver + '</a>';
                 } else {
-                    $("#lbl1").html("CSS");$("#lbl2").html("CSS Min");
+                    $("#lbl1").html("CSS");
+                    $("#lbl2").html("CSS Min");
                     $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
                     $('#exportCSSMin').val('Not available !');
                     testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>';
