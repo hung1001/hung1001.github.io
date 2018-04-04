@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>SyntaxHighlighter Without Flash Libraries</title>
-    <link rel="stylesheet" type="text/css" href="../fontas/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap-dist/3.3.7/css/bootstrap.min.css">
     <link rel="shortcut icon" href="../favicon.ico">
     <script type="text/javascript" src="../../lastest/jquery.min.js"></script>
-    <script type="text/javascript" src="../../lastest/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../bootstrap-dist/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../lastest/clipboard.min.js"></script>
     <script type="text/javascript" src="../../lastest/syntax/shCore.min.js"></script>
     <script type="text/javascript" src="../../lastest/syntax/shBrushMe.min.js"></script>
@@ -622,7 +622,7 @@ SyntaxHighlighter.all()
         }
     });
     $(document).ready(function() {
-        new Clipboard('#copyBtnJS,#copyBtnCSSMin');
+        new ClipboardJS('#copyBtnJS,#copyBtnCSSMin');
         for (var i = 0; i < 23; i++) {
             new ClipboardJS('#languagebtn' + i);
         }
