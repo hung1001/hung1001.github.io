@@ -183,6 +183,13 @@
         <div class="row">
             <h2 class="text-right"><b>Hosted FontAwesome via my github</b></h2>
             <div class="col-lg-4">
+                <h4>FontAwesome - All 5.x Versions</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="exportCode('5.0.9')">FontAwesome 5.0.9</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('5.0.8')">FontAwesome 5.0.8</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('5.0.7')">FontAwesome 5.0.7</a></li>
+                    <li><a href="javascript:void(0)" onclick="exportCode('5.0.6')">FontAwesome 5.0.6</a></li>
+                </ul>
                 <h4>FontAwesome - All 4.x Versions</h4>
                 <ul>
                     <li><a href="javascript:void(0)" onclick="exportCode('4.7.0')">FontAwesome 4.7.0</a></li>
@@ -218,11 +225,11 @@
             </div>
             <div class="col-lg-8">
                 <br />
-                <label>CSS</label>
+                <label id="lbl1">CSS</label>
                 <textarea id="exportCSS" style="width: 100%" rows="1" readonly=""></textarea>
                 <button id="copyBtnCSS" class="btn btn-primary" data-clipboard-target="#exportCSS">COPY</button>
                 <br />
-                <label>CSS MIN</label>
+                <label id="lbl2">CSS MIN</label>
                 <textarea id="exportCSSMin" style="width: 100%" rows="1" readonly=""></textarea>
                 <button id="copyBtnCSSMin" class="btn btn-primary" data-clipboard-target="#exportCSSMin">COPY</button>
                 <button id="resetBtn" class="btn btn-danger">RESET</button>
@@ -271,16 +278,22 @@
 
         function exportCode(ver) {
             var testLink;
-            if (ver == "2.0") {
+            if (ver >= "5.0.6") {
+                $("#lbl1").html("SVG with JS");
+                $("#lbl2").html("Web Fonts with CSS");
+            } else if (ver == "2.0") {
+                $("#lbl1").html("CSS");$("#lbl2").html("CSS Min");
                 $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
                 $("#exportCSSMin").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.min.css" ' + 'rel="stylesheet" type="text/css"/>');
                 testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/font-awesome.min.css" target="_blank"> ' + "CSS FontAwesome Min " + ver + '</a>';
             } else {
                 if (ver != "2.0.0") {
+                    $("#lbl1").html("CSS");$("#lbl2").html("CSS Min");
                     $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
                     $("#exportCSSMin").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.min.css" ' + 'rel="stylesheet" type="text/css"/>');
                     testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.min.css" target="_blank"> ' + "CSS FontAwesome Min " + ver + '</a>';
                 } else {
+                    $("#lbl1").html("CSS");$("#lbl2").html("CSS Min");
                     $("#exportCSS").val('<link href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" ' + 'rel="stylesheet" type="text/css"/>');
                     $('#exportCSSMin').val('Not available !');
                     testLink = '<a href="https://hung1001.github.io/lib/font-awesome/' + ver + '/css/font-awesome.css" target="_blank"> ' + "CSS FontAwesome " + ver + '</a>';
