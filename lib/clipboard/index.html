@@ -259,11 +259,11 @@
         var testLink;
         if (ver == "1.1.0" || ver == "1.2.0") {
             $("#exportJS").val('Not available !');
-            $("#exportJSMin").val('<script src="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.min.js" ' + 'type="text/javascript"/>');
+            $("#exportJSMin").val('<script src="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.min.js" ' + 'type="text/javascript"><\/script>');
             testLink = '<a href="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.min.js" target="_blank"> ' + "JS Clippboard Min " + ver + '</a>';
         } else {
-            $("#exportJS").val('<script src="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.js" ' + 'type="text/javascript"/>');
-            $("#exportJSMin").val('<script src="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.min.js" ' + 'type="text/javascript"/>');
+            $("#exportJS").val('<script src="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.js" ' + 'type="text/javascript"><\/script>');
+            $("#exportJSMin").val('<script src="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.min.js" ' + 'type="text/javascript"><\/script>');
 
             testLink = '<a href="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.js" target="_blank"> ' + "JS Clippboard " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/clipboard/' + ver + '/clipboard.min.js" target="_blank"> ' + "JS Clippboard Min " + ver + '</a>';
         }

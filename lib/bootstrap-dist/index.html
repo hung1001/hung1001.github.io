@@ -261,7 +261,7 @@
     function exportCode(ver) {
         var testLink;
         $("#exportCSS").val('<link href="https://hung1001.github.io/lib/bootstrap-dist/' + ver + '/css/bootstrap.min.css" ' + 'rel="stylesheet" type="text/css"/>');
-        $("#exportJS").val('<script src="https://hung1001.github.io/lib/bootstrap-dist/' + ver + '/js/bootstrap.min.js" ' + 'type="text/javascript"/>');
+        $("#exportJS").val('<script src="https://hung1001.github.io/lib/bootstrap-dist/' + ver + '/js/bootstrap.min.js" ' + 'type="text/javascript"><\/script>');
         testLink = '<a href="https://hung1001.github.io/lib/bootstrap-dist/' + ver + '/css/bootstrap.min.css" target="_blank"> ' + "CSS Bootstrap " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/bootstrap-dist/' + ver + '/js/bootstrap.min.js" target="_blank"> ' + "JS Bootstrap " + ver + '</a>';
         document.getElementById("testLink").innerHTML = testLink;
     }

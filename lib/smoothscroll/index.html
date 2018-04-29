@@ -225,7 +225,7 @@
 
     function exportCode(ver) {
         var testLink;
-        $("#exportJS").val('<script src="https://hung1001.github.io/lib/smoothscroll/' + ver + '/SmoothScroll.js" ' + 'type="text/javascript"/>');
+        $("#exportJS").val('<script src="https://hung1001.github.io/lib/smoothscroll/' + ver + '/SmoothScroll.js" ' + 'type="text/javascript"><\/script>');
         $("#exportCSS").val('<script src="https://hung1001.github.io/lib/smoothscroll/' + ver + '/SmoothScroll.min.js" ' + 'type="text/javascript"/>');
         testLink = '<a href="https://hung1001.github.io/lib/smoothscroll/' + ver + '/SmoothScroll.js" target="_blank"> ' + "Smooth Scroll " + ver + '</a>' + '<br/>' + '<a href="https://hung1001.github.io/lib/smoothscroll/' + ver + '/SmoothScroll.min.js" target="_blank"> ' + "Smooth Scroll Min " + ver + '</a>';
         document.getElementById("testLink").innerHTML = testLink;
