@@ -280,8 +280,7 @@
         })
 
         function exportCode(ver) {
-            var testLink;
-            if (ver >= '5.0.6' || ver == "5.0.10") {
+            if (ver >= '5.0.6' || ver == "5.0.10" || ver < '5.0.6' && ver > '5.0.0') {
                 $("#lbl1").html("SVG with JS");
                 $("#lbl2").html("Web Fonts with CSS");
                 $("#exportCSS").val('<script src="https://hung1001.github.io/lib/font-awesome/5/' + ver + '/svg-with-js/js/fontawesome-all.min.js" ' + 'type="text/javascript">' + '</' + 'script>');
