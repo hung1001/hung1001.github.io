@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Xóa dấu Tiếng Việt</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type="text/css">
+    textarea {
+        height: 15em;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form name="form">
+                <h3>Input</h3>
+                <textarea name="text" rows="12" id="text" class="form-control"></textarea>
+                <br />
+                <h3>Output</h3>
+                <textarea name="result" rows="12" readonly="" id="result" class="form-control"></textarea>
+                <br />
+                <input type="button" onClick="replace_text();" value="CLEAR" class="btn btn-primary" />
+                <input type="button" data-clipboard-target="#result" value="COPY" class="btn btn-success" id="copyBtn" />
+                <input type="reset" value="RESET" class="btn btn-danger" id="resetBtn" />
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#text").focus();
+        new ClipboardJS("#copyBtn")
+    });
+    $("#resetBtn").click(function() {
+        $("#text").focus()
+    });
+    $("#copyBtn").tooltip({
+        trigger: "click",
+        placement: "top"
+    });
+
+    function setTooltip(_0x8014x2) {
+        $("#copyBtn").tooltip("hide").attr("data-original-title", _0x8014x2).tooltip("show")
+    }
+
+    function hideTooltip() {
+        setTimeout(function() {
+            $("#copyBtn").tooltip("hide")
+        }, 3000)
+    }
+    var clipboard = new ClipboardJS("#copyBtn");
+    clipboard.on("success", function(_0x8014x5) {
+        setTooltip("Copied");
+        hideTooltip()
+    });
+    clipboard.on("error", function(_0x8014x5) {
+        setTooltip("Failed");
+        hideTooltip()
+    });
+
+    function replace_text() {
+        var str = form.text.value;
+        var output = new Array('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'd', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'y', 'y', 'y', 'y', 'y', 'i', 'i', 'i', 'i', 'i', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'Y', 'Y', 'Y', 'Y', 'Y', 'I', 'I', 'I', 'I', 'I', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'y', 'y', 'y', 'y', 'y', 'i', 'i', 'i', 'i', 'i', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'Y', 'Y', 'Y', 'Y', 'Y', 'I', 'I', 'I', 'I', 'I');
+        var input = new Array('á', 'ả', 'à', 'ã', 'ạ', 'ă', 'ắ', 'ẳ', 'ằ', 'ẵ', 'ặ', 'â', 'ấ', 'ẩ', 'ầ', 'ẫ', 'ậ', 'đ', 'é', 'ẻ', 'è', 'ẽ', 'ẹ', 'ê', 'ế', 'ể', 'ề', 'ễ', 'ệ', 'ó', 'ỏ', 'ò', 'õ', 'ọ', 'ô', 'ố', 'ổ', 'ồ', 'ỗ', 'ộ', 'ơ', 'ớ', 'ở', 'ờ', 'ỡ', 'ợ', 'ú', 'ủ', 'ù', 'ũ', 'ụ', 'ư', 'ứ', 'ử', 'ừ', 'ữ', 'ự', 'ý', 'ỷ', 'ỳ', 'ỹ', 'ỵ', 'í', 'ỉ', 'ì', 'ĩ', 'ị', 'Á', 'Ả', 'À', 'Ã', 'Ạ', 'Ă', 'Ắ', 'Ẳ', 'Ằ', 'Ẵ', 'Ặ', 'Â', 'Ấ', 'Ẩ', 'Ầ', 'Ẫ', 'Ậ', 'Đ', 'É', 'Ẻ', 'È', 'Ẽ', 'Ẹ', 'Ê', 'Ế', 'Ể', 'Ề', 'Ễ', 'Ệ', 'Ó', 'Ỏ', 'Ò', 'Õ', 'Ọ', 'Ô', 'Ố', 'Ổ', 'Ồ', 'Ỗ', 'Ộ', 'Ơ', 'Ớ', 'Ở', 'Ờ', 'Ỡ', 'Ợ', 'Ú', 'Ủ', 'Ù', 'Ũ', 'Ụ', 'Ư', 'Ứ', 'Ử', 'Ừ', 'Ữ', 'Ự', 'Ý', 'Ỷ', 'Ỳ', 'Ỹ', 'Ỵ', 'Í', 'Ỉ', 'Ì', 'Ĩ', 'Ị', 'á', 'ả', 'à', 'ã', 'ạ', 'ắ', 'ẳ', 'ằ', 'ẵ', 'ặ', 'ấ', 'ẩ', 'ầ', 'ẫ', 'ậ', 'é', 'ẻ', 'è', 'ẽ', 'ẹ', 'ế', 'ể', 'ề', 'ễ', 'ệ', 'ó', 'ỏ', 'ò', 'õ', 'ọ', 'ố', 'ổ', 'ồ', 'ỗ', 'ộ', 'ớ', 'ở', 'ờ', 'ỡ', 'ợ', 'ú', 'ủ', 'ù', 'ũ', 'ụ', 'ứ', 'ử', 'ừ', 'ữ', 'ự', 'ý', 'ỷ', 'ỳ', 'ỹ', 'ỵ', 'í', 'ỉ', 'ì', 'ĩ', 'ị', 'Á', 'Ả', 'À', 'Ã', 'Ạ', 'Ắ', 'Ẳ', 'Ằ', 'Ẵ', 'Ặ', 'Ấ', 'Ẩ', 'Ầ', 'Ẫ', 'Ậ', 'É', 'Ẻ', 'È', 'Ẽ', 'Ẹ', 'Ế', 'Ể', 'Ề', 'Ễ', 'Ệ', 'Ó', 'Ỏ', 'Ò', 'Õ', 'Ọ', 'Ố', 'Ổ', 'Ồ', 'Ỗ', 'Ộ', 'Ớ', 'Ở', 'Ờ', 'Ỡ', 'Ợ', 'Ú', 'Ủ', 'Ù', 'Ũ', 'Ụ', 'Ứ', 'Ử', 'Ừ', 'Ữ', 'Ự', 'Ý', 'Ỷ', 'Ỳ', 'Ỹ', 'Ỵ', 'Í', 'Ỉ', 'Ì', 'Ĩ', 'Ị');
+        for (var i = 0; i <= str.length; i++) {
+            for (var t = 0; t <= output.length; t++) {
+                var str = str.replace(input[t], output[t]);
+            };
+        };
+        form.result.value = str;
+    }
+    </script>
+</body>
+
+</html>

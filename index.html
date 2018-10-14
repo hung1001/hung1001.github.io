@@ -2,30 +2,32 @@
 <html lang="en">
 
 <head>
+    <title>Online Web Tools</title>
     <meta content='public' https-equiv='Cache-Control' />
     <meta content='text/javascript' https-equiv='Content-Script-Type' />
     <meta content='text/css' https-equiv='Content-Style-Type' />
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta charset="UTF-8" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assests/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assests/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="/assests/images/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assests/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assests/images/favicon-16x16.png">
+    <link rel="manifest" href="/assests/site.webmanifest">
+    <link rel="mask-icon" href="/assests/images/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#777876">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileImage" content="https://hung1001.github.io/assests/images/mstile-144x144.png">
+    <link rel="shortcut icon" href="/assests/images/favicon.ico">
 
     <meta content='#333333' name='theme-color' />
     <meta content='#333333' name='msapplication-navbutton-color' />
     <meta content='#333333' name='apple-mobile-web-app-status-bar-style' />
     <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
     <meta content='IE=edge' http-equiv='X-UA-Compatible' />
-    <meta content='https://hung1001.github.io/image/1.jpg' property='og:image' />
-    <meta content='https://hung1001.github.io/image/1.jpg' name='twitter:image:src' />
+
+    <meta content='https://hung1001.github.io/assests/images/1.jpg' property='og:image' />
+    <meta content='https://hung1001.github.io/assests/images/1.jpg' name='twitter:image:src' />
     <meta content='summary_large_image' name='twitter:card' />
     <meta content='@hoanghung1001nd' name='twitter:site' />
     <meta content='@hoanghung1001nd' name='twitter:creator' />
@@ -35,9 +37,6 @@
     <meta content='Hưng Hoàng Văn' name='Author' />
     <meta content='general' name='rating' />
     <meta content='VN-HN' name='geo.region' />
-    <meta content='Hanoi' name='geo.placename' />
-    <meta content='21.027764;105.83416' name='geo.position' />
-    <meta content='21.027764, 105.83416' name='ICBM' />
     <meta content='VN' name='geo.country' />
     <meta content='1 days' name='revisit' />
     <meta content='1 days' name='revisit-after' />
@@ -46,17 +45,18 @@
     <meta content='all' name='audience' />
     <meta content='vi_VN' property='og:locale' />
     <meta content='en_US' property='og:locale:alternate' />
-    <title>Online Web Tools</title>
-    <script type="text/javascript" src="lastest/jquery.min.js"></script>
-    <script type="text/javascript" src="lastest/pace.min.js"></script>
-    <script type="text/javascript" src="lastest/SmoothScroll.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap-dist/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="lastest/pace-theme.css">
-    <script type="text/javascript" src="lib/bootstrap-dist/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="lib/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/css.css">
-    <script type="text/javascript" src="lib/js/js.js"></script>
-    <script async="async" src="lib/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="/dist/bs3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/pace/pace-theme.css">
+    <link rel="stylesheet" type="text/css" href="/dist/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assests/css/css.css">
+
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/pace/pace.min.js"></script>
+    <script src="/dist/SmoothScroll.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+    <script src="/assests/js/js.js"></script>
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1"></script>
     <script type="text/javascript">
     window.dataLayer = window.dataLayer || [];
 
@@ -80,31 +80,36 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="lib/jquery"><i class="fa fa-book"></i> Jquery Libraries</a></li>
-                    <li><a href="lib/bootstrap-dist"><i class="fa fa-pie-chart"></i> Bootstrap Libraries</a></li>
-                    <li><a href="lib/font-awesome"><i class="fa fa-feed"></i> FontAwesome Libraries</a></li>
+                    <li><a href="https://hhcdn.github.io/jquery/dist/jquery.min.js" target="blank"><i class="fa fa-book"></i> Jquery Libraries</a></li>
+                    <li><a href=""><i class="fa fa-pie-chart"></i> Bootstrap Libraries</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-feed"></i> FontAwesome Libraries<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://hhcdn.github.io/font-awesome/4/css/font-awesome.min.css" target="blank">v4</a></li>
+                            <li><a href="https://hhcdn.github.io/font-awesome/5/css/font-awesome.min.css" target="blank">v5</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Libraries<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lib/clipboard">Clipboard.js</a></li>
-                            <li><a href="lib/material-design-icons">Material Design Icons</a></li>
-                            <li><a href="lib/prism">Prism</a></li>
-                            <li><a href="lib/pace">Pace</a></li>
-                            <li><a href="lib/syntax-highlighter">Syntax Highlighter</a></li>
-                            <li><a href="lib/smoothscroll">Smooth Scroll</a></li>
+                            <li><a href="https://hhcdn.github.io/clipboardjs/dist/clipboard.min.js" target="blank">Clipboard.js</a></li>
+                            <li><a href="https://hhcdn.github.io/highlightjs/src/highlight.min.js" target="blank">Highlightjs</a></li>
+                            <li><a href="https://hhcdn.github.io/jquery-timeago/jquery.timeago.min.js" target="blank">jQuery Timeago</a></li>
+                            <li><a href="https://hhcdn.github.io/reading-time/src/readingTime.min.js" target="blank">Reading Time</a></li>
+                            <li><a href="https://hhcdn.github.io/smartphoto/js/jquery-smartphoto.min.js" target="blank">Smart Photo</a></li>
                         </ul>
                     </li>
                     <li><a href="deployment"><i class="fa fa-code"></i> Deployment</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WZT<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lib/techbench-dump.html">TechBench Dump</a></li>
-                            <li><a href="lib/msdn-info.html">MSDN Info</a></li>
-                            <li><a href="lib/sha1-checksum.html">SHA1 Checksum</a></li>
-                            <li><a href="lib/unified-update-platform.html">UUP Dump</a></li>
+                            <li><a href="page/techbench-dump.html">TechBench Dump</a></li>
+                            <li><a href="page/msdn-info.html">MSDN Info</a></li>
+                            <li><a href="page/sha1-checksum.html">SHA1 Checksum</a></li>
+                            <li><a href="page/unified-update-platform.html">UUP Dump</a></li>
                         </ul>
                     </li>
-                    <li><a href="https://www.facebook.com/hung.hoangvan.1001"><i class="fa fa-envelope-o"></i> Contact</a></li>
+                    <li><a href="https://www.fb.com/hung.hoangvan.1001"><i class="fa fa-envelope-o"></i> Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -124,7 +129,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="tool-wrapper"><a href="tools/html-minify.html" target="_blank"><i class="glyphicon glyphicon-minus-sign"></i><span class="tool-footer">HTML Minifier</span></a></div>
+                <div class="tool-wrapper"><a href="tools/html-minifier.html" target="_blank"><i class="glyphicon glyphicon-minus-sign"></i><span class="tool-footer">HTML Minifier</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="tool-wrapper"><a href="tools/js-minify.html" target="_blank"><i class="glyphicon glyphicon-tint"></i><span class="tool-footer">JS Minifier</span></a></div>
@@ -144,26 +149,26 @@
                 <div class="tool-wrapper"><a href="tools/json-minify.html" target="_blank"><i class="glyphicon glyphicon-download-alt"></i><span class="tool-footer">JSON Minifier</span></a></div>
             </div>
         </div>
-        <div class="row ">
+        <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/html-unescape.html" target="_blank "><i class="glyphicon glyphicon-list"></i><span class="tool-footer ">HTML Unescape</span></a></div>
+                <div class="tool-wrapper"><a href="tools/html-unescape.html" target="_blank"><i class="glyphicon glyphicon-list"></i><span class="tool-footer">HTML Unescape</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/json-validate.html" target="_blank "><i class="glyphicon glyphicon-ok"></i><span class="tool-footer ">JSON Validate</span></a></div>
+                <div class="tool-wrapper"><a href="tools/json-validate.html" target="_blank"><i class="glyphicon glyphicon-ok"></i><span class="tool-footer">JSON Validate</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/json-escape.html" target="_blank "><i class="glyphicon glyphicon-eject"></i><span class="tool-footer ">JSON Escape</span></a></div>
+                <div class="tool-wrapper"><a href="tools/json-escape.html" target="_blank"><i class="glyphicon glyphicon-eject"></i><span class="tool-footer">JSON Escape</span></a></div>
             </div>
         </div>
-        <div class="row ">
+        <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/json-unescape.html" target="_blank "><i class="glyphicon glyphicon-zoom-in"></i><span class="tool-footer ">JSON Unescape</span></a></div>
+                <div class="tool-wrapper"><a href="tools/json-unescape.html" target="_blank"><i class="glyphicon glyphicon-zoom-in"></i><span class="tool-footer">JSON Unescape</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/xml-beautify.html" target="_blank "><i class="glyphicon glyphicon-object-align-bottom"></i><span class="tool-footer ">XML Beautifier</span></a></div>
+                <div class="tool-wrapper"><a href="tools/xml-beautify.html" target="_blank"><i class="glyphicon glyphicon-object-align-bottom"></i><span class="tool-footer">XML Beautifier</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/xml-minify.html" target="_blank "><i class="glyphicon glyphicon-minus"></i><span class="tool-footer ">XML Minifier</span></a></div>
+                <div class="tool-wrapper"><a href="tools/xml-minify.html" target="_blank"><i class="glyphicon glyphicon-minus"></i><span class="tool-footer">XML Minifier</span></a></div>
             </div>
         </div>
         <div class="row">
@@ -202,36 +207,47 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="tool-wrapper">
-                    <a href="tools/encode-url.html" " target="_blank "><i class="glyphicon glyphicon-resize-horizontal "></i><span class="tool-footer ">Encode URL</span></a></div>
+                    <a href="tools/encode-url.html" " target="_blank"><i class="glyphicon glyphicon-resize-horizontal"></i><span class="tool-footer">Encode URL</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/random-password-generator.html " target="_blank "><i class="glyphicon glyphicon-lock "></i><span class="tool-footer ">Random Password Generator </span></a></div>
+                <div class="tool-wrapper"><a href="tools/random-password-generator.html" target="_blank"><i class="glyphicon glyphicon-lock "></i><span class="tool-footer">Random Password Generator </span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/fontawesome-4-7-cheatsheet.html " target="_blank "><i class="glyphicon glyphicon-flag "></i><span class="tool-footer ">FontAwesome</span></a></div>
+                <div class="tool-wrapper"><a href="tools/fontawesome-4-7-cheatsheet.html " target="_blank"><i class="glyphicon glyphicon-flag "></i><span class="tool-footer">FontAwesome</span></a></div>
             </div>
         </div>
-        <div class="row ">
+        <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/heart-maker.html " target="_blank "><i class="glyphicon glyphicon-heart "></i><span class="tool-footer ">Heart Maker</span></a></div>
+                <div class="tool-wrapper"><a href="tools/heart-maker.html" target="_blank"><i class="glyphicon glyphicon-heart "></i><span class="tool-footer">Heart Maker</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/upload-images.html " target="_blank "><i class="glyphicon glyphicon-picture "></i><span class="tool-footer ">Upload Image</span></a></div>
+                <div class="tool-wrapper"><a href="tools/upload-images.html" target="_blank"><i class="glyphicon glyphicon-picture "></i><span class="tool-footer">Upload Image</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/direct-link-generator.html " target="_blank "><i class="glyphicon glyphicon-cog "></i><span class="tool-footer ">Direct Link Generator</span></a></div>
+                <div class="tool-wrapper"><a href="tools/direct-link-generator.html" target="_blank"><i class="glyphicon glyphicon-cog "></i><span class="tool-footer">Direct Link Generator</span></a></div>
             </div>
         </div>
-        <div class="row ">
+        <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="/rawgit/" target="_blank "><i class="glyphicon glyphicon-send"></i><span class="tool-footer ">RawGit</span></a></div>
+                <div class="tool-wrapper"><a href="/tools/color-picker.html" target="_blank"><i class="glyphicon glyphicon-send"></i><span class="tool-footer">Color Picker</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/" target="_blank "><i class="glyphicon glyphicon-share-alt "></i><span class="tool-footer ">Coming...</span></a></div>
+                <div class="tool-wrapper"><a href="tools/javascript-obfuscator.html" target="_blank"><i class="glyphicon glyphicon-qrcode"></i><span class="tool-footer">JS Obfuscator</span></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                <div class="tool-wrapper "><a href="tools/" target="_blank "><i class="glyphicon glyphicon-share-alt "></i><span class="tool-footer ">Coming...</span></a></div>
+                <div class="tool-wrapper"><a href="tools/random-json.html" target="_blank"><i class="glyphicon glyphicon-move"></i><span class="tool-footer">Random JSON</span></a></div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 ">
+                <div class="tool-wrapper"><a href="tools/random-xml.html" target="_blank"><i class="glyphicon glyphicon-fire"></i><span class="tool-footer">Random XML</span></a></div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 ">
+                <div class="tool-wrapper"><a href="#" target="_blank"><i class="glyphicon glyphicon-resize-vertical"></i><span class="tool-footer">Coming ...</span></a></div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 ">
+                <div class="tool-wrapper"><a href="#" target="_blank"><i class="glyphicon glyphicon-resize-vertical"></i><span class="tool-footer">Coming ...</span></a></div>
+            </div>        
         </div>
     </div>
     <footer class="footer-bottom ">
@@ -251,8 +267,8 @@
         </div>
         <hr />
     </footer>
-    <a class='waves-effect waves-light ripple' href='#' id='BackToTop'><i class='fa fa-angle-up'></i></a>
-    <a class='waves-effect waves-light ripple' href='lib/analytics.html' id='analytics' title="Google Analytics "><i class='fa fa-bar-chart-o'></i></a>
+    <a class='waves-effect waves-light ripple' id='BackToTop'><i class='fa fa-angle-up'></i></a>
+    <a class='waves-effect waves-light ripple' href='page/analytics.html' id='analytics' title="Google Analytics "><i class='fa fa-bar-chart-o'></i></a>
 </body>
 
 </html>

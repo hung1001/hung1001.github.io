@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Beautifier</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/codemirror/lib/codemirror.css" rel="stylesheet" type="text/css">
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style>
+    .CodeMirror{border:1px solid #cccccc;height:500px!important}.CodeMirror-scroll{height:100%;overflow-y:auto;overflow-x:auto}
+    </style>
+</head>
+
+<body>
+    <div class="container"><form><div class="row"><div class="col-sm-4 col-md-8 col-lg-8"><hr><div class="form-group"><textarea class="form-control" name="code" id="code" rows="25" placeholder="Enter the Javascript you want to Beautify..."></textarea></div><a id="cap" href="javascript:beautify();" class="btn btn-primary btn-large listen"><i class="icon-indent-left icon-white"></i>Format Code</a></div><div class="col-sm-8 col-md-4 col-lg-4"><br/><br/><select name="tabsize" id="tabsize" class="form-control"><option value="1">Indent with a tab character</option><option value="2">Indent with 2 spaces</option><option value="3">Indent with 3 spaces</option><option value="4">Indent with 4 spaces</option><option value="8">Indent with 8 spaces</option></select><br/><select name="max-preserve-newlines" id="max-preserve-newlines" class="form-control"><option value="-1">Remove all extra newlines</option><option value="1">Allow 1 newline between tokens</option><option value="2">Allow 2 newlines between tokens</option><option value="5">Allow 5 newlines between tokens</option><option value="10">Allow 10 newlines between tokens</option><option value="0">Allow unlimited newlines between tokens</option></select><br/><select name="wrap-line-length" id="wrap-line-length" class="form-control"><option value="0">Do not wrap lines</option><option value="40">Wrap lines near 40 characters</option><option value="70">Wrap lines near 70 characters</option><option value="80">Wrap lines near 80 characters</option><option value="110">Wrap lines near 110 characters</option><option value="120">Wrap lines near 120 characters</option><option value="160">Wrap lines near 160 characters</option></select><br/><select id="brace-style" class="form-control"><option value="collapse">Braces with control statement</option><option value="expand">Braces on own line</option><option value="end-expand">End braces on own line</option></select><br/><p style="margin:6px 0 0 0" class="pull-left"><b>HTML &lt;style>, &lt;script> formatting:</b></p><select id="indent-scripts" class="form-control"><option value="keep">Keep indent level of the tag</option><option value="normal">Add one indent level</option><option value="separate">Separate indentation</option></select> <label for="end-with-newline"><input type="checkbox" id="end-with-newline"> End script and style with newline?</label> <label for="detect-packers"><input type="checkbox" id="detect-packers"> Detect packers and obfuscators?</label> <label for="keep-array-indentation"><input type="checkbox" id="keep-array-indentation"> Keep array indentation?</label> <label for="break-chained-methods"><input type="checkbox" id="break-chained-methods"> Break lines on chained methods?</label> <label for="space-before-conditional"><input type="checkbox" id="space-before-conditional"> Space before conditional: "if(x)" / "if (x)"</label> <label for="unescape-strings"><input type="checkbox" id="unescape-strings"> Unescape printable chars encoded as \xNN or \uNNNN?</label> <label for="jslint-happy"><input type="checkbox" id="jslint-happy"> Use JSLint-happy formatting tweaks?</label></div></div></form></div>
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/codemirror/lib/codemirror.js"></script>
+    <script src="/dist/codemirror/addon/display/placeholder.js"></script>
+    <script src="/dist/codemirror/addon/display/fullscreen.js"></script>
+    <script src="/dist/codemirror/mode/javascript/javascript.js"></script>
+    <script src="/assests/js/jsb/lib/beautify.js"></script>
+    <script src="/assests/js/jsb/test/sanitytest.js"></script>
+    <script src="/assests/js/jsb/lib/unpackers/javascriptobfuscator_unpacker.js"></script>
+    <script src="/assests/js/jsb/lib/unpackers/urlencode_unpacker.js"></script>
+    <script src="/assests/js/jsb/lib/unpackers/p_a_c_k_e_r_unpacker.js"></script>
+    <script src="/assests/js/jsb/lib/unpackers/myobfuscate_unpacker.js"></script>
+    <script src="/assests/js/jsb/lib/formatting.js"></script>
+    <script src="/assests/js/jsb/main.js"></script>
+</body>
+
+</html>

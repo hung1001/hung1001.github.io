@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Javascript Obfuscator</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center"><b>Javascript Obfuscator</b></h2>
+        <div class="row">
+            <form id="form" method="post">
+                <div class="row">
+                    <label class="paste">INPUT</label>
+                    <textarea class="form-control" id="input" name="input" rows="10" cols="80" disabled></textarea>
+                </div>
+                <div class="row">
+                    <label for="base62">Base62 encode
+                        <input type="checkbox" id="base62" name="base62" value="1">
+                    </label>
+                    <label for="shrink">Shrink variables
+                        <input type="checkbox" id="shrink" name="shrink" value="1">
+                    </label>
+                </div><br />
+                <div class="row">
+                    <button class='btn btn-primary' type="button" id="pack-script" disabled>Pack</button>
+                    <button class='btn btn-danger' type="button" id="clear-all" disabled>Clear</button>
+                </div><br />
+                <div class="row">
+                    <label class="copy">OUTPUT</label>
+                    <textarea class="form-control" id="output" name="output" rows="10" cols="80" disabled></textarea>
+                    <p id="message" class="error">disabled</p>
+                </div>
+                <div class="row">
+                    <button class="btn btn-info" type="button" id="decode-script" disabled>Decode</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/assests/js/js-ob/my.js"></script>
+    <script src="/assests/js/js-ob/base2-load.js"></script>
+    <script src="/assests/js/js-ob/Packer.js"></script>
+    <script src="/assests/js/js-ob/Words.js"></script>
+    <script src="/assests/js/js-ob/bindings.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON Beautifier &amp; Formatter</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style>
+    #fromeditor,
+    #toeditor {
+        height: 275px;
+        border: 1px solid #DDD;
+        border-radius: 4px;
+        border-bottom-right-radius: 0px;
+        margin-top: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3><b>Format JSON code</b></h3>
+        <hr>
+        <div class="row">
+            <div id="fromeditor"></div>
+            <div class="row">
+                <div class="col-md-3">
+                    <button id="convert" class="btn btn-primary" style="margin:10px 0">Beautifier</button>
+                </div>
+            </div>
+            <div id="toeditor"></div>
+            <hr>
+        </div>
+    </div>
+    <script>
+    var _0x30ea=['json','setValue','edit','fromeditor','getSession','setMode','ace/mode/json','setShowPrintMargin','toeditor','ready','#convert','getValue'];(function(_0x458617,_0x495a83){var _0x5e0fae=function(_0xc1d44d){while(--_0xc1d44d){_0x458617['push'](_0x458617['shift']());}};_0x5e0fae(++_0x495a83);}(_0x30ea,0x135));var _0x6c92=function(_0x2a7510,_0x239c58){_0x2a7510=_0x2a7510-0x0;var _0x3af5be=_0x30ea[_0x2a7510];return _0x3af5be;};$(document)[_0x6c92('0x0')](function(){$(document)['on']('click',_0x6c92('0x1'),function(){if(typeof vkbeautify['json']==='function'){var _0x289f10=_0x474e7f[_0x6c92('0x2')]();var _0x5e57c1=vkbeautify[_0x6c92('0x3')](_0x289f10,'');_0x588a94[_0x6c92('0x4')](_0x5e57c1);}});var _0x474e7f=ace[_0x6c92('0x5')](_0x6c92('0x6'));_0x474e7f[_0x6c92('0x7')]()[_0x6c92('0x8')](_0x6c92('0x9'));_0x474e7f[_0x6c92('0xa')](![]);var _0x588a94=ace['edit'](_0x6c92('0xb'));_0x588a94['getSession']()[_0x6c92('0x8')](_0x6c92('0x9'));_0x588a94[_0x6c92('0xa')](![]);});
+    </script>
+    <script src="/dist/ace/src-min/ace.js"></script>
+    <script src="/assests/js/vkbeautify.js"></script>
+</body>
+
+</html>

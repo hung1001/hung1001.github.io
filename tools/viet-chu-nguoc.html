@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chữ ngược</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type="text/css">
+    textarea {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form name="f">
+                <h3>INPUT</h3>
+                <textarea name="original" onkeyup="flip()" rows="12" id="original" class="form-control"></textarea>
+                <h3>OUTPUT</h3>
+                <textarea name="flipped" rows="12" id="flipped" class="form-control"></textarea>
+                <br />
+                <input type="button" value="COPY" id="copyBtn" class="btn btn-primary" data-clipboard-target="#flipped">
+                <input type="reset" value="RESET" id="resetBtn" class="btn btn-danger">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        new ClipboardJS('#copyBtn');
+        $('#original').focus();
+    });
+    $('#resetBtn').click(function() {
+        $('#original').val('').focus();
+    });
+    $('#copyBtn').tooltip({
+        trigger: 'click',
+        placement: 'top'
+    });
+
+    function setTooltip(message) {
+        $('#copyBtn').tooltip('hide')
+            .attr('data-original-title', message)
+            .tooltip('show');
+    }
+
+    function hideTooltip() {
+        setTimeout(function() {
+            $('#copyBtn').tooltip('hide');
+        }, 3000);
+    }
+
+    var clipboard = new ClipboardJS('#copyBtn');
+
+    clipboard.on('success', function(e) {
+        setTooltip('Copied');
+        hideTooltip();
+    });
+
+    clipboard.on('error', function(e) {
+        setTooltip('Failed');
+        hideTooltip();
+    });
+
+    function flip() {
+        var result = flipString(document.f.original.value.toLowerCase());
+        document.f.flipped.value = result;
+    }
+
+    function flipString(aString) {
+        var last = aString.length - 1;
+        var result = new Array(aString.length)
+        for (var i = last; i >= 0; --i) {
+            var c = aString.charAt(i)
+            var r = flipTable[c]
+            result[last - i] = r != undefined ? r : c
+        }
+        return result.join('')
+    }
+    var flipTable = {
+        a: '\u0250',
+        b: 'q',
+        c: '\u0254', //open o -- from pne
+        d: 'p',
+        e: '\u01DD',
+        f: '\u025F', //from pne
+        g: '\u0183',
+        h: '\u0265',
+        i: '\u0131', //from pne
+        j: '\u027E',
+        k: '\u029E',
+        //l : '\u0283',
+        m: '\u026F',
+        n: 'u',
+        r: '\u0279',
+        t: '\u0287',
+        v: '\u028C',
+        w: '\u028D',
+        y: '\u028E',
+        '.': '\u02D9',
+        '[': ']',
+        '(': ')',
+        '{': '}',
+        '?': '\u00BF', //from pne
+        '!': '\u00A1',
+        "\'": ',',
+        '<': '>',
+        '_': '\u203E',
+        ';': '\u061B',
+        '\u203F': '\u2040',
+        '\u2045': '\u2046',
+        '\u2234': '\u2235',
+        '\r': '\n'
+    }
+
+    for (i in flipTable) {
+        flipTable[flipTable[i]] = i
+    }
+    </script>
+</body>
+
+</html>

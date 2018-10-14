@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Converter</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type="text/css">
+    textarea{height:18em!important;width:100%}.form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control{background-color:#fff}
+    </style>
+</head>
+
+<body>
+    <div class="container"><div class="row"><div class="row"><label><h2><b>Input</b></h2></label> <textarea class="form-control" id="input" onchange="do_escape(this)" onkeyup="do_escape(this)"></textarea></div><div class="row"><label><h2><b>Output</b></h2></label> <textarea class="form-control" id="escaped" onclick="this.select()" readonly="readonly"></textarea></div><br><div class="row"><button class="btn btn-primary copy-text" data-clipboard-target="#escaped">COPY</button> <button class="btn btn-danger reset-text">RESET</button></div></div></div>
+    <script type="text/javascript">
+    function escape_entities(str){for(var rv="",i=0;i<str.length;i++){var ch=str.charAt(i);rv+=char2entity[ch]||ch}return rv}function do_escape(e){document.getElementById("escaped").value=escape_entities(e.value)}jQuery(document).ready(function($){$("#input").focus(),new ClipboardJS(".copy-text"),$(".reset-text").click(function(){$("#input,#escaped").val(""),$("#input").focus()})});var char2entity={"'":"&#39;",'"':"&quot;","<":"&lt;",">":"&gt;","&":"&amp;"};
+    </script>
+</body>
+
+</html>
