@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Binary converter</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type="text/css">
+    	body{
+    		padding: 3em 0 0
+    	}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <textarea class="form-control" name="string" id="from" rows="20" placeholder="Enter your text, decimal, binary, or hex and the convertion will appear to the right."></textarea>
+            </div>
+            <div class="col-md-6">
+                <textarea class="form-control" name="string2" id="to" rows="20" placeholder="Your results will appear here."></textarea>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <select id="type" class="btn btn-default" style="margin-left:15px;">
+                <option value="decimal">Decimal To Binary</option>
+                <option value="ascii">ASCII To Binary</option>
+                <option value="hex">Hex To Binary</option>
+                <option value="binary">Binary To ASCII</option>
+                <option value="binarydecimal">Binary To Decimal</option>
+            </select>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        var isbinary = /^[0-1\ ]+$/;
+        var isnumber = /^\d+$/;
+        var ishex = /^[0-9A-Fa-f]+$/;
+
+        $('#from').bind('change keyup input', function() {
+            if (isbinary.test($('#from').val())) {
+                $('#type').val('binarydecimal');
+                $('#to').val(Bin2Dec($('#from').val()));
+            } else if (isnumber.test($('#from').val())) {
+                $('#type').val('decimal');
+                $('#to').val((+$('#from').val()).toString(2)) + " ";
+            } else if (ishex.test($('#from').val())) {
+                $('#type').val('hex');
+                $('#to').val(Hex2Bin($('#from').val())) + " ";
+            } else {
+                $('#type').val('ascii');
+                convertText();
+            }
+        });
+
+        $('#type').change(function() {
+            if ($('#type').val() == 'decimal') {
+                $('#to').val((+$('#from').val()).toString(2)) + " ";
+            } else if ($('#type').val() == 'ascii') {
+                convertText();
+            } else if ($('#type').val() == 'hex') {
+                $('#to').val(Hex2Bin($('#from').val())) + " ";
+            } else if ($('#type').val() == 'binary') {
+                $('#to').val(Bin2ASCII($('#from').val()));
+            } else if ($('#type').val() == 'binarydecimal') {
+                $('#to').val(Bin2Dec($('#from').val()));
+            }
+
+        });
+
+        function convertText() {
+            var output = document.getElementById("to");
+            var input = document.getElementById("from").value;
+            output.value = "";
+            for (i = 0; i < input.length; i++) {
+                output.value += pad(input[i].charCodeAt(0).toString(2), 8) + " ";
+            }
+        }
+
+        function Hex2Bin(n) {
+            return pad(parseInt(n, 16).toString(2), 8);
+        }
+
+        function Bin2Dec(n) {
+            return n.replace(/\s*[01]+\s*/g, function(bin) {
+                return parseInt(bin, 2) + " ";
+            });
+        }
+
+        function Bin2ASCII(n) {
+            return n.replace(/\s*[01]{8}\s*/g, function(bin) {
+                return String.fromCharCode(parseInt(bin, 2))
+            });
+        }
+
+        function pad(s, z) { s = "" + s; return s.length < z ? pad("0" + s, z) : s }
+
+    });
+    </script>
+</body>
+
+</html>

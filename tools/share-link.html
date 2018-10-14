@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Share link generator</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>Share link generator</h2>
+            <form>
+                <input type="hidden" name="nad" id="noads" value="0">
+                <input type="url" name="url" id="url" placeholder="http://www.example.com" style="width:90%">
+                <br>
+                <br> <span>Text (Twitter, Pinterest, and LinkedIn only)</span>
+                <br>
+                <input type="text" name="text" id="text" placeholder="Some small description" style="width:90%">
+                <br>
+                <br>
+                <input type="button" value="Generate" onclick="javascript:sendSharelinks();" class="btn btn-primary">&nbsp;
+                <input type="Reset" value="Reset" onclick="eraseText()" class="btn btn-danger"> </form>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-2"><span>Facebook</span> </div>
+            <div class="col-lg-8">
+                <input type="text" name="facebook" id="facebook" style="width:90%" onClick="this.focus(); this.select();" readonly> </div>
+            <div class="col-lg-2">
+                <button class="btn btn-success" onclick="copy_to_clipboard('facebook')">Copy</button>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-2"><span>Twitter</span> </div>
+            <div class="col-lg-8">
+                <input type="text" name="twitter" id="twitter" style="width:90%" onClick="this.focus(); this.select();" readonly> </div>
+            <div class="col-lg-2">
+                <button class="btn btn-success" onclick="copy_to_clipboard('twitter')">Copy</button>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-2"><span>Google+</span> </div>
+            <div class="col-lg-8">
+                <input type="text" name="google" id="google" style="width:90%" onClick="this.focus(); this.select();" readonly> </div>
+            <div class="col-lg-2">
+                <button class="btn btn-success" onclick="copy_to_clipboard('google')">Copy</button>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-2"><span>LinkedIn</span> </div>
+            <div class="col-lg-8">
+                <input type="text" name="linkedin" id="linkedin" style="width:90%" onClick="this.focus(); this.select();" readonly> </div>
+            <div class="col-lg-2">
+                <button class="btn btn-success" onclick="copy_to_clipboard('linkedin')">Copy</button>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-2"><span>Pinterest</span> </div>
+            <div class="col-lg-8">
+                <input type="text" name="pinterest" id="pinterest" style="width:90%" onClick="this.focus(); this.select();" readonly> </div>
+            <div class="col-lg-2">
+                <button class="btn btn-success" onclick="copy_to_clipboard('pinterest')">Copy</button>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-2"><span>Tumblr</span> </div>
+            <div class="col-lg-8">
+                <input type="text" name="tumblr" id="tumblr" style="width:90%" onClick="this.focus(); this.select();" readonly> </div>
+            <div class="col-lg-2">
+                <button class="btn btn-success" onclick="copy_to_clipboard('tumblr')">Copy</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    function sendSharelinks() {
+        var url = encodeURIComponent(document.getElementById('url').value);
+        var text = encodeURIComponent(document.getElementById('text').value);
+        document.getElementById('facebook').value = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+        document.getElementById('twitter').value = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
+        document.getElementById('google').value = 'https://plus.google.com/share?url=' + url;
+        document.getElementById('linkedin').value = 'http://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + text;
+        document.getElementById('pinterest').value = 'http://pinterest.com/pin/create/button/?url=' + url + '&description=' + text;
+        document.getElementById('tumblr').value = 'http://www.tumblr.com/share?v=3&u=' + url + '&t=' + text;
+    }
+    </script>
+    <script>
+    function copy_to_clipboard(element) {
+        document.getElementById(element).select();
+        document.execCommand('copy');
+    }
+
+    function eraseText() {
+        document.getElementById("facebook").value = "";
+        document.getElementById("twitter").value = "";
+        document.getElementById("google").value = "";
+        document.getElementById("linkedin").value = "";
+        document.getElementById("pinterest").value = "";
+        document.getElementById("tumblr").value = "";
+    }
+    </script>
+</body>
+
+</html>

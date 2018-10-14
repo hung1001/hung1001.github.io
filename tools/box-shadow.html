@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Box Shadow Generator</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+    <link href="/dist/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <script src="/dist/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/dist/jscolor.js"></script>
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type="text/css">
+    pre {
+        background-color: transparent;
+    }
+
+    .input-group .form-control {
+        width: 96%;
+    }
+
+    #demo {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 40px;
+        width: 80%;
+        margin: 1em auto 1em auto;
+        height: 70px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 2px #bbb;
+        -webkit-box-shadow: 2px 2px 2px #bbb;
+        -moz-box-shadow: 2px 2px 2px #bbb;
+        background-color: #ffffff;
+    }
+
+    #demo:focus {
+        outline: none
+    }
+
+    #demo-container {
+        background-color: #fff;
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .examples {
+        position: relative;
+        margin: 15px 0;
+        padding: 19px 19px 14px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    .examples .topic {
+        padding: 3px 7px;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        background-color: #fffefe;
+        border: 1px solid #ddd;
+        color: #333;
+        border-radius: 4px 0 4px 0;
+        max-width: 130px;
+        text-align: center;
+        top: -19px;
+        left: -20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="examples">
+            <div class="topic">Shadow Preview</div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group"><span class="input-group-addon">Text Color</span>
+                        <input class="form-control jscolor {hash:true}" id="t-color" value="000000" type="text" onchange="shadowme()">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group"><span class="input-group-addon">Background</span>
+                        <input class="form-control jscolor {hash:true}" id="b-color" value="FFFFFF" type="text" onchange="shadowme()"> </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group"><span class="input-group-addon">Container</span>
+                        <input class="form-control jscolor {hash:true}" id="c-color" value="FFFFFF" type="text" onchange="shadowme()"> </div>
+                </div>
+            </div>
+            <div id="demo-container">
+                <div id="demo"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="examples">
+                    <div class="topic">Shadow Options</div>
+                    <p>
+                        <label for="h-length-value">Horizontal Length:</label> <strong><span class="text-info" id="h-length-value">&nbsp;</span></strong> </p>
+                    <div id="h-length-value-out"></div>
+                    <br />
+                    <p>
+                        <label for="v-length-value">Vertical Length:</label> <strong><span class="text-info" id="v-length-value">&nbsp;</span></strong> </p>
+                    <div id="v-length-value-out"></div>
+                    <br />
+                    <p>
+                        <label for="b-length-value">Blur Radius:</label> <strong><span class="text-info" id="b-length-value">&nbsp;</span></strong> </p>
+                    <div id="b-length-value-out"></div>
+                    <br />
+                    <p>
+                        <label for="s-color">Shadow Color : </label>
+                        <input class="form-control jscolor {pickerPosition:'top',hash:true}" id="s-color" value="215D80" type="text" onchange="shadowme()" onchange="getElementById('s-color-text').innerHTML = '#'+this.color" /> </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="examples">
+                    <div class="topic">CSS Code</div> <pre class="prettyprint lang-css" id="code"></pre>
+                </div>
+                <div class="examples">
+                    <div class="topic">Browser Support</div> <img class="browser" alt="Firefox" src="data:image/png;base64,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" /> Firefox 3.5+
+                    <div class="clear"></div> <img class="browser" alt="Safari" src="data:image/png;base64,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" /> Safari 3.0+
+                    <div class="clear"></div> <img class="browser" alt="Opera" src="data:image/png;base64,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" /> Opera 10.5+
+                    <div class="clear"></div> <img class="browser" alt="Chrome" src="data:image/png;base64,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" /> Chrome 4.0+
+                    <div class="clear"></div> <img class="browser" alt="Internet Explorer" src="data:image/png;base64,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" /> IE 9.0+ </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(function() { $("#h-length-value-out").slider({ orientation: "horizontal", range: "min", min: -50, max: 50, value: 5, slide: function(e, l) { $("#h-length-value").text(l.value + "px"), shadowme() } }), $("#h-length-value").text($("#h-length-value-out").slider("value") + "px") }), $(function() { $("#v-length-value-out").slider({ orientation: "horizontal", range: "min", min: -20, max: 20, value: 5, slide: function(e, l) { $("#v-length-value").text(l.value + "px"), shadowme() } }), $("#v-length-value").text($("#v-length-value-out").slider("value") + "px") }), $(function() { $("#b-length-value-out").slider({ orientation: "horizontal", range: "min", min: 0, max: 150, value: 30, slide: function(e, l) { $("#b-length-value").text(l.value + "px"), shadowme() } }), $("#b-length-value").text($("#b-length-value-out").slider("value") + "px") });
+
+    function shadowme() {
+        demoDiv = document.getElementById("demo"), demoContainerDiv = document.getElementById("demo-container"), codeDiv = document.getElementById("code"), textColor = document.getElementById("t-color").value, backgroundColor = document.getElementById("b-color").value, demoBackgroundColor = document.getElementById("c-color").value;
+        var e = "",
+            o = "",
+            t = "",
+            d = "",
+            n = "";
+        o = document.getElementById("h-length-value").innerHTML, t = document.getElementById("v-length-value").innerHTML, d = document.getElementById("b-length-value").innerHTML, n = document.getElementById("s-color").value, "" == e && (e = o + " " + t + " " + d + " " + n), demoDiv && (demoDiv.style.backgroundColor = backgroundColor, demoContainerDiv.style.backgroundColor = demoBackgroundColor, demoDiv.style.color = textColor, demoDiv.style.webkitBoxShadow = e, demoDiv.style.MozBoxShadow = e, demoDiv.style.boxShadow = e, codeDiv.innerText ? codeDiv.innerText = "box-shadow:" + e + ";" : codeDiv.textContent = "box-shadow:" + e + ";")
+    }
+    window.onload = shadowme;
+    </script>
+</body>
+
+</html>
