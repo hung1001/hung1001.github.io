@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Maker</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+</head>
+
+<body>
+    <div class="container"><h2 class="text-center"><b>HEART MAKER</b></h2><div class="row"><form><div class="row"><h3><b>INPUT</b></h3><input class="form-control" id="text" name="text"></div><div class="row"><h3><b>OUTPUT</b></h3><textarea class="form-control" rows="20" id="result" onclick="this.focus(),this.select()"></textarea></div><br><div class="row"><input onclick='return createHeart("text","result")' value="GENERATOR" type="button" class="btn btn-primary"> <input value="COPY" type="button" class="btn btn-success" id="copyBtn" data-clipboard-target="#result"> <input value="RESET" type="reset" class="btn btn-danger" id="resetBtn"></div></form></div></div>
+    <script type="text/javascript">
+    function setTooltip(message){$("#copyBtn").tooltip("hide").attr("data-original-title",message).tooltip("show")}function hideTooltip(){setTimeout(function(){$("#copyBtn").tooltip("hide")},3e3)}function createHeart(sourceId,resultId){return objSource=window.document.getElementById(sourceId),objResult=window.document.getElementById(resultId),0==objSource.value.length?(alert("Bạn chưa nhập đoạn text cần tạo hình trái tim vào ô trống"),!1):(string=objSource.value,heart="",heart+="_________"+partString(string,8)+"____________"+partString(string,9)+"\n",heart+="______"+partString(string,12)+"_______"+partString(string,15)+"\n",heart+="____"+partString(string,17)+"___"+partString(string,18)+"\n",heart+="___"+partString(string,41)+"\n",heart+="__"+partString(string,44)+"\n",heart+="_"+partString(string,46)+"\n",heart+="_"+partString(string,46)+"\n",heart+=partString(string,47)+"\n",heart+=partString(string,47)+"\n",heart+=partString(string,46)+"\n",heart+=partString(string,45)+"\n",heart+="_"+partString(string,43)+"\n",heart+="__"+partString(string,41)+"\n",heart+="____"+partString(string,38)+"\n",heart+="______"+partString(string,34)+"\n",heart+="_________"+partString(string,28)+"\n",heart+="____________"+partString(string,22)+"\n",heart+="______________"+partString(string,18)+"\n",heart+="_________________"+partString(string,13)+"\n",heart+="___________________"+partString(string,9)+"\n",heart+="_____________________"+partString(string,6)+"\n",heart+="______________________"+partString(string,4)+"\n",heart+="_______________________"+partString(string,2)+"\n",void(objResult.value=heart))}function partString(string,num){if(string.length>=num)return string.substring(0,num);for(repeat=Math.ceil(num/string.length),newString="",i=0;i<repeat;i++)newString+=string;return newString.substring(0,num)}$(document).ready(function(){new ClipboardJS("#copyBtn"),$("#text").focus()}),$("#resetBtn").click(function(){$("#text").focus()}),$("#copyBtn").tooltip({trigger:"click",placement:"top"});var clipboard=new ClipboardJS("#copyBtn");clipboard.on("success",function(e){setTooltip("Copied"),hideTooltip()}),clipboard.on("error",function(e){setTooltip("Failed"),hideTooltip()});
+    </script>
+</body>
+
+</html>

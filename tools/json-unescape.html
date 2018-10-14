@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON Unescape</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h3><b>JSON Unescape</b></h3>
+            <hr>
+            <div class="row">
+                <textarea id="json-unescape-text" class="form-control" rows="25"></textarea>
+            </div>
+            <div class="row">
+                <div id="action-error"></div>
+            </div>
+            <hr style="border: 0" />
+            <div class="row action">
+                <button class="btn btn-primary" id="json-unescape-submit">UNESCAPE</button>
+                <button class="btn btn-success" id="copy-to-clipboard" data-clipboard-target="#json-unescape-text">COPY</button>
+                <button class="btn btn-danger" id="reset-btn">RESET</button>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#json-unescape-text").focus();
+            new ClipboardJS("#copy-to-clipboard");
+        });
+        $("#reset-btn").click(function() {
+            $("#json-unescape-text").val("").focus();
+        });
+        </script>
+        <script src="/assests/js/json_unescape.js"></script>
+</body>
+
+</html>

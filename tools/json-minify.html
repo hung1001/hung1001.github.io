@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON Minify</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style>
+    #fromeditor,
+    #toeditor {
+        height: 275px;
+        border: 1px solid #DDD;
+        border-radius: 4px;
+        border-bottom-right-radius: 0px;
+        margin-top: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3><b>Compress your JSON</b></h3>
+        <hr>
+        <div class="row">
+            <div id="fromeditor"></div>
+            <div class="row">
+                <div class="col-md-3">
+                    <button id="convert" class="btn btn-primary" style="margin:10px 0">Compress</button>
+                </div>
+            </div>
+            <div id="toeditor"></div>
+            <hr>
+        </div>
+    </div>
+    <script>
+    var _0x37d3=['toeditor','ready','click','#convert','jsonmin','function','getValue','edit','getSession','setMode','ace/mode/json','setShowPrintMargin'];(function(_0x29cc54,_0xd0d65e){var _0x578140=function(_0x497cdf){while(--_0x497cdf){_0x29cc54['push'](_0x29cc54['shift']());}};_0x578140(++_0xd0d65e);}(_0x37d3,0x91));var _0x49c5=function(_0x3fa47b,_0x6df406){_0x3fa47b=_0x3fa47b-0x0;var _0x1ba28d=_0x37d3[_0x3fa47b];return _0x1ba28d;};$(document)[_0x49c5('0x0')](function(){$(document)['on'](_0x49c5('0x1'),_0x49c5('0x2'),function(){if(typeof vkbeautify[_0x49c5('0x3')]===_0x49c5('0x4')){var _0x457817=_0x43e1b4[_0x49c5('0x5')]();var _0x58ba32=vkbeautify[_0x49c5('0x3')](_0x457817,'');_0x1eac75['setValue'](_0x58ba32);}});var _0x43e1b4=ace[_0x49c5('0x6')]('fromeditor');_0x43e1b4[_0x49c5('0x7')]()[_0x49c5('0x8')](_0x49c5('0x9'));_0x43e1b4[_0x49c5('0xa')](![]);var _0x1eac75=ace[_0x49c5('0x6')](_0x49c5('0xb'));_0x1eac75['getSession']()['setMode'](_0x49c5('0x9'));_0x1eac75[_0x49c5('0xa')](![]);});
+    </script>
+    <script src="/dist/ace/src-min/ace.js"></script>
+    <script src="/assests/js/vkbeautify.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Minify HTML - Online HTML Minifier and Compressor</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type='text/css'>
+    * {
+        outline: none;
+        margin: 0;
+        padding: 0
+    }
+
+    body {
+        color: #44734E;
+        background: #7CAB86
+    }
+
+    #main {
+        clear: both;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0 10px;
+        width: 95%;
+    }
+
+    #main .wrap {
+        margin-bottom: 43px;
+        overflow: hidden
+    }
+
+    #content {
+        max-width: 1170px;
+        width: 100%
+    }
+
+    #content {
+        margin-bottom: 25px;
+        overflow: hidden
+    }
+
+    textarea {
+        background: #a1c7b3 none repeat scroll 0 0;
+        border: 1px solid #6c927e
+    }
+
+    h1 {
+        margin-top: 0.5em;
+        font-size: 1.25em
+    }
+
+    h1 span {
+        font-size: 0.6em
+    }
+
+    .groupbtn {
+        margin: 0 auto;
+        overflow: hidden;
+        width: 230px
+    }
+
+    button {
+        border: 1px solid #62966c;
+        color: #B4DAC6;
+        cursor: pointer;
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 2px 5px;
+        float: left;
+        background: #85aa8c;
+        background: -moz-linear-gradient(top, #85aa8c 0%, #257235 100%);
+        background: -webkit-linear-gradient(top, #85aa8c 0%, #257235 100%);
+        background: linear-gradient(to bottom, #85aa8c 0%, #257235 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#85aa8c', endColorstr='#257235', GradientType=0)
+    }
+
+    .minify-button {
+        background: #92c19c none repeat scroll 0 0;
+        border: 1px solid #6c927e;
+        border-top: 0 solid #6c927e;
+        padding: 15px 6px 10px;
+        width: 99.8%;
+        overflow: hidden;
+        margin-top: -6px
+    }
+
+    .headerop {
+        background: #92c19c none repeat scroll 0 0;
+        border-bottom: 1px solid #71a07b;
+        margin-bottom: 24px
+    }
+
+    .headwrap,
+    .footerwrap {
+        overflow: hidden;
+        max-width: 1170px;
+        width: 100%;
+        margin: 0 auto
+    }
+
+    .headwrap h2 {
+        color: #44734e;
+        font-size: 50px;
+        line-height: 52px;
+        margin: 0;
+        padding: 10px 5px;
+        text-align: center;
+        text-shadow: 1px 1px 0 #c9efdb
+    }
+
+    .footerwrap p {
+        margin: 3px
+    }
+
+    .footerwrap a {
+        color: #5D9267;
+        text-decoration: underline
+    }
+
+    .footerwrap a:hover {
+        text-decoration: none
+    }
+
+    .footerop {
+        background: #92c19c none repeat scroll 0 0;
+        border-top: 1px solid #71a07b;
+        font-size: 17px;
+        padding: 15px 5px;
+        text-align: center;
+        margin-top: 16px
+    }
+
+    #outer-wrapper {
+        overflow: hidden;
+        max-width: 1170px;
+        width: 100%;
+        margin: 0 auto
+    }
+
+    #wrapper {
+        float: left;
+        margin-right: 15px;
+        width: 70%
+    }
+
+    #wrapper h1 {
+        background: #92c19c none repeat scroll 0 0;
+        border: 1px solid #699873;
+        border-bottom: 0 solid #699873;
+        color: #44734e;
+        font-size: 30px;
+        margin: 0;
+        padding: 5px;
+        text-align: center;
+        text-shadow: 1px 1px 0 #c9efdb;
+        width: 100%
+    }
+
+    #input {
+        height: 28em;
+        padding: 5px;
+        width: 100%
+    }
+
+    #options {
+        float: left;
+        width: 28%
+    }
+
+    #options ul {
+        background: #92c19c none repeat scroll 0 0;
+        border: 1px solid #6c927e;
+        list-style: outside none none;
+        margin-top: 0;
+        overflow: hidden;
+        padding: 0.5em
+    }
+
+    #options ul li {
+        clear: both;
+        float: left;
+        padding-bottom: 2px
+    }
+
+    #options ul li div {
+        margin-left: 1.75em
+    }
+
+    #options label.sub-option {
+        margin-left: 22px;
+        margin-right: 5px
+    }
+
+    #options label {
+        margin-left: 0.25em
+    }
+
+    #options label+input {
+        margin-left: 0.5em
+    }
+
+    #stats {
+        margin: 10px 0;
+        width: 99.4%
+    }
+
+    #todo {
+        font-family: monospace;
+        margin-bottom: 2em
+    }
+
+    .success {
+        background: #a1c7b3 none repeat scroll 0 0;
+        border: 1px solid #739985;
+        color: #00621f;
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 8px;
+        width: 99.9%
+    }
+
+    .failure {
+        background: #a1c7b3 none repeat scroll 0 0;
+        border: 1px solid #739985;
+        color: #F41906;
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 8px
+    }
+
+    .quiet {
+        font-size: 0.85em;
+        color: #888
+    }
+
+    .short {
+        display: inline-block;
+        width: 20em;
+        margin-top: 0.25em;
+        margin-left: 0.25em
+    }
+
+    .controls span {
+        margin-right: 0.5em;
+        margin-left: 1em
+    }
+
+    .controls a {
+        color: #357b44;
+        margin-left: 0.1em
+    }
+
+    .controls a:focus,
+    .controls a:hover {
+        text-decoration: none
+    }
+
+    .unsafe {
+        color: #f33
+    }
+
+    iframe {
+        position: absolute;
+        top: 10px;
+        right: 10px
+    }
+
+    .footer p {
+        font-style: italic
+    }
+
+    .sitecontent {
+        border-top: 1px solid #65946f;
+        color: #1f4e29;
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 10px;
+        margin-top: 30px
+    }
+
+    .sitecontent h2 {
+        font-weight: 400;
+        margin-bottom: 5px;
+        margin-top: 20px
+    }
+
+    
+    </style>
+</head>
+
+<body>
+    <div id='container'>
+        <div class='headerop'>
+            <div class='headwrap'>
+                <h2 itemprop='name'>Minify HTML - Online HTML Minifier</h2>
+            </div>
+        </div>
+        <div id='main'>
+            <div id='outer-wrapper'>
+                <div id='wrapper'>
+                    <h1 itemprop='name'>Put HTML Code Here</h1>
+                    <textarea id='input' onblur='if(this.value==&#39;&#39;)this.value=this.defaultValue;' onfocus='if(this.value==this.defaultValue)this.value=&#39;&#39;;' placeholder='Put your html code here...' spellcheck='false'>
+<html>
+<body>
+<style>
+        #minify{border:1px solid #444;height:220px;width: 100%;}
+    </style>
+<div class='nav'>
+<ul>
+<li><a href='http://www.minifyhtml.net/'>Minify HTML</a></li>
+</ul>
+</div>
+<script>
+        console.log("Minify");alert("Code");
+    </script>
+</body>
+</html></textarea>
+                    <div class='minify-button'>
+                        <div class='groupbtn'>
+                            <button id='minify-btn' type='button'>Minify</button>
+                            <button id='copybtn' style='margin:0 5px;' type='button'>Copy</button>
+                            <button onclick='javascript:eraseText();' type='button'>Clear</button>
+                        </div>
+                    </div>
+                    <p id='stats'></p>
+                    <div style='clear:both;'></div>
+                </div>
+                <div id='options'>
+                    <ul>
+                        <li><input id='caseSensitive' type='checkbox' /><label for='caseSensitive'>Case-sensitive</label></li>
+                        <li><input id='collapseBooleanAttributes' type='checkbox' /><label for='collapseBooleanAttributes'>Collapse boolean attributes</label></li>
+                        <li><input checked='checked' id='collapseWhitespace' type='checkbox' /><label for='collapseWhitespace'>Collapse whitespace</label></li>
+                        <li><input id='conservativeCollapse' type='checkbox' /><label for='conservativeCollapse'>Conservative collapse</label></li>
+                        <li><input checked='checked' id='decodeEntities' type='checkbox' /><label for='decodeEntities'>Decode Entity Characters</label></li>
+                        <li><input checked='checked' id='html5' type='checkbox' /><label for='html5'>HTML5</label></li>
+                        <li><input checked='checked' id='keepClosingSlash' type='checkbox' /><label for='keepClosingSlash'>Keep closing slash</label></li>
+                        <li><input checked='checked' id='minifyCSS' type='checkbox' /><label for='minifyCSS'>Minify CSS</label></li>
+                        <li><input checked='checked' id='minifyJS' type='checkbox' /><label for='minifyJS'>Minify JavaScript</label></li>
+                        <li><input id='preserveLineBreaks' type='checkbox' /><label for='preserveLineBreaks'>Preserve line-breaks</label></li>
+                        <li><input checked='checked' id='processConditionalComments' type='checkbox' /><label for='processConditionalComments'>Process conditional comments</label></li>
+                        <li><input id='removeAttributeQuotes' type='checkbox' /><label for='removeAttributeQuotes'>Remove attribute quotes</label></li>
+                        <li><input checked='checked' id='removeComments' type='checkbox' /><label for='removeComments'>Remove comments</label></li>
+                        <li><input checked='checked' id='removeEmptyAttributes' type='checkbox' /><label for='removeEmptyAttributes'>Remove empty attributes</label></li>
+                        <li><input id='removeOptionalTags' type='checkbox' /><label for='removeOptionalTags'>Remove optional tags</label></li>
+                        <li><input checked='checked' id='removeRedundantAttributes' type='checkbox' /><label for='removeRedundantAttributes'>Remove redundant attributes</label></li>
+                        <li><input checked='checked' id='removeScriptTypeAttributes' type='checkbox' /><label for='removeScriptTypeAttributes'>Remove script type attributes</label></li>
+                        <li><input checked='checked' id='removeStyleLinkTypeAttributes' type='checkbox' /><label for='removeStyleLinkTypeAttributes'>Remove style link type attributes</label></li>
+                        <li><input id='removeTagWhitespace' type='checkbox' /><label for='removeTagWhitespace'>Remove tag whitespace</label></li>
+                        <li><input id='sortAttributes' type='checkbox' /><label for='sortAttributes'>Sort attributes</label></li>
+                        <li><input id='sortClassName' type='checkbox' /><label for='sortClassName'>Sort class name</label></li>
+                        <li><input checked='checked' id='trimCustomFragments' type='checkbox' /><label for='trimCustomFragments'>Trim white space around custom fragments</label></li>
+                        <li><input checked='checked' id='useShortDoctype' type='checkbox' /><label for='useShortDoctype'>Use short <code>doctype</code></label></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='/dist/html-minifier/dist/htmlminifier.min.js'></script>
+    <script type="text/javascript">
+    (function() {
+        var minify = (function() { var minify = require('html-minifier').minify; return function(value, options, callback, errorback) { options.log = function(message) { console.log(message) }; var minified; try { minified = minify(value, options) } catch (err) { return errorback(err) } callback(minified) } })();
+
+        function byId(id) { return document.getElementById(id) }
+
+        function escapeHTML(str) { return (str + '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') }
+
+        function forEachOption(fn) {
+            [].forEach.call(byId('options').getElementsByTagName('input'), fn)
+        }
+
+        function getOptions() {
+            var options = {};
+            forEachOption(function(element) {
+                var key = element.id;
+                var value;
+                if (element.type === 'checkbox') { value = element.checked } else { value = element.value.replace(/^\s+|\s+$/, ''); if (!value) { return } }
+                switch (key) {
+                    case 'maxLineLength':
+                        value = parseInt(value);
+                        break;
+                    case 'processScripts':
+                        value = value.split(/\s*,\s*/)
+                }
+                options[key] = value
+            });
+            return options
+        }
+
+        function comhtml(str) { return String(str).split('').reverse().join('').replace(/(...)(?!$)/g, '$1,').split('').reverse().join('') } byId('minify-btn').onclick = function() {
+            var startValue = byId('input').value;
+            minify(startValue, getOptions(), function(endValue) {
+                var diff = startValue.length - endValue.length;
+                var savings = startValue.length ? (100 * diff / startValue.length).toFixed(2) : 0;
+                byId('input').value = endValue;
+                byId('stats').innerHTML = '<span class="success">' + 'Success ! Original size: <strong>' + comhtml(startValue.length) + '</strong>' + '. Compressed size: <strong>' + comhtml(endValue.length) + '</strong>' + '. <span style="color:red">Savings: ' + comhtml(diff) + ' (' + savings + '%)</span>.' + '</span>'
+            }, function(err) { byId('stats').innerHTML = '<span class="failure">' + escapeHTML(err) + '</span>' })
+        }
+    })();
+    var copyTextareaBtn = document.querySelector('#copybtn');
+    copyTextareaBtn.addEventListener('click', function(event) {
+        var copyTextarea = document.querySelector('#input');
+        copyTextarea.select();
+        try {
+            var success = document.execCommand('copy');
+            var msg = success ? 'Success' : 'Unsuccess';
+            alert(msg + '! Copied successfully. Please paste anywhere.')
+        } catch (err) { alert('Oops, unable to copy !') }
+    })
+
+    function eraseText() { document.getElementById("input").value = ""; }
+    </script>
+</body>
+
+</html>

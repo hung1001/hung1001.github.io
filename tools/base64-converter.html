@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Base64 Converter</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+</head>
+
+<body>
+    <div class="container"><h3 class="text-center"><b>Base64 Converter</b></h3><div class="row"><form><div class="row"><textarea class="form-control" name="message" id="message" rows="30"></textarea></div><br/><div class="row"><input type="button" id="encode" value="ENCODE" class="btn btn-primary"> <input type="button" id="decode" value="DECODE" class="btn btn-info"> <input type="button" id="copyBtn" value="COPY" class="btn btn-success" data-clipboard-target="#message"> <input type="button" id="clear" value="CLEAR" class="btn btn-danger"></div></form></div></div>
+    <script type="text/javascript">
+    function setTooltip(message){$("#copyBtn").tooltip("hide").attr("data-original-title",message).tooltip("show")}function hideTooltip(){setTimeout(function(){$("#copyBtn").tooltip("hide")},3e3)}$(document).ready(function(){new ClipboardJS("#copyBtn"),$("#message").focus()}),$("#clear").click(function(){$("#message").val("").focus()}),$("#copyBtn").tooltip({trigger:"click",placement:"top"});var clipboard=new ClipboardJS("#copyBtn");clipboard.on("success",function(e){setTooltip("Copied"),hideTooltip()}),clipboard.on("error",function(e){setTooltip("Failed"),hideTooltip()}),$(function(){$("#encode").click(function(){var encodedMessage=$.base64.encode($("#message").val());$("#message").val(encodedMessage)}),$("#decode").click(function(){var decodedMessage=$.base64.decode($("#message").val());$("#message").val(decodedMessage)}),$("#clear").click(function(){$("#message").val("")})}),jQuery.base64=function($){function _getbyte64(s,i){var idx=_ALPHA.indexOf(s.charAt(i));if(-1===idx)throw"Cannot decode base64";return idx}function _decode(s){var i,b10,pads=0,imax=s.length,x=[];if(s=String(s),0===imax)return s;if(imax%4!==0)throw"Cannot decode base64";for(s.charAt(imax-1)===_PADCHAR&&(pads=1,s.charAt(imax-2)===_PADCHAR&&(pads=2),imax-=4),i=0;imax>i;i+=4)b10=_getbyte64(s,i)<<18|_getbyte64(s,i+1)<<12|_getbyte64(s,i+2)<<6|_getbyte64(s,i+3),x.push(String.fromCharCode(b10>>16,b10>>8&255,255&b10));switch(pads){case 1:b10=_getbyte64(s,i)<<18|_getbyte64(s,i+1)<<12|_getbyte64(s,i+2)<<6,x.push(String.fromCharCode(b10>>16,b10>>8&255));break;case 2:b10=_getbyte64(s,i)<<18|_getbyte64(s,i+1)<<12,x.push(String.fromCharCode(b10>>16))}return x.join("")}function _getbyte(s,i){var x=s.charCodeAt(i);if(x>255)throw"INVALID_CHARACTER_ERR: DOM Exception 5";return x}function _encode(s){if(1!==arguments.length)throw"SyntaxError: exactly one argument required";s=String(s);var i,b10,x=[],imax=s.length-s.length%3;if(0===s.length)return s;for(i=0;imax>i;i+=3)b10=_getbyte(s,i)<<16|_getbyte(s,i+1)<<8|_getbyte(s,i+2),x.push(_ALPHA.charAt(b10>>18)),x.push(_ALPHA.charAt(b10>>12&63)),x.push(_ALPHA.charAt(b10>>6&63)),x.push(_ALPHA.charAt(63&b10));switch(s.length-imax){case 1:b10=_getbyte(s,i)<<16,x.push(_ALPHA.charAt(b10>>18)+_ALPHA.charAt(b10>>12&63)+_PADCHAR+_PADCHAR);break;case 2:b10=_getbyte(s,i)<<16|_getbyte(s,i+1)<<8,x.push(_ALPHA.charAt(b10>>18)+_ALPHA.charAt(b10>>12&63)+_ALPHA.charAt(b10>>6&63)+_PADCHAR)}return x.join("")}var _PADCHAR="=",_ALPHA="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",_VERSION="1.0";return{decode:_decode,encode:_encode,VERSION:_VERSION}}(jQuery);
+    </script>
+</body>
+
+</html>

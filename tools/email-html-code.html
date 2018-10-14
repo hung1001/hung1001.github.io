@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Email HTML Code</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type="text/css">
+    td {
+        padding: 10px
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container"><h2 class="text-center"><b>Email HTML Link Code</b></h2><p> </p><div class="row"><form><div class="col-lg-6"><table><tr><td>Your Email address</td><td><input class="form-control" id="tfEmail" name="tfEmail" size="21" class="frmtxt"></td></tr><tr><td>The Link Text</td><td><input class="form-control" id="tfLink" name="tfLink" size="21" class="frmtxt"></td></tr><tr><td>The Subject Line</td><td><input class="form-control" id="tfSubject" name="tfSubject" size="21" class="frmtxt"></td></tr><tr><td>The Body of the Email</td><td><input class="form-control" id="tfBody" name="tfBody" size="21" class="frmtxt"></td></tr><tr><td><input type="button" id="email-code" name="email-code" value="Create Email Link Code" class="btn btn-primary"></td><td><input type="reset" value="RESET" class="btn btn-danger" id="resetBtn"></td></tr></table></div><div class="col-lg-6"><textarea class="form-control" id="newCode" name="newCode" rows="3" style="margin:5px 0 0;width:100%"></textarea><br/><br/><input type="button" name="copyClip" id="copyBtn" value="Copy to Clipboard" class="btn btn-success" data-clipboard-target="#newCode"><br/><br/><p id="workingExample"> </p></div></form></div></div>
+    <script type="text/javascript">
+    function setTooltip(_0xec5bx3){$("#copyBtn").tooltip("hide").attr("data-original-title",_0xec5bx3).tooltip("show")}function hideTooltip(){setTimeout(function(){$("#copyBtn").tooltip("hide")},3e3)}$(document).ready(function(){new ClipboardJS("#copyBtn"),$("#tfEmail").focus()}),$("#resetBtn").click(function(_0xec5bx1){$("#newCode").val(""),$("#tfEmail").focus(),$("#workingExample").html("")}),$("#copyBtn").tooltip({trigger:"click",placement:"top"});var clipboard=new ClipboardJS("#copyBtn");clipboard.on("success",function(_0xec5bx6){setTooltip("Copied"),hideTooltip()}),clipboard.on("error",function(_0xec5bx6){setTooltip("Failed"),hideTooltip()}),document.addEventListener("DOMContentLoaded",function(){var _0xec5bx7,_0xec5bx8,_0xec5bx9,_0xec5bxa,_0xec5bxb;document.getElementById("email-code").addEventListener("click",function(){_0xec5bx7=document.getElementById("tfEmail").value,""==_0xec5bx7&&(_0xec5bx7="YourName@YourSite.com",_0xec5bx8="YourName@YourSite.com"),_0xec5bx7=_0xec5bx7.replace(new RegExp('"',"g"),"&quot;"),_0xec5bx7=_0xec5bx7.replace(new RegExp("'","g"),"&#39;"),_0xec5bx7=_0xec5bx7.replace(new RegExp("&","g"),"&amp;"),_0xec5bx7=_0xec5bx7.replace(new RegExp("=","g"),"&61;"),_0xec5bx7=_0xec5bx7.replace(new RegExp("\\?","g"),"&63;"),_0xec5bx8=document.getElementById("tfLink").value,""==_0xec5bx8&&(_0xec5bx8="YourName@YourSite.com"),_0xec5bx8=_0xec5bx8.replace(new RegExp("'","g"),"&#39;"),_0xec5bx8=_0xec5bx8.replace(new RegExp("&","g"),"&amp;"),_0xec5bx8=_0xec5bx8.replace(new RegExp("=","g"),"&61;"),_0xec5bx8=_0xec5bx8.replace(new RegExp("\\?","g"),"&63;"),_0xec5bxa=document.getElementById("tfBody").value,""!=_0xec5bxa&&(_0xec5bxa=_0xec5bxa.replace(new RegExp('"',"g"),"&quot;"),_0xec5bxa=_0xec5bxa.replace(new RegExp("'","g"),"&#39;"),_0xec5bxa=_0xec5bxa.replace(new RegExp("&","g"),"&amp;"),_0xec5bxa=_0xec5bxa.replace(new RegExp("=","g"),"&61;"),_0xec5bxa=_0xec5bxa.replace(new RegExp("\\?","g"),"&63;"),_0xec5bxa="&body="+_0xec5bxa),_0xec5bx9=document.getElementById("tfSubject").value,""!=_0xec5bx9?(_0xec5bx9=_0xec5bx9.replace(new RegExp('"',"g"),"&quot;"),_0xec5bx9=_0xec5bx9.replace(new RegExp("'","g"),"&#39;"),_0xec5bx9=_0xec5bx9.replace(new RegExp("&","g"),"&amp;"),_0xec5bx9=_0xec5bx9.replace(new RegExp("=","g"),"&61;"),_0xec5bx9=_0xec5bx9.replace(new RegExp("\\?","g"),"&63;"),_0xec5bx9="?subject="+_0xec5bx9):(_0xec5bx9="",_0xec5bxa=""),_0xec5bxb='<a href="mailto:'+_0xec5bx7+_0xec5bx9+_0xec5bxa+'">'+_0xec5bx8+"</a>",document.getElementById("newCode").value=_0xec5bxb,_0xec5bxb="<b>WORKING LINK</b>: "+_0xec5bxb,document.getElementById("workingExample").innerHTML=_0xec5bxb})});var textBox=document.getElementById("newCode");textBox.onfocus=function(){textBox.select(),textBox.onmouseup=function(){return textBox.onmouseup=null,!1}};
+    </script>
+</body>
+
+</html>

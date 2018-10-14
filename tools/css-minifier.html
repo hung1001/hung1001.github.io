@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Minifier</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type="text/css">
+    #cssminifier{position:relative;clear:both;border-radius:5px;color:#333}#cssminifier textarea{width:98%;height:500px;margin:0 auto;display:block;background-color:#fff;padding:10px;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:14px;border:1px solid #cacaca;border-radius:2px;resize:none}textarea:focus{background-color:#FFF;color:#000000}#cssminifier .box{margin:10px auto 20px}#cssminifier .box p{margin:0 0 2px}#cssminifier button{cursor:pointer}#cssminifier .col{width:48%;margin:0 auto 30px}#cssminifier .left{float:left;margin-left:1%}#cssminifier .right{float:right;margin-right:1%}#cssminifier .button-group{text-align:center;margin:0;border-radius:0 0 5px 5px}#cssminifier .opt1,#cssminifier .opt2,#cssminifier .opt3,#cssminifier .opt4,#cssminifier .opt5{display:inline-block;margin:0 0 0 10px;vertical-align:middle;border:none;outline:none}#cssminifier br{display:none}.btn{margin:0 3px}
+    </style>
+</head>
+
+<body>
+    <div class="container"><div class="row"><h2 class="text-center">CSS MINIFIER</h2><div id="cssminifier"><textarea class="form-control" autofocus="" id="cssField" placeholder="Paste your CSS code here..." spellcheck="false"></textarea><div class="button-group"><div class="box"><input class="opt1" id="stripAllComment" type="checkbox" checked=""/><br/><label for="stripAllComment">Strip all comments</label><br/><input class="opt2" id="superCompact" type="checkbox"/><br/><label for="superCompact">Super compact</label><br/><input class="opt3" id="betterIndentation" type="checkbox"/><br/><label for="betterIndentation">Keep indentation</label><br/><input checked="" class="opt4" id="keepLastComma" type="checkbox"/><br/><label for="keepLastComma">Remove the last semicolon</label></div><button onclick='compressCSS("cssField")' class="btn btn-primary">COMPRESS</button><br/><button onclick='clearField("cssField")' class="btn btn-danger">CLEAR</button><br/><button onclick='selectAll("cssField")' class="btn btn-info">SELECT</button><br/><button onclick="copyText()" class="btn btn-success">COPY</button></div></div></div></div>
+    <script type="text/javascript">
+    function copyText(){document.getElementById("cssField").select(),document.execCommand("Copy")}function get(e){return document.getElementById(e)}function highlightCode(e){if(hc.checked){var c=e.innerHTML;c=(c=(c=(c=c.replace(/\{([\s\S]+?)\}/g,function(e){return e.replace(/\'(.*?)\'/g,"<span class='st'>'$1'</span>").replace(/\"(.*?)\"/g,"<span class='st'>\"$1\"</span>").replace(/(\{|\n|;)?(.[^\{]*?):(.[^\{]*?)(;|\})/g,"$1<span class='pr'>$2</span>:<span class='vl'>$3</span>$4").replace(/<span class='pr'>\{/g,"{<span class='pr'>")})).replace(/&lt;(.*?)('|")(.*?)('|")&gt;/g,function(e){return e.replace(/'(.*?)'/g,"<span class='vl'>'$1'</span>").replace(/"(.*?)"/g,"<span class='vl'>\"$1\"</span>")})).replace(/\{([\s\S]+?)\}/g,function(e){return e.replace(/([\(\)\{\}\[\]\:\;\,]+)/g,"<span class='pn'>$1</span>").replace(/\!important/gi,"<span class='im'>!important</span>")})).replace(/\/\*([\w\W]+?)\*\//gm,"<span class='cm'>/*$1*/</span>"),e.innerHTML="<code>"+c+"</code>",hr.style.display="block",rt.style.display="block"}else hr.style.display="none",rt.style.display="none"}function compressCSS(e){var c=get(e),n=/@(media|-w|-m|-o|keyframes|page)(.*?)\{([\s\S]+?)?\}\}/gi,a=c.value,t=a.length;a=(a=sa.checked||sc.checked?a.replace(/\/\*[\w\W]*?\*\//gm,""):a.replace(/(\n+)?(\/\*[\w\W]*?\*\/)(\n+)?/gm,"\n$2\n")).replace(/([\n\r\t\s ]+)?([\,\:\;\{\}]+?)([\n\r\t\s ]+)?/g,"$2"),a=sc.checked?a:a.replace(/\}(?!\})/g,"}\n"),a=bi.checked?a.replace(n,function(e){return e.replace(/\n+/g,"\n  ")}):a.replace(n,function(e){return e.replace(/\n+/g,"")}),a=bi.checked&&!sc.checked?a.replace(/\}\}/g,"}\n}"):a,a=bi.checked&&!sc.checked?a.replace(/@(media|-w|-m|-o|keyframes)(.*?)\{/g,"@$1$2{\n  "):a,a=(a=(a=(a=(a=cm.checked?a.replace(/;\}/g,"}"):a.replace(/\}/g,";}").replace(/;+\}/g,";}").replace(/\};\}/g,"}}")).replace(/\:0(px|em|pt)/gi,":0")).replace(/ 0(px|em|pt)/gi," 0")).replace(/\s+\!important/gi,"!important")).replace(/(^\n+|\n+$)/,""),c.value=a,hr.innerHTML="/* "+(t-a.length)+" of "+t+" unused characters has been removed. */\n"+a.replace(/</g,"&lt;").replace(/>/g,"&gt;"),highlightCode(hr)}function clearField(e){var c=get(e);c.value="",c.focus()}function selectAll(e){get(e).focus(),get(e).select()}var hc=get("highlightCode"),sa=get("stripAllComment"),sc=get("superCompact"),cm=get("keepLastComma"),bi=get("betterIndentation"),bs=get("breakSelector"),tt=get("toTab"),sb=get("spaceBetween"),ip=get("inlineSingleProp"),rs=get("removeLastSemicolon"),il=get("inlineLayout"),si=get("singleBreak"),hr=get("highlightedResult"),rt=document.getElementsByTagName("h2")[1];
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CHỮ HOA &gt; chữ thường</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <style type="text/css">
+    textarea {
+        height: 18em;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container"><div class="row"><form name="form"><div class="row"><h3><b>INPUT (UPPERCASE)</b></h3><textarea class="form-control" name="text" rows="13" id="text"></textarea></div><div class="row"><h3><b>output (lowercase)</b></h3><textarea class="form-control" name="result" rows="13" id="result"></textarea></div><br><div class="row"><input type="button" onclick="replace_text()" value="CONVERT" class="btn btn-primary"/> <input type="button" data-clipboard-target="#result" value="COPY" class="btn btn-success" id="copyBtn"/> <input type="reset" value="RESET" class="btn btn-danger" id="resetBtn"/></div></form></div></div>
+    <script type="text/javascript">
+    function setTooltip(e){$("#copyBtn").tooltip("hide").attr("data-original-title",e).tooltip("show")}function hideTooltip(){setTimeout(function(){$("#copyBtn").tooltip("hide")},3e3)}function replace_text(){for(var str=form.text.value,output=new Array("a","á","ả","à","ã","ạ","ă","ắ","ẳ","ằ","ẵ","ặ","â","ấ","ẩ","ầ","ẫ","ậ","b","c","d","đ","e","é","ẻ","è","ẽ","ẹ","ê","ế","ể","ề","ễ","ệ","f","g","h","j","k","l","m","n","o","ó","ỏ","ò","õ","ọ","ô","ố","ổ","ồ","ỗ","ộ","ơ","ớ","ở","ờ","ỡ","ợ","p","q","r","s","t","u","ú","ủ","ù","ũ","ụ","ư","ứ","ử","ừ","ữ","ự","v","w","x","y","ý","ỷ","ỳ","ỹ","ỵ","z","i","í","ỉ","ì","ĩ","ị","á","ả","à","ã","ạ","ắ","ẳ","ằ","ẵ","ặ","ấ","ẩ","ầ","ẫ","ậ","é","ẻ","è","ẽ","ẹ","ế","ể","ề","ễ","ệ","ó","ỏ","ò","õ","ọ","ố","ổ","ồ","ỗ","ộ","ớ","ở","ờ","ỡ","ợ","ú","ủ","ù","ũ","ụ","ứ","ử","ừ","ữ","ự","ý","ỷ","ỳ","ỹ","ỵ","í","ỉ","ì","ĩ","ị"),input=new Array("A","Á","Ả","À","Ã","Ạ","Ă","Ắ","Ẳ","Ằ","Ẵ","Ặ","Â","Ấ","Ẩ","Ầ","Ẫ","Ậ","B","C","D","Đ","E","É","Ẻ","È","Ẽ","Ẹ","Ê","Ế","Ể","Ề","Ễ","Ệ","F","G","H","J","K","L","M","N","O","Ó","Ỏ","Ò","Õ","Ọ","Ô","Ố","Ổ","Ồ","Ỗ","Ộ","Ơ","Ớ","Ở","Ờ","Ỡ","Ợ","P","Q","R","S","T","U","Ú","Ủ","Ù","Ũ","Ụ","Ư","Ứ","Ử","Ừ","Ữ","Ự","V","W","X","Y","Ý","Ỷ","Ỳ","Ỹ","Ỵ","Z","I","Í","Ỉ","Ì","Ĩ","Ị","Á","Ả","À","Ã","Ạ","Ắ","Ẳ","Ằ","Ẵ","Ặ","Ấ","Ẩ","Ầ","Ẫ","Ậ","É","Ẻ","È","Ẽ","Ẹ","Ế","Ể","Ề","Ễ","Ệ","Ó","Ỏ","Ò","Õ","Ọ","Ố","Ổ","Ồ","Ỗ","Ộ","Ớ","Ở","Ờ","Ỡ","Ợ","Ú","Ủ","Ù","Ũ","Ụ","Ứ","Ử","Ừ","Ữ","Ự","Ý","Ỷ","Ỳ","Ỹ","Ỵ","Í","Ỉ","Ì","Ĩ","Ị"),i=0;i<=str.length;i++)for(var t=0;t<=output.length;t++)var str=str.replace(input[t],output[t]);form.result.value=str}$(document).ready(function(){$("#text").focus(),new ClipboardJS("#copyBtn")}),$("#resetBtn").click(function(){$("#text").focus()}),$("#copyBtn").tooltip({trigger:"click",placement:"top"});var clipboard=new ClipboardJS("#copyBtn");clipboard.on("success",function(b){setTooltip("Copied"),hideTooltip()}),clipboard.on("error",function(b){setTooltip("Failed"),hideTooltip()});
+    </script>
+</body>
+
+</html>
