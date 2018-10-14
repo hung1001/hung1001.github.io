@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Color converter</title>
+    <link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+    <link href="/dist/bs3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/clipboard.min.js"></script>
+    <script src="/dist/bs3/js/bootstrap.min.js"></script>
+    <link href="/dist/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <script src="/dist/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/dist/jscolor.js"></script>
+    <script src="/dist/tinycolor/dist/tinycolor-min.js"></script>
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-bold">Color Converter</h2>
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-4">
+                <label for="colorvalue">Choose color</label>
+                <input autofocus="" class="colorvalue form-control jscolor {hash:true,closable:true,closeText:'Close',onFineChange:'update(this)'}" id="colorvalue" name="colorvalue" type="text" value="3369BA" />
+                <br />
+                <label for="colorvalue">Live preview</label>
+                <p id="rect" style="border:1px solid #cacaca; width:100%; height:100px;">
+                <br />
+            </div>
+            <div class="col-md-8 col-lg-8 col-sm-8">
+                <table class="output table table-hover table-condensed">
+                    <tbody>
+                        <tr>
+                            <th class="title">Type</th>
+                            <th class="title">Value</th>
+                            <th class="title">Action</th>
+                        </tr>
+                        <tr>
+                            <td>Hex</td>
+                            <td><span id="hex"></span> </td>
+                            <td>
+                                <button class="btn btn-success copy-text" data-clipboard-target="#hex">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RGB</td>
+                            <td><span id="rgb"></span> </td>
+                            <td>
+                                <button class="btn btn-success copy-text" data-clipboard-target="#rgb">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RGB %</td>
+                            <td><span id="rgbp"></span> </td>
+                            <td>
+                                <button class="btn btn-success copy-text" data-clipboard-target="#rgbp">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HSL</td>
+                            <td><span id="hsl"></span> </td>
+                            <td>
+                                <button class="btn btn-success copy-text" data-clipboard-target="#hsl">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HLV</td>
+                            <td><span id="hsv"></span> </td>
+                            <td>
+                                <button class="btn btn-success copy-text" data-clipboard-target="#hsv">COPY</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function colorChange(color) {
+        var tiny = tinycolor(color);
+        $("#hex").text(tiny.toHexString());
+        $("#rgb").text(tiny.toRgbString());
+        $("#rgbp").text(tiny.toPercentageRgbString());
+        $("#hsl").text(tiny.toHslString());
+        $("#hsv").text(tiny.toHsvString());
+        var allColors = [];
+        for (var i in tinycolor.names) {
+            allColors.push(i);
+        }
+    }
+    $(function() {
+        new ClipboardJS(".copy-text");
+        $("#convertcolor").on("click", function() {
+            colorChange($("#colorvalue").val()).trigger("change");
+        });
+        $("#colorvalue").on("keyup change", function() {
+            colorChange($(this).val());
+        });
+        colorChange({
+            r: 0,
+            g: 186,
+            b: 174
+        });
+        $("#combine-output").on("click", "span", function() {
+            $("#colorvalue").val($(this).attr("title")).trigger("change");
+        });
+        $(".lighter").on("click", function() {
+            $("#colorvalue").val($(this).attr("title")).trigger("change");
+        });
+        $(".darker").on("click", function() {
+            $("#colorvalue").val($(this).attr("title")).trigger("change");
+        });
+    });
+
+    function update(jscolor) {
+        document.getElementById('rect').style.backgroundColor = '#' + jscolor;
+    }
+    </script>
+</body>
+
+</html>
