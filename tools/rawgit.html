@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Github to JSDelivr</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
+    <script src="//hhcdn.github.io/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//hhcdn.github.io/bootstrap/4/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="//www.google.com/s2/favicons?domain=https://www.jsdelivr.com">
+    <style type="text/css">
+    .intro {
+        margin: 1.2em 0;
+    }
+
+    .main {
+        margin: 2em 0;
+    }
+
+    .jsDelivr,
+    .ex {
+        margin: 2em 0;
+    }
+
+    .jsDelivr>img {
+        margin: 0 0 10px;
+    }
+
+    .git .head {
+        display: flex;
+        align-items: center;
+        margin: 0 0 .5em;
+    }
+
+    .git .head span {
+        font-size: 1.3em;
+        font-weight: 500;
+        display: inline-block;
+        margin: 0 0 0 6px;
+    }
+
+    .ex ul li {
+        word-break: break-all;
+    }
+
+    .gitlink.invalid {
+        border-color: #ffaf86;
+        box-shadow: 0 0 0 0.2rem rgba(234, 121, 55, 0.25);
+    }
+    .footer {
+        padding: 1em 0;
+        border-top: 1px solid #eaeaea;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xl-12 col-sm-12 col-md-12">
+                <div class="head">
+                    <h1 class="text-center intro">Migrating from GitHub to jsDelivr</h1>
+                    <p class="text-center">
+                        <legend>jsDelivr is a free, fast, and reliable Open Source CDN for npm and GitHub.
+                            Most GitHub links can be easily converted to jsDelivr links.</legend>
+                    </p>
+                </div>
+                <div class="main">
+                    <div class="git">
+                        <div class="head">
+                            <img src="//i.imgur.com/jbCwXbB.png" width="25" height="25"> <span>Github</span>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12 col-xl-12 col-sm-12 col-md-12">
+                                <input type="text" class="form-control gitlink" id="gitlink" placeholder="Github file URL">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jsDelivr">
+                        <img src="//i.imgur.com/drtug7D.png">
+                        <div class="form-group row">
+                            <div class="col-lg-12 col-xl-12 col-sm-12 col-md-12">
+                                <input type="text" class="form-control" id="output" placeholder="Direct link" readonly="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="embed">
+                        <span>Embedded code</span>
+                        <div class="form-group row">
+                            <div class="col-lg-12 col-xl-12 col-sm-12 col-md-12">
+                                <input type="text" class="form-control" id="embed" placeholder="Embedded code" readonly="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btngroup">
+                    <button class="btn btn-success" id="copy">COPY DIRECT LINK</button>
+                    <button class="btn btn-info" id="copy-2">COPY EMBEDDED CODE</button>
+                    <button class="btn btn-primary" id="test">TEST</button>
+                    <button class="btn btn-danger" id="reset">RESET</button>
+                </div>
+                <div class="ex">
+                    <h5>Valid URL</h5>
+                    <ul>
+                        <li>Github file URL: <b>https://github.com/hhcdn/hhcdn.github.io/blob/master/jquery/dist/jquery.min.js</b></li>
+                        <li>Github file URL: <b>https://github.com/hhcdn/hhcdn.github.io/raw/master/jquery/dist/jquery.min.js</b></li>
+                        <li>Github file URL: <b>https://github.com/hhcdn/hhcdn.github.io/blame/master/jquery/dist/jquery.min.js</b></li>
+                        <li>Github raw file URL: <b>https://raw.githubusercontent.com/hhcdn/hhcdn.github.io/master/jquery/dist/jquery.min.js</b></li>
+                    </ul>
+                </div>
+                <div class="footer text-center">
+                    @ <span class="year"></span> by Hung1001
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    const giturl = /^https?:\/\/github\.com\/(.+?)\/(.+?)\/(?!releases\/)(?:(?:blob|raw|blame)\/)?(.+?)\/(.+)/i,
+          rawgit = /^https?:\/\/raw\.github(?:usercontent)?\.com\/(.+?)\/(.+?)\/(.+?)\/(.+)/i;
+    $(function() {
+        $(".gitlink").focus();
+        $(".year").html(new Date().getFullYear());
+    }), $(".gitlink").on("input", function() {
+        var t = $(".gitlink").val();
+        let e = t.match(giturl),
+            i = t.match(rawgit);
+
+        function n(e, i) {
+            $(".gitlink").removeClass("invalid");
+            let n = `https://api.github.com/repos/${i[1]}/${i[2]}/commits/${i[3]}`;
+            $.ajax({
+                url: n,
+                type: "GET",
+                dataType: "json",
+                success: function(i) {
+                    var n = i.sha,
+                        c = t.replace(e, `https://cdn.jsdelivr.net/gh/$1/$2@${n}/$4`);
+                    $("#output").val(c);
+                    var l = c.split("/").pop();
+                    l.indexOf(".js") > -1 && $("#embed").val('<script src="' + c + '" type="text/javascript"><\/script>'), l.indexOf(".css") > -1 && $("#embed").val('<link href="' + c + '" rel="stylesheet" type="text/css"/>'), (l.indexOf(".png") > -1 || l.indexOf(".jpg") > -1 || l.indexOf(".gif") > -1 || l.indexOf(".svg") > -1) && $("#embed").val('<img src="' + c + '">')
+                }
+            })
+        }
+        giturl.test(t) ? n(giturl, e) : rawgit.test(t) ? n(rawgit, i) : $(this).addClass("invalid")
+    }), $("#reset").click(function() {
+        $(".gitlink").focus(), $("#commit,#gitlink,#output,#embed").val("")
+    }), $("#copy").click(function() {
+        $("#output").val().length > 0 ? ($("#output").select(), document.execCommand("copy")) : alert("Nothing to copy !")
+    }), $("#copy-2").click(function() {
+        $("#embed").val().length > 0 ? ($("#embed").select(), document.execCommand("copy")) : alert("Nothing to copy !")
+    }), $("#test").click(function() {
+        $("#output").val().length > 0 ? window.open($("#output").val()) : (alert("Nothing to test !"), $("#gitlink").focus())
+    });
+    </script>
+</body>
+
+</html>
