@@ -9,16 +9,16 @@
     <link rel="shortcut icon" href="//www.google.com/s2/favicons?domain=https://www.jsdelivr.com">
     <style type="text/css">
     .intro {
-        margin: 1.2em 0;
+        margin: 1em 0;
     }
 
     .main {
-        margin: 2em 0;
+        margin: 1.5em 0;
     }
 
     .jsDelivr,
     .ex {
-        margin: 2em 0;
+        margin: 1.5em 0;
     }
 
     .jsDelivr>img {
@@ -46,19 +46,25 @@
         border-color: #ffaf86;
         box-shadow: 0 0 0 0.2rem rgba(234, 121, 55, 0.25);
     }
+
     .footer {
         padding: 1em 0;
         border-top: 1px solid #eaeaea;
     }
+
+    .embed-label {
+        display: inline-block;
+        margin: 10px 0;
+    }
     </style>
-    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1"></script>
+    <!--  <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1"></script>
     <script type="text/javascript">
     window.dataLayer = window.dataLayer || [];
 
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-113310556-1');
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -79,7 +85,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-12 col-xl-12 col-sm-12 col-md-12">
-                                <input type="text" class="form-control gitlink" id="gitlink" placeholder="Github file URL">
+                                <input type="text" class="form-control gitlink" id="g" placeholder="Github file URL">
                             </div>
                         </div>
                     </div>
@@ -87,24 +93,55 @@
                         <img src="//i.imgur.com/drtug7D.png">
                         <div class="form-group row">
                             <div class="col-lg-12 col-xl-12 col-sm-12 col-md-12">
-                                <input type="text" class="form-control" id="output" placeholder="Direct link" readonly="">
+                                <div class="row">
+                                    <div class="col-lg-10 col-xl-10 col-sm-10 col-md-10">
+                                        <input type="text" class="form-control" id="o" placeholder="Direct link with lastest commit" readonly="">
+                                    </div>
+                                    <div class="col-lg-2 col-xl-2 col-sm-2 col-md-2">
+                                        <button class="btn btn-success" id="c1">COPY</button>
+                                        <button class="btn btn-primary" id="t1">TEST</button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-10 col-xl-10 col-sm-10 col-md-10">
+                                        <input type="text" class="form-control" id="m" placeholder="Direct link without lastest commit" readonly="">
+                                    </div>
+                                    <div class="col-lg-2 col-xl-2 col-sm-2 col-md-2">
+                                        <button class="btn btn-success" id="c2">COPY</button>
+                                        <button class="btn btn-primary" id="t2">TEST</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="embed">
-                        <span>Embedded code</span>
+                        <span class="embed-label"><strong>Embedded code</strong></span>
                         <div class="form-group row">
                             <div class="col-lg-12 col-xl-12 col-sm-12 col-md-12">
-                                <input type="text" class="form-control" id="embed" placeholder="Embedded code" readonly="">
+                                <div class="row">
+                                    <div class="col-lg-10 col-xl-10 col-sm-10 col-md-10">
+                                        <input type="text" class="form-control" id="n" placeholder="Embedded code with lastest commit" readonly="">
+                                    </div>
+                                    <div class="col-lg-2 col-xl-2 col-sm-2 col-md-2">
+                                        <button class="btn btn-success" id="c3">COPY</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-lg-10 col-xl-10 col-sm-10 col-md-10">
+                                        <input type="text" class="form-control" id="p" placeholder="Embedded code without lastest commit" readonly="">
+                                    </div>
+                                    <div class="col-lg-2 col-xl-2 col-sm-2 col-md-2">
+                                        <button class="btn btn-success" id="c4">COPY</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="btngroup">
-                    <button class="btn btn-success" id="copy">COPY DIRECT LINK</button>
-                    <button class="btn btn-info" id="copy-2">COPY EMBEDDED CODE</button>
-                    <button class="btn btn-primary" id="test">TEST</button>
-                    <button class="btn btn-danger" id="reset">RESET</button>
+                    <button class="btn btn-danger" id="r">RESET</button>
                 </div>
                 <div class="ex">
                     <h5>Valid URL</h5>
@@ -123,41 +160,73 @@
     </div>
     <script type="text/javascript">
     const giturl = /^https?:\/\/github\.com\/(.+?)\/(.+?)\/(?!releases\/)(?:(?:blob|raw|blame)\/)?(.+?)\/(.+)/i,
-          rawgit = /^https?:\/\/raw\.github(?:usercontent)?\.com\/(.+?)\/(.+?)\/(.+?)\/(.+)/i;
-    $(function() {
-        $(".gitlink").focus();
-        $(".year").html(new Date().getFullYear());
-    }), $(".gitlink").on("input", function() {
-        var t = $(".gitlink").val();
-        let e = t.match(giturl),
-            i = t.match(rawgit);
+        rawgit = /^https?:\/\/raw\.github(?:usercontent)?\.com\/(.+?)\/(.+?)\/(.+?)\/(.+)/i;
+    (function(doc) {
+        doc.getElementsByClassName("gitlink")[0].focus();
+        doc.getElementsByClassName("year")[0].innerHTML = new Date().getFullYear();
 
-        function n(e, i) {
-            $(".gitlink").removeClass("invalid");
-            let n = `https://api.github.com/repos/${i[1]}/${i[2]}/commits/${i[3]}`;
-            $.ajax({
-                url: n,
-                type: "GET",
-                dataType: "json",
-                success: function(i) {
-                    var n = i.sha,
-                        c = t.replace(e, `https://cdn.jsdelivr.net/gh/$1/$2@${n}/$4`);
-                    $("#output").val(c);
-                    var l = c.split("/").pop();
-                    l.indexOf(".js") > -1 && $("#embed").val('<script src="' + c + '" type="text/javascript"><\/script>'), l.indexOf(".css") > -1 && $("#embed").val('<link href="' + c + '" rel="stylesheet" type="text/css"/>'), (l.indexOf(".png") > -1 || l.indexOf(".jpg") > -1 || l.indexOf(".gif") > -1 || l.indexOf(".svg") > -1) && $("#embed").val('<img src="' + c + '">')
-                }
-            })
+        function a() {
+            var t = $(".gitlink").val();
+            let e = t.match(giturl),
+                i = t.match(rawgit);
+
+            function n(e, i) {
+                $(".gitlink").removeClass("invalid");
+                let n = `https://api.github.com/repos/${i[1]}/${i[2]}/commits/${i[3]}`;
+                $.ajax({
+                    url: n,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(i) {
+                        var n = i.sha,
+                            c = t.replace(e, `https://cdn.jsdelivr.net/gh/$1/$2@${n}/$4`),
+                            d = t.replace(e, `https://cdn.jsdelivr.net/gh/$1/$2/$4`);
+                        $("#o").val(c);
+                        $("#m").val(d);
+                        var l = t.split("/").pop();
+                        l.indexOf(".js") > -1 && ($("#n").val('<script src="' + c + '" type="text/javascript"><\/script>'), $("#p").val('<script src="' + d + '" type="text/javascript"><\/script>'));
+                        l.indexOf(".css") > -1 && ($("#n").val('<link href="' + c + '" rel="stylesheet" type="text/css"/>'), $("#p").val('<link href="' + d + '" rel="stylesheet" type="text/css"/>'));
+                        (l.indexOf(".png") > -1 || l.indexOf(".jpg") > -1 || l.indexOf(".gif") > -1 || l.indexOf(".svg") > -1) && ($("#n").val('<img src="' + c + '">'), $("#p").val('<img src="' + d + '">'));
+                    }
+                })
+            }
+            giturl.test(t) ? n(giturl, e) : rawgit.test(t) ? n(rawgit, i) : $(".gitlink").addClass("invalid")
         }
-        giturl.test(t) ? n(giturl, e) : rawgit.test(t) ? n(rawgit, i) : $(this).addClass("invalid")
-    }), $("#reset").click(function() {
-        $(".gitlink").focus(), $("#commit,#gitlink,#output,#embed").val("")
-    }), $("#copy").click(function() {
-        $("#output").val().length > 0 ? ($("#output").select(), document.execCommand("copy")) : alert("Nothing to copy !")
-    }), $("#copy-2").click(function() {
-        $("#embed").val().length > 0 ? ($("#embed").select(), document.execCommand("copy")) : alert("Nothing to copy !")
-    }), $("#test").click(function() {
-        $("#output").val().length > 0 ? window.open($("#output").val()) : (alert("Nothing to test !"), $("#gitlink").focus())
-    });
+
+        function b(id) {
+            doc.getElementById(id).value.length > 0 ? (doc.getElementById(id).select(), doc.execCommand("copy")) : alert("Nothing to copy !")
+        }
+
+        function c(id) {
+            doc.getElementById(id).value.length > 0 ? window.open(doc.getElementById(id).value) : (alert("Nothing to test !"))
+        }
+        doc.getElementById("r").addEventListener("click", function() {
+            doc.getElementById("g").focus();
+            var a = doc.querySelectorAll("#g,#o,#m,#n,#p");
+            for (var i = 0; i < a.length; i++) {
+                a[i].value = "";
+            };
+        })
+        doc.getElementById("c1").addEventListener("click", function() {
+            b("o");
+        })
+        doc.getElementById("c2").addEventListener("click", function() {
+            b("m");
+        })
+        doc.getElementById("c3").addEventListener("click", function() {
+            b("n");
+        })
+        doc.getElementById("c4").addEventListener("click", function() {
+            b("p");
+        })
+        doc.getElementById("t1").addEventListener("click", function() {
+            c("o");
+        })
+        doc.getElementById("t2").addEventListener("click", function() {
+            c("m");
+        })
+        doc.getElementById("g").addEventListener("input", a)
+    })(document);
     </script>
 </body>
 
