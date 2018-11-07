@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Installation ID</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
+    <link rel='icon' type='image/x-icon' href="//www.google.com/s2/favicons?domain=https://www.microsoft.com">
+    <style type="text/css">
+    h4 {
+        margin: 1em 0;
+    }
+
+    .my-form {
+        min-height: 15em
+    }
+
+    .my-form[readonly] {
+        background: #fff
+    }
+
+    .status {
+        color: red
+    }
+
+    .al {
+        align-items: center;
+    }
+
+    .al img {
+        height: 30px;
+        max-width: 100%;
+    }
+
+    .footer {
+        padding: 1em 0;
+        border-top: 1px solid #eaeaea;
+    }
+    </style>
+</head>
+
+<body>
+<!-- Capture 
+011784244380288090583452758715672151894414017750859364 
+or 011784-244380-288090-583452-758715-672151-894414-017750-859364 
+or 011784244380288090583452758715672151894414017750859364123545343 
+or
+---------------------------
+Windows Script Host
+---------------------------
+Installation ID: 224941661921251875800800038659951665638232681102185462308888326
+
+
+---------------------------
+OK   
+----------------------------->
+    <div class="container">
+        <div class="row al">
+            <div class="col-lg-4">
+                <img src="//i.imgur.com/kVS5Ui2.png"/>
+    		</div>
+                <div class="col-lg-8">
+                    <h4 class="text-right">Beautifier Windows/Office/Server Installation ID</h4>
+                </div>
+            </div>
+            <h6>INPUT</h6>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <textarea class="form-control my-form" type="text" id="iid" placeholder="Installation ID"></textarea>
+                    <br>
+                    <p class="status"></p>
+                </div>
+            </div>
+            <h6>OUTPUT</h6>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                    <textarea class="form-control my-form" type="text" id="e1" placeholder="Export Installation ID" readonly=""></textarea><br>
+                    <button type="button" class="btn btn-success" id="b1">COPY</button>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                    <textarea class="form-control my-form" type="text" id="e2" placeholder="Export Installation ID" readonly=""></textarea><br>
+                    <button type="button" class="btn btn-success" id="b2">COPY</button>
+                </div>
+            </div>
+            <br />
+            <div class="footer text-center">
+                @ <span class="year"></span> by <a href="https://www.facebook.com/hung.hoangvan.1001">Hung1001</a>
+            </div>
+        </div>
+        <script type="text/javascript">
+        (function(doc) {
+            doc.getElementById("iid").focus();
+            doc.getElementsByClassName("year")[0].innerHTML = new Date().getFullYear();
+            doc.getElementById("iid").addEventListener("input", function() {
+                console.clear();
+                var a = this.value.trim();
+
+                if (a.length === 0) {
+                    var t = doc.querySelectorAll("#e1,#e2");
+                    for (var i = 0; i < t.length; i++) {
+                        t[i].value = "";
+                    };
+                    doc.getElementsByClassName("status")[0].innerHTML = "";
+                    return;
+                };
+
+                a = a.replace(/-| /gi, "");
+
+                let reg = /\d+/;
+
+                if (reg.test(a)) {
+                    var c = a.match(/\d+/)[0]
+
+                    function _54(character) {
+                        let b = c.substr(0, 6) + character + c.substr(6, 6) + character + c.substr(12, 6) + character + c.substr(18, 6) + character + c.substr(24, 6) + character + c.substr(30, 6) + character + c.substr(36, 6) + character + c.substr(42, 6) + character + c.substr(48, 6);
+                        return b;
+                    }
+
+                    function _63(character) {
+                        let b = c.substr(0, 7) + character + c.substr(7, 7) + character + c.substr(14, 7) + character + c.substr(21, 7) + character + c.substr(28, 7) + character + c.substr(35, 7) + character + c.substr(42, 7) + character + c.substr(49, 7) + character + c.substr(56, 7);
+                        return b;
+                    }
+
+                    if (c.length == 54 || c.length == 63) {
+                        doc.getElementsByClassName("status")[0].innerHTML = "";
+                        switch (c.length) {
+                            case 54:
+                                {
+                                    doc.getElementById("e1").value = _54("\n");
+                                    doc.getElementById("e2").value = _54("-");
+                                    break;
+                                }
+                            case 63:
+                                {
+                                    doc.getElementById("e1").value = _63("\n");
+                                    doc.getElementById("e2").value = _63("-");
+                                    break;
+                                }
+                            default:
+                                break;
+                        }
+                    } else {
+                        var t = doc.querySelectorAll("#e1,#e2");
+                        for (var i = 0; i < t.length; i++) {
+                            t[i].value = "";
+                        };
+                        doc.getElementsByClassName("status")[0].innerHTML = "Invalid Installation ID";
+                    }
+                } else {
+                    doc.getElementsByClassName("status")[0].innerHTML = "Invalid Installation ID";
+                    return;
+                }
+
+            })
+
+            function b(id) {
+                doc.getElementById(id).value.length > 0 ? (doc.getElementById(id).select(), doc.execCommand("copy")) : alert("Nothing to copy !")
+            }
+
+            doc.getElementById("b1").addEventListener("click", function() {
+                b("e1");
+            })
+            doc.getElementById("b2").addEventListener("click", function() {
+                b("e2");
+            })
+        })(document);
+        </script>
+</body>
+
+</html>
