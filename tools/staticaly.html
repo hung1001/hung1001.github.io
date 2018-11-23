@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Staticaly Production</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.staticaly.com/gh/twbs/bootstrap/v4-dev/dist/css/bootstrap.min.css">
+    <link rel='icon' type='image/x-icon' href="//www.google.com/s2/favicons?domain=https://www.staticaly.com/">
+    <style type="text/css">
+    body{color:#fff;padding:0;margin:0}
+	.github{background:-webkit-gradient(linear,right top, left bottom,from(#fd6147),to(#5139c1)) no-repeat;background:-webkit-linear-gradient(top right,#fd6147,#5139c1) no-repeat;background:-moz-linear-gradient(top right,#fd6147,#5139c1) no-repeat;background:-o-linear-gradient(top right,#fd6147,#5139c1) no-repeat;background:linear-gradient(to bottom left,#fd6147,#5139c1) no-repeat;min-height:100vh}
+	.imgx{background:-webkit-gradient(linear,right top, left bottom,from(#1a8ab7),to(#635b8e)) no-repeat;background:-webkit-linear-gradient(top right,#1a8ab7,#635b8e) no-repeat;background:-moz-linear-gradient(top right,#1a8ab7,#635b8e) no-repeat;background:-o-linear-gradient(top right,#1a8ab7,#635b8e) no-repeat;background:linear-gradient(to bottom left,#1a8ab7,#635b8e) no-repeat;min-height:100vh;position: relative}
+	img{max-width:100%}
+	textarea{overflow:hidden}
+	.container-fluid{margin:0;padding:0}
+    .btn{background: #eee}
+	.nowrap{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;margin:0}
+	.url.invalid{border-color:#ffaf86;-webkit-box-shadow:0 0 0 0.2rem rgba(234,121,55,0.25);-moz-box-shadow:0 0 0 0.2rem rgba(234,121,55,0.25);box-shadow:0 0 0 0.2rem rgba(234,121,55,0.25)}
+	.in{margin:0}
+	.in h2{padding:25px 0 30px;font-size:40px}
+	.out{margin:0}
+	.out h4{margin:20px 0}
+	.out h6{margin:20px 0}
+	.de{margin:20px 0 0}
+	.walk{margin:auto;display:block;max-height:360px}
+	.about{font-size:19px;position:absolute;bottom:10px;left:50%;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);-o-transform:translateX(-50%);transform:translateX(-50%)}
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="github">
+            <div class="row in">
+                <div class="col-xl-12">
+                    <h2 class="text-center">Free CDN for GitHub from Staticaly</h2>
+                </div>
+                <div class="col-xl-12">
+                    <textarea id="url" rows="1" class="form-control url" placeholder="Paste a GitHub URL here.."></textarea>
+                </div>
+            </div>
+            <div class="row out">
+                <div class="col-xl-6">
+                    <h4 class="text-center">Use this URL in production</h4>
+                    <h6>With lastest commit</h6>
+                    <div class="row nowrap">
+                        <textarea readonly="" id="pro" rows="1" class="form-control" placeholder="https://cdn.staticaly.com/gh/:user/:repo/:tag/:file"></textarea>
+                        <button type="button" id="cp1" class="btn"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwMjQiIHdpZHRoPSI4OTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTEyOCA3NjhoMjU2djY0SDEyOHYtNjR6IG0zMjAtMzg0SDEyOHY2NGgzMjB2LTY0eiBtMTI4IDE5MlY0NDhMMzg0IDY0MGwxOTIgMTkyVjcwNGgzMjBWNTc2SDU3NnogbS0yODgtNjRIMTI4djY0aDE2MHYtNjR6TTEyOCA3MDRoMTYwdi02NEgxMjh2NjR6IG01NzYgNjRoNjR2MTI4Yy0xIDE4LTcgMzMtMTkgNDVzLTI3IDE4LTQ1IDE5SDY0Yy0zNSAwLTY0LTI5LTY0LTY0VjE5MmMwLTM1IDI5LTY0IDY0LTY0aDE5MkMyNTYgNTcgMzEzIDAgMzg0IDBzMTI4IDU3IDEyOCAxMjhoMTkyYzM1IDAgNjQgMjkgNjQgNjR2MzIwaC02NFYzMjBINjR2NTc2aDY0MFY3Njh6TTEyOCAyNTZoNTEyYzAtMzUtMjktNjQtNjQtNjRoLTY0Yy0zNSAwLTY0LTI5LTY0LTY0cy0yOS02NC02NC02NC02NCAyOS02NCA2NC0yOSA2NC02NCA2NGgtNjRjLTM1IDAtNjQgMjktNjQgNjR6IiAvPgo8L3N2Zz4K" width="13"></button>
+                    </div>
+                    <h6>Without lastest commit</h6>
+                    <div class="row nowrap">
+                        <textarea readonly="" id="pro-master" rows="1" class="form-control" placeholder="https://cdn.staticaly.com/gh/:user/:repo/:tag/:file"></textarea>
+                        <button type="button" id="cp2" class="btn"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwMjQiIHdpZHRoPSI4OTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTEyOCA3NjhoMjU2djY0SDEyOHYtNjR6IG0zMjAtMzg0SDEyOHY2NGgzMjB2LTY0eiBtMTI4IDE5MlY0NDhMMzg0IDY0MGwxOTIgMTkyVjcwNGgzMjBWNTc2SDU3NnogbS0yODgtNjRIMTI4djY0aDE2MHYtNjR6TTEyOCA3MDRoMTYwdi02NEgxMjh2NjR6IG01NzYgNjRoNjR2MTI4Yy0xIDE4LTcgMzMtMTkgNDVzLTI3IDE4LTQ1IDE5SDY0Yy0zNSAwLTY0LTI5LTY0LTY0VjE5MmMwLTM1IDI5LTY0IDY0LTY0aDE5MkMyNTYgNTcgMzEzIDAgMzg0IDBzMTI4IDU3IDEyOCAxMjhoMTkyYzM1IDAgNjQgMjkgNjQgNjR2MzIwaC02NFYzMjBINjR2NTc2aDY0MFY3Njh6TTEyOCAyNTZoNTEyYzAtMzUtMjktNjQtNjQtNjRoLTY0Yy0zNSAwLTY0LTI5LTY0LTY0cy0yOS02NC02NC02NC02NCAyOS02NCA2NC0yOSA2NC02NCA2NGgtNjRjLTM1IDAtNjQgMjktNjQgNjR6IiAvPgo8L3N2Zz4K" width="13"></button>
+                    </div>
+                    <div class="de">
+                        <ul>
+                            <li>No traffic limits or throttling. Files are served via Super Fast Global CDN.</li>
+                            <li>Use a specific tag or commit hash in the URL (not a branch). Files are cached permanently based on the URL.</li>
+                            <li>Load project from GitHub, GitLab and Bitbucket more easily!</li>
+                            <li>Files are cached in the browser for 1 year.</li>
+                        </ul>
+                    </div>
+                    <div class="vaid">
+                        <h6>Valid URL</h6>
+                        <ul>
+                            <li>https://github.com/PrismJS/prism/blob/master/prism.js</li>
+                            <li>https://github.com/PrismJS/prism/raw/master/prism.js</li>
+                            <li>https://github.com/PrismJS/prism/blame/master/prism.js</li>
+                            <li>https://raw.githubusercontent.com/PrismJS/prism/master/prism.js</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <h4 class="text-center">Use this URL in developement</h4>
+                    <h6>With lastest commit</h6>
+                    <div class="row nowrap">
+                        <textarea readonly="" id="dev" rows="1" class="form-control" placeholder="https://cdn.staticaly.com/gh/:user/:repo/:tag/:file?env=dev"></textarea>
+                        <button type="button" id="cp3" class="btn"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwMjQiIHdpZHRoPSI4OTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTEyOCA3NjhoMjU2djY0SDEyOHYtNjR6IG0zMjAtMzg0SDEyOHY2NGgzMjB2LTY0eiBtMTI4IDE5MlY0NDhMMzg0IDY0MGwxOTIgMTkyVjcwNGgzMjBWNTc2SDU3NnogbS0yODgtNjRIMTI4djY0aDE2MHYtNjR6TTEyOCA3MDRoMTYwdi02NEgxMjh2NjR6IG01NzYgNjRoNjR2MTI4Yy0xIDE4LTcgMzMtMTkgNDVzLTI3IDE4LTQ1IDE5SDY0Yy0zNSAwLTY0LTI5LTY0LTY0VjE5MmMwLTM1IDI5LTY0IDY0LTY0aDE5MkMyNTYgNTcgMzEzIDAgMzg0IDBzMTI4IDU3IDEyOCAxMjhoMTkyYzM1IDAgNjQgMjkgNjQgNjR2MzIwaC02NFYzMjBINjR2NTc2aDY0MFY3Njh6TTEyOCAyNTZoNTEyYzAtMzUtMjktNjQtNjQtNjRoLTY0Yy0zNSAwLTY0LTI5LTY0LTY0cy0yOS02NC02NC02NC02NCAyOS02NCA2NC0yOSA2NC02NCA2NGgtNjRjLTM1IDAtNjQgMjktNjQgNjR6IiAvPgo8L3N2Zz4K" width="13"></button>
+                    </div>
+                    <h6>Without lastest commit</h6>
+                    <div class="row nowrap">
+                        <textarea readonly="" id="dev-master" rows="1" class="form-control" placeholder="https://cdn.staticaly.com/gh/:user/:repo/:tag/:file?env=dev"></textarea>
+                        <button type="button" id="cp4" class="btn"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwMjQiIHdpZHRoPSI4OTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTEyOCA3NjhoMjU2djY0SDEyOHYtNjR6IG0zMjAtMzg0SDEyOHY2NGgzMjB2LTY0eiBtMTI4IDE5MlY0NDhMMzg0IDY0MGwxOTIgMTkyVjcwNGgzMjBWNTc2SDU3NnogbS0yODgtNjRIMTI4djY0aDE2MHYtNjR6TTEyOCA3MDRoMTYwdi02NEgxMjh2NjR6IG01NzYgNjRoNjR2MTI4Yy0xIDE4LTcgMzMtMTkgNDVzLTI3IDE4LTQ1IDE5SDY0Yy0zNSAwLTY0LTI5LTY0LTY0VjE5MmMwLTM1IDI5LTY0IDY0LTY0aDE5MkMyNTYgNTcgMzEzIDAgMzg0IDBzMTI4IDU3IDEyOCAxMjhoMTkyYzM1IDAgNjQgMjkgNjQgNjR2MzIwaC02NFYzMjBINjR2NTc2aDY0MFY3Njh6TTEyOCAyNTZoNTEyYzAtMzUtMjktNjQtNjQtNjRoLTY0Yy0zNSAwLTY0LTI5LTY0LTY0cy0yOS02NC02NC02NC02NCAyOS02NCA2NC0yOSA2NC02NCA2NGgtNjRjLTM1IDAtNjQgMjktNjQgNjR6IiAvPgo8L3N2Zz4K" width="13"></button>
+                    </div>
+                    <img src="/assests/images/staticaly.svg" class="walk">
+                </div>
+            </div>
+        </div>
+        <div class="imgx">
+            <div class="row in">
+                <div class="col-xl-12">
+                    <h2 class="text-center">Free CDN for Images</h2>
+                </div>
+                <div class="col-xl-12">
+                    <textarea id="url-image" rows="1" class="form-control" placeholder="Paste a image URL here.."></textarea>
+                </div>
+            </div>
+            <div class="row out">
+                <div class="col-xl-6">
+                    <h4 class="text-center">Use this URL in production</h4>
+                    <div class="row nowrap">
+                        <textarea readonly="" id="img" rows="1" class="form-control" placeholder="https://cdn.staticaly.com/img/:image_url"></textarea>
+                        <button type="button" id="cp5" class="btn"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwMjQiIHdpZHRoPSI4OTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTEyOCA3NjhoMjU2djY0SDEyOHYtNjR6IG0zMjAtMzg0SDEyOHY2NGgzMjB2LTY0eiBtMTI4IDE5MlY0NDhMMzg0IDY0MGwxOTIgMTkyVjcwNGgzMjBWNTc2SDU3NnogbS0yODgtNjRIMTI4djY0aDE2MHYtNjR6TTEyOCA3MDRoMTYwdi02NEgxMjh2NjR6IG01NzYgNjRoNjR2MTI4Yy0xIDE4LTcgMzMtMTkgNDVzLTI3IDE4LTQ1IDE5SDY0Yy0zNSAwLTY0LTI5LTY0LTY0VjE5MmMwLTM1IDI5LTY0IDY0LTY0aDE5MkMyNTYgNTcgMzEzIDAgMzg0IDBzMTI4IDU3IDEyOCAxMjhoMTkyYzM1IDAgNjQgMjkgNjQgNjR2MzIwaC02NFYzMjBINjR2NTc2aDY0MFY3Njh6TTEyOCAyNTZoNTEyYzAtMzUtMjktNjQtNjQtNjRoLTY0Yy0zNSAwLTY0LTI5LTY0LTY0cy0yOS02NC02NC02NC02NCAyOS02NCA2NC0yOSA2NC02NCA2NGgtNjRjLTM1IDAtNjQgMjktNjQgNjR6IiAvPgo8L3N2Zz4K" width="13"></button>
+                    </div>
+                    <div class="de">
+                        <ul>
+                            <li>No traffic limits or throttling. Files are served via Super Fast Global CDN</li>
+                            <li>Imgpx will serve images with sizes up to 60 Megabytes</li>
+                            <li>Query strings will be ignored</li>
+                            <li>Supported Content-Type: PNG, JPG, GIF, BMP</li>
+                            <li>Files are cached in the browser for 1 year</li>
+                        </ul>
+                    </div>
+                    <div class="valid">
+                        <h6>Example</h6>
+                        <ul>
+                            <li>https://i.imgur.com/8tqc6F5.jpg</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                	<br />
+                    <img src="/assests/images/imgpx.svg" class="walk">
+                </div>
+            </div>
+            <div class="about text-center">
+            	@ <script type="text/javascript">document.write(new Date().getFullYear())</script> by Hung1001
+            </div>
+        </div>
+    </div>
+    <script async="async" src="/assests/js/analytics.js?id=UA-113310556-1"></script>
+    <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    </script>
+    <script type="text/javascript">
+    "use strict";
+    (function(doc) {
+        const rawurl = /^https?:\/\/raw\.github(?:usercontent)?\.com\/(.+?)\/(.+?)\/(.+?)\/(.+)/i;
+        const giturl = /^https?:\/\/github\.com\/(.+?)\/(.+?)\/(?!releases\/)(?:(?:blob|raw|blame)\/)?(.+?)\/(.+)/i;
+        doc.getElementById("url").focus();
+        doc.getElementById("url").addEventListener("input", event => {
+            let t = event.currentTarget.value.trim();
+            if (t.length == 0) {
+                doc.getElementById("pro").value = "";
+                doc.getElementById("pro-master").value = "";
+                doc.getElementById("dev").value = "";
+                doc.getElementById("dev-master").value = "";
+                return;
+            };
+            let e = t.match(giturl),
+                i = t.match(rawurl);
+
+            var n = (url, match) => {
+                doc.getElementsByClassName("url")[0].classList.remove('invalid');
+                doc.getElementById("pro-master").value = t.replace(url, `https://cdn.staticaly.com/gh/$1/$2/$3/$4`);
+                doc.getElementById("dev-master").value = t.replace(url, `https://cdn.staticaly.com/gh/$1/$2/$3/$4?env=dev`);
+                let m = `https://api.github.com/repos/${match[1]}/${match[2]}/commits/${match[3]}`;
+                fetch(m)
+                    .then(res => res.json())
+                    .then(data => {
+                        let ref;
+                        if (data) {
+                            if (data.sha) ref = data.sha.slice(0, 8);
+                            else ref = matches[3];
+                        }
+                        doc.getElementById("pro").value = t.replace(url, `https://cdn.staticaly.com/gh/$1/$2/${ref}/$4`);
+                        doc.getElementById("dev").value = t.replace(url, `https://cdn.staticaly.com/gh/$1/$2/${ref}/$4?env=dev`);
+                    });
+            }
+            giturl.test(t) ? n(giturl, e) : rawurl.test(t) ? n(rawurl, i) : doc.getElementsByClassName("url")[0].classList.add('invalid');
+        })
+        let c = doc.getElementsByTagName("textarea");
+        for (let i = 0; i < c.length; i++) {
+            c[i].addEventListener("click", r => {
+                r.currentTarget.select();
+            })
+        };
+        doc.getElementById("url-image").addEventListener("input", event => {
+            let t = event.currentTarget.value.trim();
+            if (t.length == 0) {
+                doc.getElementById("img").value = "";
+                return;
+            };
+            doc.getElementById("img").value = t.replace(/.*?:\/\//gi, "https://cdn.staticaly.com/img/");
+        })
+        var b = id =>{
+            doc.getElementById(id).value.length > 0 && (doc.getElementById(id).select(), doc.execCommand("copy")) 
+        }
+        doc.getElementById("cp1").addEventListener("click", function() {
+            b("pro");
+        })
+        doc.getElementById("cp2").addEventListener("click", function() {
+            b("pro-master");
+        })
+        doc.getElementById("cp3").addEventListener("click", function() {
+            b("dev");
+        })
+        doc.getElementById("cp4").addEventListener("click", function() {
+            b("dev-master");
+        })
+        doc.getElementById("cp5").addEventListener("click", function() {
+            b("img");
+        })
+    })(document);
+    </script>
+</body>
+
+</html>
