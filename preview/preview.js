@@ -5,7 +5,13 @@ var HTMLPreview = {
     previewform: document.getElementById('previewform'),
 
     file: function() {
-        return decodeURIComponent(location.search.substring(1)); //Get everything after the ?
+        var href = decodeURIComponent(location.search.substring(1));
+        if (href.indexOf("&") != -1) {
+            var url = href.split("&")[0]; // remove fbclid from facebook
+        } else {
+            var url = href;
+        }
+        return url;
     },
 
     raw: function() {
@@ -121,16 +127,16 @@ var HTMLPreview = {
     submitform: function() {
         window.open(
             location.href.split("?")[0] + "?" + decodeURIComponent(document.getElementById('file').value),
-            '_blank' 
+            '_blank'
         );
         return false;
     },
 
     init: function() {
         HTMLPreview.previewform.onsubmit = HTMLPreview.submitform;
-        if(HTMLPreview.file()) {
-        	HTMLPreview.previewform.innerHTML = '<p>Loading...</p>';
-        	HTMLPreview.send(HTMLPreview.raw(), 'loadHTML');
+        if (HTMLPreview.file()) {
+            HTMLPreview.previewform.innerHTML = '<p>Loading...</p>';
+            HTMLPreview.send(HTMLPreview.raw(), 'loadHTML');
         }
     }
 }
