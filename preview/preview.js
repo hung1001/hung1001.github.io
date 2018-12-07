@@ -71,7 +71,7 @@ var HTMLPreview = {
             data.query.results.resources &&
             data.query.results.resources.content &&
             data.query.results.resources.status == 200) {
-            HTMLPreview.content = data.query.results.resources.content.replace(/<head>/i, '<head><base href="' + HTMLPreview.raw() + '">').replace(/<script( type=["'](text|application)\/javascript["'])?/gi, '<script type="text/htmlpreview"').replace(/<\/body>/i, '<script src="//' + location.hostname + '/htmlpreview.min.js"></script><script>HTMLPreview.replaceAssets();</script></body>').replace(/<\/head>\s*<frameset/gi, '<script src="//' + location.hostname + '/htmlpreview.min.js"></script><script>document.addEventListener("DOMContentLoaded",HTMLPreview.replaceAssets,false);</script></head><frameset'); //Add <base> just after <head> and inject <script> just before </body> or </head> if <frameset>
+            HTMLPreview.content = data.query.results.resources.content.replace(/<head>/i, '<head><base href="' + HTMLPreview.raw() + '">').replace(/<script( type=["'](text|application)\/javascript["'])?/gi, '<script type="text/htmlpreview"').replace(/<\/body>/i, '<script src="//' + location.hostname + '/preview/preview.min.js"></script><script>HTMLPreview.replaceAssets();</script></body>').replace(/<\/head>\s*<frameset/gi, '<script src="//' + location.hostname + '/preview/preview.min.js"></script><script>document.addEventListener("DOMContentLoaded",HTMLPreview.replaceAssets,false);</script></head><frameset'); //Add <base> just after <head> and inject <script> just before </body> or </head> if <frameset>
             setTimeout(function() {
                 document.open();
                 document.write(HTMLPreview.content);
