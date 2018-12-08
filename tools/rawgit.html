@@ -194,7 +194,7 @@
                         let n = i.sha,
                             c = t.replace(e, `https://cdn.jsdelivr.net/gh/$1/$2@${n}/$4`),
                             d = t.replace(e, `https://cdn.jsdelivr.net/gh/$1/$2/$4`),
-                            k = t.replace(e, `https://cdn.jsdelivr.net/gh/$1/$2@${n.substring(0,8)}/$4`),
+                            k = t.replace(e, `https://cdn.jsdelivr.net/gh/$1/$2@${n.substring(0,7)}/$4`),
                             q = t.split("/").pop();
                         doc.getElementById("o").value = c;
                         doc.getElementById("m").value = d;

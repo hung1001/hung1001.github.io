@@ -163,7 +163,7 @@
                     .then(data => {
                         let ref;
                         if (data) {
-                            if (data.sha) ref = data.sha.slice(0, 8);
+                            if (data.sha) ref = data.sha.slice(0, 7);
                             else ref = matches[3];
                         }
                         doc.getElementById("pro").value = t.replace(url, `https://cdn.staticaly.com/gh/$1/$2/${ref}/$4`);
