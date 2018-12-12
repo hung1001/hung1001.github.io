@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CDN Free for Font Awesome 5</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    body {
+        height: 100vh;
+        font-size: 16px;
+        background: #f3f3f3;
+    }
+
+    .ver {
+        color: #ff0000;
+    }
+
+    .demo span {
+        display: block
+    }
+
+    .copyright {
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        padding: 10px 0 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h3 class="text-center"><strong><i class="far fa-sm fa-clock"></i> Lastest updated version: <span class="ver"></span></strong></h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h4><strong>Via JsDelivr</strong></h4>
+                <div class="row">
+                    <div class="col-lg-11 col-md-11">
+                        <textarea id="a" rows="1" class="form-control" readonly=""></textarea>
+                    </div>
+                    <div class="col-lg-1 col-md-1">
+                        <button class="btn btn-warning" type="button" id="b">COPY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h4><strong>Via Staticaly</strong></h4>
+                <div class="row">
+                    <div class="col-lg-11 col-md-11">
+                        <textarea id="c" rows="1" class="form-control" readonly=""></textarea>
+                    </div>
+                    <div class="col-lg-1 col-md-1">
+                        <button class="btn btn-warning" type="button" id="d">COPY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row demo">
+            <div class="col-lg-4 col-md-4 text-center">
+                <p><h4><strong>Sizing icons</strong></h4></p>
+                <p><span>Solid icon with class <b>.fa</b></span> <i class="fa fa-3x fa-address-card"></i></p>
+                <p><span>Solid icon with class <b>.fas</b></span> <i class="fas fa-3x fa-address-card"></i></p>
+                <p><span>Regular icon with class <b>.far</b></span> <i class="far fa-3x fa-address-card"></i></p>
+                <p><span>Light icon with class <b>.fal</b> (not free)</span> <i class="fal fa-3x fa-address-card"></i></p>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+                <p><h4><strong>Animating icons</strong></h4></p>
+                <p><span>Solid icon with class <b>.fa</b></span> <i class="fa fa-3x fa-spinner fa-spin"></i></p>
+                <p><span>Solid icon with class <b>.fas</b></span> <i class="fas fa-3x fa-spinner fa-spin"></i></p>
+                <p><span>Regular icon with class <b>.far</b></span> <i class="far fa-3x fa-spinner fa-spin"></i></p>
+                <p><span>Light icon with class <b>.fal</b> (not free)</span> <i class="fal fa-3x fa-spinner fa-spin"></i></p>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+                <p><h4><strong>Rotating icons</strong></h4></p>
+                <p><span>Solid icon with class <b>.fa</b></span> <i class="fa fa-3x fa-magic fa-rotate-90"></i></p>
+                <p><span>Solid icon with class <b>.fas</b></span> <i class="fas fa-3x fa-magic fa-rotate-180""></i></p>
+                <p><span>Regular icon with class <b>.far</b></span> <i class="far fa-3x fa-magic fa-rotate-270"></i></p>
+                <p><span>Light icon with class <b>.fal</b> (not free)</span> <i class="fal fa-3x fa-magic fa-flip-vertical"></i></p>
+            </div>
+        </div>
+        <br>
+        <div class="row text-center copyright">
+            <p>
+                Pro Sources FREE &amp; CDN by <a href="https://www.hung1001.blog/">Hung1001</a>
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $.ajax({
+        url: 'https://api.github.com/repos/hhcdn/font-awesome/commits',
+        dataType: 'json',
+        success: function(e) {
+            var sha = e[0].sha.slice(0, 7);
+            var ver = e[0].commit.message;
+            $('.ver').html(ver);
+            $('#a').val('<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@' + sha + '/css/all.css" rel="stylesheet" type="text/css"/>');
+            $('#c').val('<link href="//cdn.staticaly.com/gh/hhcdn/font-awesome/' + sha + '/css/all.css" rel="stylesheet" type="text/css"/>');
+            $("head").append('<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@' + sha + '/css/all.css" rel="stylesheet" type="text/css">')
+        }
+    })
+    $('#b').click(function() {
+        if ($('#a').val().length > 0) {
+            $('#a').select();
+            document.execCommand('copy');
+        };
+    });
+    $('#d').click(function() {
+        if ($('#c').val().length > 0) {
+            $('#c').select();
+            document.execCommand('copy');
+        };
+    });
+    </script>
+</body>
+
+</html>
