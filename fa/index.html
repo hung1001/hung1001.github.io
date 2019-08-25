@@ -8,21 +8,21 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
   <link rel="shortcut icon" href="//www.google.com/s2/favicons?domain=https://fontawesome.com"/>
-  <style type="text/css">
-    body {
-      min-height: 100vh;
-      font-size: 16px;
-      background: #f3f3f3;
-    }
-  </style>
 </head>
 
-<body>
+<body class="bg-light">
   <div class="container-fluid px-md-5">
     <h3 class="text-center my-3">
       <i class="far fa-sm fa-clock"></i>
       <span>Lastest updated version:</span> <span class="ver text-danger"></span>
     </h3>
+    
+    <div class="row list-versions mb-3 justify-content-end">
+      <div class="col-sm-4 col-xl-2">
+        <h5>Select versions</h5>
+        <select class="custom-select bg-light" id="list-versions" style="cursor: pointer;"></select>
+      </div>  
+    </div>
 
     <div class="mb-3">
       <h5>Via JsDelivr</h5>
@@ -31,7 +31,7 @@
           <input id="a" class="form-control" readonly="readonly"/>
         </div>
         <div class="col-md-1">
-          <button class="btn btn-primary text-uppercase" id="b">copy</button>
+          <button class="btn btn-primary btn-block text-uppercase" id="b">copy</button>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
           <input id="c" class="form-control" readonly="readonly"/>
         </div>
         <div class="col-md-1">
-          <button class="btn btn-primary text-uppercase" id="d">copy</button>
+          <button class="btn btn-primary btn-block text-uppercase" id="d">copy</button>
         </div>
       </div>
     </div>
@@ -79,8 +79,8 @@
 
     <hr>
 
-    <div class="mb-3">
-      <h5 class="mb-3">Duotone - new style in version 5.10.0 and greater</h5>
+    <div class="mb-3 duotone">
+      <h5 class="mb-3">Duotone - new style in version <span class="text-danger">5.10.0 and greater</span></h5>
       
       <div class="row">
         <div class="col-md-4 text-center">
@@ -124,31 +124,57 @@
       </div>
     </div>
 
-    <div class="copyright text-center border-bottom border-top py-3">Pro Sources FREE &amp; CDN by <a href="https://hung1001nd.blogspot.com/">Hung1001</a></div>
+    <div class="copyright text-center border-bottom border-top py-3">Pro Sources FREE &amp; CDN by <a href="https://www.fb.com/hung.hoangvan.1001">Hung1001</a></div>
   </div>
 
   <script type="text/javascript">
   $.ajax({
     url: "https://api.github.com/repos/hhcdn/font-awesome/commits",
     dataType: "json",
-    success: function(e) {
-      var sha = e[0].sha.slice(0, 7),
-        ver = e[0].commit.message;
-      $(".ver").html(ver.match(/\d+(\.\d+)+/g)[0]);
-      $("#a").val('<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@' + sha + '/css/all.css" rel="stylesheet" type="text/css"/>');
-      $("#c").val('<link href="//cdn.staticaly.com/gh/hhcdn/font-awesome/' + sha + '/css/all.css" rel="stylesheet" type="text/css"/>');
-      $("head").append('<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@' + sha + '/css/all.css" rel="stylesheet" type="text/css"/>');
+    success: function(data) {
+      var listVersions = [],
+        sha = data[0].sha.slice(0, 7),
+        ver = data[0].commit.message.match(/\d+(\.\d+)+/g)[0];
+
+      data.forEach(function(value, index) {
+        listVersions.push({
+          sha: value.sha.slice(0, 7),
+          ver: value.commit.message.match(/\d+(\.\d+)+/g)[0]
+        });
+      });
+
+      var removeDuplicate = listVersions.reduce((unique, value) => {
+        if(!unique.some(obj => obj.ver === value.ver)) {
+          unique.push(value);
+        }
+        return unique;
+      }, []);
+
+      removeDuplicate.forEach(function(value, index) {
+        $('#list-versions').append(`<option value="${value.sha}">v${value.ver}</option>`);
+      });
+
+      $(".ver").text(ver);
+      $("#a").val(`<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@${sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+      $("#c").val(`<link href="//cdn.staticaly.com/gh/hhcdn/font-awesome/${sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+      $("head").append(`<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@${sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+
+      $("body").on("change", "#list-versions", function () {
+        var _sha = $(this).val();
+        $("#a").val(`<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@${_sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+        $("#c").val(`<link href="//cdn.staticaly.com/gh/hhcdn/font-awesome/${_sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+      });
     }
   });
 
-  $("body").on("click", "#b", function() {
+  $("body").on("click", "#b", function () {
     if ($("#a").val().length > 0) {
       $("#a").select();
       document.execCommand("copy");
     }
   });
 
-  $("body").on("click", "#d", function() {
+  $("body").on("click", "#d", function () {
     if ($("#c").val().length > 0) {
       $("#c").select();
       document.execCommand("copy");
