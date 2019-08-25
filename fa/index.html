@@ -134,7 +134,7 @@
     success: function(e) {
       var sha = e[0].sha.slice(0, 7),
         ver = e[0].commit.message;
-      $(".ver").html(ver);
+      $(".ver").html(ver.match(/\d+(\.\d+)+/g)[0]);
       $("#a").val('<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@' + sha + '/css/all.css" rel="stylesheet" type="text/css"/>');
       $("#c").val('<link href="//cdn.staticaly.com/gh/hhcdn/font-awesome/' + sha + '/css/all.css" rel="stylesheet" type="text/css"/>');
       $("head").append('<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@' + sha + '/css/all.css" rel="stylesheet" type="text/css"/>');
