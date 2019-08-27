@@ -129,7 +129,7 @@
 
   <script type="text/javascript">
   $.ajax({
-    url: "https://api.github.com/repos/hhcdn/font-awesome/commits",
+    url: "https://api.github.com/repos/hung1001/font-awesome/commits",
     dataType: "json",
     success: function(data) {
       var listVersions = [],
@@ -155,14 +155,14 @@
       });
 
       $(".ver").text(ver);
-      $("#a").val(`<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@${sha}/css/all.css" rel="stylesheet" type="text/css" />`);
-      $("#c").val(`<link href="//cdn.staticaly.com/gh/hhcdn/font-awesome/${sha}/css/all.css" rel="stylesheet" type="text/css" />`);
-      $("head").append(`<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@${sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+      $("#a").val(`<link href="//cdn.jsdelivr.net/gh/hung1001/font-awesome@${sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+      $("#c").val(`<link href="//cdn.staticaly.com/gh/hung1001/font-awesome/${sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+      $("head").append(`<link href="//cdn.jsdelivr.net/gh/hung1001/font-awesome@${sha}/css/all.css" rel="stylesheet" type="text/css" />`);
 
       $("body").on("change", "#list-versions", function () {
         var _sha = $(this).val();
-        $("#a").val(`<link href="//cdn.jsdelivr.net/gh/hhcdn/font-awesome@${_sha}/css/all.css" rel="stylesheet" type="text/css" />`);
-        $("#c").val(`<link href="//cdn.staticaly.com/gh/hhcdn/font-awesome/${_sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+        $("#a").val(`<link href="//cdn.jsdelivr.net/gh/hung1001/font-awesome@${_sha}/css/all.css" rel="stylesheet" type="text/css" />`);
+        $("#c").val(`<link href="//cdn.staticaly.com/gh/hung1001/font-awesome/${_sha}/css/all.css" rel="stylesheet" type="text/css" />`);
       });
     }
   });
