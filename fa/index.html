@@ -10,12 +10,12 @@
 
   <link href="//www.google.com/s2/favicons?domain=https://fontawesome.com" rel="shortcut icon" />
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.full.min.js" type="text/javascript"></script>
-
   <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" type="text/css" />
   <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="css/main.css" rel="stylesheet" type="text/css" />
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.full.min.js" type="text/javascript"></script>
 </head>
 
 <body class="bg-light">
@@ -27,11 +27,19 @@
     
     <div class="row list-versions mb-3 justify-content-end">
       <div class="col-sm-4 col-xl-2">
-        <h5>Select versions</h5>
+        <h6><i class="fad fa-code-merge"></i> Select versions</h6>
         <div class="position-relative">
-          <select id="list-versions"></select>
+          <select id="list-versions" class="js-select2"></select>
         </div>
-      </div>  
+      </div>
+      <div class="col-sm-4 col-xl-2">
+        <h6><i class="fad fa-download"></i> Download</h6>
+        <div class="position-relative">
+          <select id="archive" class="js-select2" data-placeholder="Select version">
+            <option value=""></option>
+          </select>
+        </div>
+      </div>
     </div>
 
     <div class="mb-3">
